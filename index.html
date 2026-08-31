@@ -32,25 +32,28 @@ section{max-width:1100px;margin:auto;padding:65px 5%}h2{text-align:center;font-s
 </div></div>
 <script>
 const K="MAS_PRO";let edit=-1;
-let d=JSON.parse(localStorage.getItem(K)||"null")||{about:"আমি Monir Ahmed Shakib। This website contains My পেশাগত About, Skills, Education, Experience, কাজ and Contactের information উপস্থাপন করা হয়েছে।",contact:"Email: monirahmedshakib.mb@gmail.com",items:[
-{title:"Digital Marketing",desc:"Digital marketing related services and solutions.",type:"skills"},
-{title:"MS Office",desc:"Professional office productivity skills.",type:"skills"},
-{title:"Data Entry",desc:"Accurate and organized data entry.",type:"skills"},
-{title:"HSC — 2021",desc:"Dhap Satgara Model Kamil Madrasah, Rangpur · GPA 2.37",type:"education"},
-{title:"SSC — 2019",desc:"Jafarganj School and College, Rangpur · GPA 3.65",type:"education"},
-{title:"Data Entry",desc:"Steadfast Courier · 3 years experience.",type:"experience"},
-{title:"Digital Marketing",desc:"Digital marketing services.",type:"services"},
-{title:"Data Entry",desc:"Professional data entry services.",type:"services"},
-{title:"Professional Project",desc:"Portfolio project details can be added here.",type:"portfolio"},
-{title:"Welcome",desc:"Blog articles can be added and updated from the Admin Panel.",type:"blog"}]};
+let d=JSON.parse(localStorage.getItem(K)||"null")||{about:"আমি Monir Ahmed Shakib! This website contains My পেশাগত About, Skills, Education, Experience, কাজ and Contactের information উপস্থাপন করা হয়েছে।",contact:"Email: monirahmedshakib.mb@gmail.com",items:[
+  {title:"Digital Marketing",desc:"Digital marketing related services and solutions.",type:"skills"},
+  {title:"MS Office",desc:"Professional office productivity skills.",type:"skills"},
+  {title:"Data Entry",desc:"Accurate and organized data entry.",type:"skills"},
+  {title:"HSC - 2021",desc:"Dhap Satgara Model Kamil Madrasah, Rangpur · GPA 2.37",type:"education"},
+  {title:"SSC - 2019",desc:"Jafarganj School and College, Rangpur · GPA 3.65",type:"education"},
+  {title:"Data Entry",desc:"Steadfast Courier · 3 years experience.",type:"experience"},
+  {title:"Digital Marketing",desc:"Digital marketing services.",type:"services"},
+  {title:"Data Entry",desc:"Professional data entry services.",type:"services"},
+  {title:"Professional Project",desc:"Portfolio project details can be added here.",type:"portfolio"},
+  {title:"Welcome",desc:"Blog articles can be added and updated from the Admin Panel.",type:"blog"}
+]};
 function esc(s){return String(s).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]))}
 function save(){localStorage.setItem(K,JSON.stringify(d));render()}
-function render(){aboutText.textContent=d.about;contactText.textContent=d.contact;["skills","education","experience","services","portfolio","blog"].forEach(t=>{let e=document.getElementById(t+"Grid");e.innerHTML=d.items.filter(x=>x.type===t).map(x=>`<div class="card"><h3>${esc(x.title)}</h3><p class="muted">${esc(x.desc)}</p></div>`).join("")});renderList()}
+function render(){aboutText.textContent=d.about;contactText.textContent=d.contact;["skills","education","experience","services","portfolio","blog"].forEach(t=>{let e=document.getElementById(t+"Grid");if(e)e.innerHTML=""});d.items.forEach((x,i)=>{let e=document.getElementById(x.type+"Grid");if(e)e.innerHTML+=`<div class="card"><h3>${esc(x.title)}</h3><p>${esc(x.desc)}</p></div>`})}
 function renderList(){aboutEdit.value=d.about;contactEdit.value=d.contact;list.innerHTML=d.items.map((x,i)=>`<div class="item"><div><b>${esc(x.title)}</b><div class="muted">${esc(x.type)}</div><div>${esc(x.desc)}</div></div><div><button class="btn" onclick="editItem(${i})">Edit</button> <button class="btn danger" onclick="delItem(${i})">Delete</button></div></div>`).join("")}
-function saveItem(){let t=title.value.trim(),x=desc.value.trim();if(!t)return alert("Please enter a title");let o={title:t,desc:x,type:type.value};if(edit<0)d.items.push(o);else{d.items[edit]=o;edit=-1}title.value="";desc.value="";save()}
+function saveItem(){let t=title.value.trim(),x=desc.value.trim();if(!t)return alert("Please enter a title");let o={title:t,desc:x,type:type.value};if(edit<0)d.items.push(o);else{d.items[edit]=o;edit=-1}title.value="";desc.value="";save();renderList()}
 function editItem(i){edit=i;let x=d.items[i];title.value=x.title;desc.value=x.desc;type.value=x.type;document.getElementById("admin").scrollTop=0}
-function delItem(i){if(confirm("Delete this item?")){d.items.splice(i,1);save()}}
+function delItem(i){if(confirm("Delete this item?")){d.items.splice(i,1);save();renderList()}}
 function saveInfo(){d.about=aboutEdit.value;d.contact=contactEdit.value;save();alert("Updated successfully")}
 function openAdmin(){document.getElementById("admin").style.display="block"}
 function closeAdmin(){document.getElementById("admin").style.display="none"}
-function login(e){if(e)e.preventDefault();if(u.value.toLowerCase()==="admin"&&p.value.toLowerCase()==="monir7557"){login.style.display="none";panel.style.display="block";renderList()}else{alert("Incorrect username or password")}}render();</script></body></html>
+function login(e){if(e)e.preventDefault();if(u.value.toLowerCase()==="admin"&&p.value.toLowerCase()==="monir7557"){document.getElementById("login").style.display="none";document.getElementById("panel").style.display="block";renderList()}else alert("Incorrect username or password")}
+render();
+</script>
