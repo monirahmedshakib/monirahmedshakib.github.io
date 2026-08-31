@@ -138,6 +138,131 @@
   </div>
 
   <script>
+    const K="MAS_PRO";let edit=-1;
+    let d=JSON.parse(localStorage.getItem(K))||{
+      about:"আমি Monir Ahmed Shakib! This website contains My information ❤️",
+      contact:"Email: monirahmedshakib.mb@gmail.com",
+      items:[
+        {title:"Digital Marketing",desc:"Digital marketing related services and solutions.",type:"skills"},
+        {title:"MS Office",desc:"Professional office productivity skills.",type:"skills"},
+        {title:"Data Entry",desc:"Accurate and organized data entry.",type:"skills"},
+        {title:"HSC - 2021",desc:"Dhap Satgara Model Kamil Madrasah, Rangpur · GPA 2.37",type:"education"},
+        {title:"SSC - 2019",desc:"Jafarganj School and College, Rangpur · GPA 3.65",type:"education"},
+        {title:"Data Entry",desc:"Steadfast Courier - 3 years experience.",type:"experience"},
+        {title:"Digital Marketing",desc:"Digital marketing services.",type:"services"},
+        {title:"Data Entry",desc:"Professional data entry services.",type:"services"},
+        {title:"Professional Project",desc:"Portfolio project details can be added here.",type:"portfolio"},
+        {title:"📖 আল-কুরআন শরীফ",desc:"অনলাইন কুরআন শরীফ তিলাওয়াত ও অনুবাদ।",type:"blog"},
+        {title:"🕌 নামাযের সময়সূচী ও নিয়ম",desc:"দৈনন্দিন নামাযের সঠিক সময়, ওয়াজিব ও সুন্নাত নিয়ম।",type:"blog"},
+        {title:"🤲 প্রয়োজনীয় দোয়া ও মাসআলা",desc:"দৈনন্দিন জীবনের গুরুত্বপূর্ণ দোয়া সমূহ।",type:"blog"},
+        {title:"🔍 ডিজিটাল তাসবিহ",desc:"অনলাইনে তাসবিহ ও জিকির গণনার সুবিধা।",type:"blog"},
+        {title:"📚 ইসলামিক বই ও পিডিএফ",desc:"গুরুত্বপূর্ণ ইসলামিক বই ডাউনলোড ও পড়ার সুবিধা।",type:"blog"}
+      ]
+    };
+
+    function esc(s){return String(s).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]))}
+    function save(){localStorage.setItem(K,JSON.stringify(d));render()}
+
+    function render(){
+      const aEl=document.getElementById("aboutText");if(aEl)aEl.textContent=d.about;
+      const cEl=document.getElementById("contactText");if(cEl)cEl.innerHTML='Email: <a href="mailto:monirahmedshakib.mb@gmail.com" style="color:#fff;">monirahmedshakib.mb@gmail.com</a>';
+      
+      ["skills","education","experience","services","portfolio","blog"].forEach(t=>{
+        const e=document.getElementById(t==="blog"?"blogGrid":t+"Grid");
+        if(e){
+          e.innerHTML=d.items.filter(x=>x.type===t).map(x=>`
+            <div class="card">
+              <h3>${esc(x.title)}</h3>
+              <p>${esc(x.desc)}</p>
+            </div>
+          `).join('')
+        }
+      })
+    }
+
+    function renderList(){
+      document.getElementById("aboutEdit").value=d.about;
+      document.getElementById("contactEdit").value=d.contact;
+      document.getElementById("itemsList").innerHTML=d.items.map((x,i)=>`
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid #eee">
+          <div><b>${esc(x.title)}</b> (${esc(x.type)})<br><small class="muted">${esc(x.desc)}</small></div>
+          <div><button class="btn" onclick="editItem(${i})">Edit</button> <button class="btn danger" onclick="delItem(${i})">Delete</button></div>
+        </div>
+      `).join('')
+    }
+
+    function saveItem(){
+      let t=document.getElementById("title").value.trim(),x=document.getElementById("desc").value.trim(),tp=document.getElementById("type").value;
+      if(!t)return alert("Please enter a title");
+      let o={title:t,desc:x,type:tp};
+      if(edit>-1){d.items[edit]=o;edit=-1}else{d.items.push(o)}
+      document.getElementById("title").value="";document.getElementById("desc").value="";
+      save();renderList()
+    }
+
+    function editItem(i){
+      edit=i;let x=d.items[i];
+      document.getElementById("title").value=x.title;
+      document.getElementById("desc").value=x.desc;
+      document.getElementById("type").value=x.type
+    }
+
+    function delItem(i){if(confirm("Delete this item?")){d.items.splice(i,1);save();renderList()}}
+
+    function saveInfo(){
+      d.about=document.getElementById("aboutEdit").value;
+      d.contact=document.getElementById("contactEdit").value;
+      save();alert("Updated successfully!")
+    }
+
+    function openAdmin(){document.getElementById("admin").style.display="block"}
+    function closeAdmin(){document.getElementById("admin").style.display="none"}
+
+    function login(e){
+      e.preventDefault();
+      if(document.getElementById("u").value.toLowerCase()==="admin"&&document.getElementById("p").value.toLowerCase()==="monir7557"){
+        document.getElementById("login").style.display="none";
+        document.getElementById("list").style.display="block";
+        renderList()
+      }else{
+        alert("Wrong credentials")
+      }
+    }
+
+    render();
+  </script>
+</body>
+</html>
+      </div>
+
+      <div id="list" style="display:none;">
+        <h3>Content Management</h3>
+        <div class="form">
+          <div class="row">
+            <input id="title" placeholder="Title" style="padding:8px;width:100%;margin-bottom:10px;">
+            <textarea id="desc" placeholder="Description" style="padding:8px;width:100%;margin-bottom:10px;"></textarea>
+            <select id="type" style="padding:8px;margin-bottom:10px;">
+              <option value="skills">skills</option>
+              <option value="education">education</option>
+              <option value="experience">experience</option>
+              <option value="services">services</option>
+              <option value="portfolio">portfolio</option>
+              <option value="blog">blog</option>
+            </select>
+            <button class="btn" onclick="saveItem()">Add Item</button>
+          </div>
+        </div>
+        <div id="itemsList" style="margin-top:20px;"></div>
+
+        <h3 style="margin-top:30px;">About & Contact Update</h3>
+        <textarea id="aboutEdit" style="padding:8px;width:100%;margin-bottom:10px;"></textarea>
+        <input id="contactEdit" style="padding:8px;width:100%;margin-bottom:10px;">
+        <button class="btn" onclick="saveInfo()">Save Information</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
     const K = "MAS_PRO";
     let edit = -1;
     let d = JSON.parse(localStorage.getItem(K)) || {
