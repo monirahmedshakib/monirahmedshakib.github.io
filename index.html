@@ -54,5 +54,4 @@ function delItem(i){if(confirm("Delete this item?")){d.items.splice(i,1);save()}
 function saveInfo(){d.about=aboutEdit.value;d.contact=contactEdit.value;save();alert("Updated successfully")}
 function openAdmin(){document.getElementById("admin").style.display="block"}
 function closeAdmin(){document.getElementById("admin").style.display="none"}
-function login(){if(u.value==="admin"&&p.value==="monir7557"){login.style.display="none";panel.style.display="block";renderList()}else alert("Incorrect username or password")}render();
-</script></body></html>
+function login(e){if(e)e.preventDefault();if(u.value.toLowerCase()==="admin"&&p.value.toLowerCase()==="monir7557"){login.style.display="none";panel.style.display="block";renderList()}else{alert("Incorrect username or password")}}render();</script></body></html>
