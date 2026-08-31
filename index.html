@@ -1,100 +1,60 @@
-<!DOCTYPE html>
-<html lang="bn">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Monir Ahmed Shakib</title>
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Monir Ahmed Shakib | Professional Portfolio</title>
 <style>
-*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#f5f7fb;color:#172033}
-header{position:sticky;top:0;z-index:10;background:#111827;color:#fff;padding:14px 5%}
-nav{max-width:1100px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:15px}.logo{font-weight:700;font-size:20px}
-nav a{color:#fff;text-decoration:none;margin-left:12px;font-size:14px}.hero{text-align:center;padding:70px 6%;background:linear-gradient(135deg,#fff,#eef4ff)}
-.profile{width:180px;height:180px;object-fit:cover;border-radius:50%;border:5px solid #2563eb}.hero h1{font-size:40px;margin:18px 0 8px}.hero p{color:#667085;font-size:18px}
-.btn{display:inline-block;border:0;border-radius:10px;padding:11px 18px;background:#2563eb;color:white;text-decoration:none;cursor:pointer;margin:5px}
-section{max-width:1100px;margin:auto;padding:55px 6%}h2{text-align:center;margin-bottom:25px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}.card{background:white;padding:22px;border-radius:14px;box-shadow:0 5px 18px #00000010}
-.contact{max-width:none;background:#111827;color:#fff;text-align:center}footer{text-align:center;padding:20px;background:#0b1220;color:#cbd5e1}
-#admin{display:none;min-height:100vh;background:#f3f4f6;padding:25px 6%}.adminbox{max-width:1000px;margin:auto;background:white;padding:25px;border-radius:16px}.adminbar{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}.form{display:grid;gap:10px;margin:20px 0}.form input,.form textarea{padding:12px;border:1px solid #d0d5dd;border-radius:8px;width:100%}.item{border:1px solid #ddd;border-radius:10px;padding:14px;margin:10px 0;display:flex;justify-content:space-between;gap:10px}.danger{background:#dc2626}.muted{color:#667085}
-@media(max-width:700px){nav{flex-direction:column}.hero h1{font-size:30px}nav a{margin:0 4px;font-size:12px}}
-</style>
-</head>
-<body>
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#f5f7fb;color:#172033;line-height:1.6}
+header{position:sticky;top:0;background:#111827;color:#fff;z-index:10}.nav{max-width:1100px;margin:auto;padding:15px 5%;display:flex;justify-content:space-between;align-items:center;gap:15px}.brand{font-weight:bold;font-size:20px}.links{display:flex;flex-wrap:wrap;gap:12px}.links a{color:#fff;text-decoration:none;font-size:14px}
+.hero{padding:75px 5%;background:linear-gradient(135deg,#fff,#eaf2ff)}.heroIn{max-width:1100px;margin:auto;display:grid;grid-template-columns:1.2fr .8fr;align-items:center;gap:40px}.hero h1{font-size:clamp(38px,6vw,62px);margin:10px 0}.hero h1 span{color:#2563eb}.lead{color:#667085;font-size:18px}.photo{width:250px;height:250px;object-fit:cover;border-radius:28px;border:7px solid #fff;box-shadow:0 15px 40px #0002}.photoBox{text-align:center}
+section{max-width:1100px;margin:auto;padding:65px 5%}h2{text-align:center;font-size:30px;margin-bottom:30px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}.card{background:#fff;padding:22px;border-radius:16px;border:1px solid #e5e7eb;box-shadow:0 6px 22px #0000000a}.muted{color:#667085}.btn{display:inline-block;background:#2563eb;color:#fff;text-decoration:none;border:0;border-radius:10px;padding:11px 18px;cursor:pointer;margin-top:18px}.dark{background:#111827;color:#fff;max-width:none;text-align:center}.dark .muted{color:#cbd5e1}footer{text-align:center;background:#080f1d;color:#ddd;padding:22px}
+#admin{display:none;position:fixed;inset:0;z-index:50;background:#f3f4f6;overflow:auto;padding:25px}.admin{max-width:950px;margin:auto;background:#fff;border-radius:16px;padding:25px}.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}.form{display:grid;gap:10px;margin:15px 0}.form input,.form textarea,.form select{width:100%;padding:12px;border:1px solid #d0d5dd;border-radius:8px;font:inherit}.item{border:1px solid #e5e7eb;border-radius:10px;padding:12px;margin:10px 0;display:flex;justify-content:space-between;gap:10px}.danger{background:#dc2626}.adminBtn{position:fixed;right:18px;bottom:18px;border:0;border-radius:50%;width:52px;height:52px;background:#2563eb;color:#fff;font-size:20px;z-index:20}
+@media(max-width:750px){.nav,.heroIn{display:flex;flex-direction:column;align-items:center}.links{justify-content:center}.hero{text-align:center}.photo{width:210px;height:210px}.row{grid-template-columns:1fr}.item{flex-direction:column}}
+</style></head><body>
+<header><div class="nav"><div class="brand">Monir Ahmed Shakib</div><nav class="links"><a href="#about">About</a><a href="#skills">Skills</a><a href="#education">Education</a><a href="#experience">Experience</a><a href="#services">Services</a><a href="#portfolio">Portfolio</a><a href="#cv">CV</a><a href="#blog">Blog</a><a href="#contact">Contact</a></nav></div></header>
 
-<div id="site">
-<header><nav><div class="logo">Monir Ahmed Shakib</div><div>
-<a href="#home">Home</a><a href="#about">About</a><a href="#services">Services</a><a href="#portfolio">Portfolio</a><a href="#blog">Blog</a><a href="#contact">Contact</a>
-<a href="#" onclick="showAdmin();return false">Admin</a></div></nav></header>
+<div class="hero"><div class="heroIn"><div><p style="color:#2563eb;font-weight:bold">PROFESSIONAL PERSONAL BRAND</p><h1>Monir Ahmed <span>Shakib</span></h1><p class="lead">Welcome to my professional portfolio. here About Me, Skills, Education, Experience, Services ও কাজের information পাবেন।</p><a class="btn" href="#portfolio">View Portfolio</a></div><div class="photoBox"><img class="photo" src="assets/profile.jpg" alt="Monir Ahmed Shakib"></div></div></div>
 
-<div class="hero" id="home">
-<img class="profile" src="assets/monir-ahmed-shakib.jpg" alt="Monir Ahmed Shakib">
-<h1 id="heroName">Monir Ahmed Shakib</h1><p id="heroText">Welcome to my personal website</p>
-<a class="btn" href="#about">Explore Website</a>
-</div>
-
-<section id="about"><h2>About Me</h2><div class="card"><p id="aboutText">স্বাগতম! এটি Monir Ahmed Shakib-এর ব্যক্তিগত Website। এখানে আমার পরিচয়, কাজ, Portfolio ও Articles পাওয়া যাবে।</p></div></section>
-
-<section id="services"><h2>My Services</h2><div class="grid" id="servicesGrid"></div></section>
+<section id="about"><h2>About Me</h2><div class="card"><p id="aboutText">আমি Monir Ahmed Shakib। This website contains My পেশাগত About, Skills, Education, Experience, কাজ and Contactের information উপস্থাপন করা হয়েছে।</p></div></section>
+<section id="skills"><h2>Skills</h2><div class="grid" id="skillsGrid"></div></section>
+<section id="education"><h2>Educationগত যোগ্যতা</h2><div class="grid" id="educationGrid"></div></section>
+<section id="experience"><h2>কাজের Experience</h2><div class="grid" id="experienceGrid"></div></section>
+<section id="services"><h2>Servicesসমূহ</h2><div class="grid" id="servicesGrid"></div></section>
 <section id="portfolio"><h2>Portfolio</h2><div class="grid" id="portfolioGrid"></div></section>
+<section id="cv"><h2>CV / Resume</h2><div class="card" style="text-align:center"><p class="muted">Your CV file can be added here later.</p></div></section>
 <section id="blog"><h2>Blog & Articles</h2><div class="grid" id="blogGrid"></div></section>
-<section class="contact" id="contact"><h2>Contact Me</h2><p id="contactText">আপনার যোগাযোগের তথ্য এখানে থাকবে।</p></section>
-<footer>© 2026 Monir Ahmed Shakib. All Rights Reserved.</footer>
-</div>
+<section class="dark" id="contact"><h2>Contact</h2><p id="contactText" class="muted">Email: monirahmedshakib.mb@gmail.com</p></section>
+<footer>© 2026 Monir Ahmed Shakib · All Rights Reserved</footer>
+<button class="adminBtn" onclick="openAdmin()">⚙</button>
 
-<div id="admin">
-<div class="adminbox">
-<div class="adminbar"><h2>Admin Panel</h2><button class="btn danger" onclick="logout()">Logout</button></div>
-<p class="muted">এখান থেকে Website-এর লেখা ও পোস্ট Add / Edit / Delete করতে পারবেন।</p>
-
-<div class="form">
-<input id="aTitle" placeholder="Post/Service title">
-<textarea id="aDesc" rows="3" placeholder="Description"></textarea>
-<select id="aType"><option value="services">Service</option><option value="portfolio">Portfolio</option><option value="blog">Blog</option></select>
-<button class="btn" onclick="saveItem()">Add / Update</button>
-</div>
-<div id="adminList"></div>
-<hr>
-<h3>About & Contact Update</h3>
-<div class="form">
-<textarea id="aAbout" rows="3" placeholder="About text"></textarea>
-<input id="aContact" placeholder="Contact information">
-<button class="btn" onclick="saveInfo()">Save Website Info</button>
-</div>
-<p class="muted">Demo login: <b>admin</b> / <b>123456</b></p>
+<div id="admin"><div class="admin">
+<div style="display:flex;justify-content:space-between;gap:10px"><h2>Admin Panel</h2><button class="btn danger" onclick="closeAdmin()">Close</button></div>
+<div id="login"><div class="form"><input id="u" placeholder="Username"><input id="p" type="password" placeholder="Password"><button class="btn" onclick="login()">Login</button></div><p class="muted">Demo login: admin / 123456</p></div>
+<div id="panel" style="display:none">
+<h3>Content Management</h3><div class="form"><div class="row"><input id="title" placeholder="Title"><select id="type"><option>skills</option><option>education</option><option>experience</option><option>services</option><option>portfolio</option><option>blog</option></select></div><textarea id="desc" rows="3" placeholder="Description"></textarea><button class="btn" onclick="saveItem()">Add / Update</button></div>
+<div id="list"></div><hr><h3>About & Contact Update</h3><div class="form"><textarea id="aboutEdit" rows="3"></textarea><input id="contactEdit"><button class="btn" onclick="saveInfo()">Save Information</button></div></div>
 </div></div>
-
 <script>
-const key="MAS_SITE_DATA";
-let data=JSON.parse(localStorage.getItem(key)||"null")||{
-items:[
-{title:"Digital Marketing",desc:"Digital marketing related services and solutions.",type:"services"},
-{title:"Data Entry",desc:"Accurate and organized data entry services.",type:"services"},
-{title:"MS Office",desc:"Professional document and office productivity support.",type:"services"},
-{title:"Project 01",desc:"Your project details will appear here.",type:"portfolio"},
-{title:"Welcome",desc:"এই Blog section-এ ভবিষ্যতে নতুন Article যোগ করা যাবে।",type:"blog"}
-],about:"স্বাগতম! এটি Monir Ahmed Shakib-এর ব্যক্তিগত Website। এখানে আমার পরিচয়, কাজ, Portfolio ও Articles পাওয়া যাবে।",contact:"আপনার যোগাযোগের তথ্য এখানে থাকবে।"
-};
-let editIndex=-1;
-function persist(){localStorage.setItem(key,JSON.stringify(data));render();}
-function render(){
-document.getElementById("aboutText").textContent=data.about;document.getElementById("contactText").textContent=data.contact;
-for(const type of ["services","portfolio","blog"]){
- const el=document.getElementById(type+"Grid");el.innerHTML="";
- data.items.filter(x=>x.type===type).forEach(x=>el.innerHTML+=`<div class="card"><h3>${esc(x.title)}</h3><p>${esc(x.desc)}</p></div>`);
-}
-renderAdmin();
-}
-function renderAdmin(){const el=document.getElementById("adminList");el.innerHTML="";
-data.items.forEach((x,i)=>el.innerHTML+=`<div class="item"><div><b>${esc(x.title)}</b><br><span class="muted">${esc(x.type)}</span><p>${esc(x.desc)}</p></div><div><button class="btn" onclick="editItem(${i})">Edit</button><button class="btn danger" onclick="deleteItem(${i})">Delete</button></div></div>`);
-document.getElementById("aAbout").value=data.about;document.getElementById("aContact").value=data.contact;
-}
-function saveItem(){let t=aTitle.value.trim(),d=aDesc.value.trim(),ty=aType.value;if(!t)return alert("Title দিন");
-if(editIndex<0)data.items.push({title:t,desc:d,type:ty});else{data.items[editIndex]={title:t,desc:d,type:ty};editIndex=-1}
-aTitle.value="";aDesc.value="";persist();}
-function editItem(i){let x=data.items[i];editIndex=i;aTitle.value=x.title;aDesc.value=x.desc;aType.value=x.type;scrollTo(0,0)}
-function deleteItem(i){if(confirm("এই item delete করবেন?")){data.items.splice(i,1);persist()}}
-function saveInfo(){data.about=aAbout.value;data.contact=aContact.value;persist();alert("Updated successfully!")}
+const K="MAS_PRO";let edit=-1;
+let d=JSON.parse(localStorage.getItem(K)||"null")||{about:"আমি Monir Ahmed Shakib। This website contains My পেশাগত About, Skills, Education, Experience, কাজ and Contactের information উপস্থাপন করা হয়েছে।",contact:"Email: monirahmedshakib.mb@gmail.com",items:[
+{title:"Digital Marketing",desc:"Digital marketing related services and solutions.",type:"skills"},
+{title:"MS Office",desc:"Professional office productivity skills.",type:"skills"},
+{title:"Data Entry",desc:"Accurate and organized data entry.",type:"skills"},
+{title:"HSC — 2021",desc:"Dhap Satgara Model Kamil Madrasah, Rangpur · GPA 2.37",type:"education"},
+{title:"SSC — 2019",desc:"Jafarganj School and College, Rangpur · GPA 3.65",type:"education"},
+{title:"Data Entry",desc:"Steadfast Courier · 3 years experience.",type:"experience"},
+{title:"Digital Marketing",desc:"Digital marketing services.",type:"services"},
+{title:"Data Entry",desc:"Professional data entry services.",type:"services"},
+{title:"Professional Project",desc:"Portfolio project details can be added here.",type:"portfolio"},
+{title:"Welcome",desc:"Blog articles can be added and updated from the Admin Panel.",type:"blog"}]};
 function esc(s){return String(s).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]))}
-function showAdmin(){let u=prompt("Admin username:");if(u===null)return;let p=prompt("Admin password:");if(u==="admin"&&p==="123456"){site.style.display="none";admin.style.display="block";renderAdmin()}else alert("ভুল username বা password")}
-function logout(){admin.style.display="none";site.style.display="block"}
+function save(){localStorage.setItem(K,JSON.stringify(d));render()}
+function render(){aboutText.textContent=d.about;contactText.textContent=d.contact;["skills","education","experience","services","portfolio","blog"].forEach(t=>{let e=document.getElementById(t+"Grid");e.innerHTML=d.items.filter(x=>x.type===t).map(x=>`<div class="card"><h3>${esc(x.title)}</h3><p class="muted">${esc(x.desc)}</p></div>`).join("")});renderList()}
+function renderList(){aboutEdit.value=d.about;contactEdit.value=d.contact;list.innerHTML=d.items.map((x,i)=>`<div class="item"><div><b>${esc(x.title)}</b><div class="muted">${esc(x.type)}</div><div>${esc(x.desc)}</div></div><div><button class="btn" onclick="editItem(${i})">Edit</button> <button class="btn danger" onclick="delItem(${i})">Delete</button></div></div>`).join("")}
+function saveItem(){let t=title.value.trim(),x=desc.value.trim();if(!t)return alert("Please enter a title");let o={title:t,desc:x,type:type.value};if(edit<0)d.items.push(o);else{d.items[edit]=o;edit=-1}title.value="";desc.value="";save()}
+function editItem(i){edit=i;let x=d.items[i];title.value=x.title;desc.value=x.desc;type.value=x.type;document.getElementById("admin").scrollTop=0}
+function delItem(i){if(confirm("Delete this item?")){d.items.splice(i,1);save()}}
+function saveInfo(){d.about=aboutEdit.value;d.contact=contactEdit.value;save();alert("Updated successfully")}
+function openAdmin(){document.getElementById("admin").style.display="block"}
+function closeAdmin(){document.getElementById("admin").style.display="none"}
+function login(){if(u.value==="admin"&&p.value==="123456"){login.style.display="none";panel.style.display="block";renderList()}else alert("Incorrect username or password")}
 render();
-</script>
-</body></html>
+</script></body></html>
