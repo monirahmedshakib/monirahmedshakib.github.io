@@ -12,7 +12,12 @@
     .photo{width:260px;height:260px;border-radius:50%;object-fit:cover;border:5px solid #2563eb;box-shadow:0 10px 25px rgba(0,0,0,.1)}
     section{max-width:1100px;margin:auto;padding:65px 5%;text-align:center}h2{font-size:30px;margin-bottom:30px;text-align:center}
     .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
-    .card{background:#fff;padding:20px;border-radius:10px;box-shadow:0 4px 10px rgba(0,0,0,.05);text-align:left}
+    .card{background:#fff;padding:20px;border-radius:10px;box-shadow:0 4px 10px rgba(0,0,0,.05);text-align:left;transition:transform 0.3s ease, box-shadow 0.3s ease}
+    
+    /* Interactive Card Style for Blog/Islamic Corner */
+    .clickable-card { cursor: pointer; position: relative; }
+    .clickable-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); border-left: 4px solid #2563eb; }
+    
     .dark{background:#011827;color:#fff;text-align:center}
     #admin{display:none;position:fixed;inset:0;z-index:50;background:#f3f4f6;overflow:auto;padding:25px;text-align:left}
     .btn{background:#2563eb;color:#fff;border:none;padding:10px 18px;border-radius:8px;cursor:pointer}.btn.danger{background:#dc2626}
@@ -34,7 +39,6 @@
       transform-style:preserve-3d;
     }
     
-    /* 3D Phone Icon Style */
     .phone-3d-box {
       display: inline-flex;
       align-items: center;
@@ -59,17 +63,56 @@
       box-shadow: 0 5px 12px rgba(16, 185, 129, 0.4), inset 0 2px 2px rgba(255, 255, 255, 0.5);
     }
 
-    /* Individual 3D Brand Colors & Shadows */
     .btn-fb { background: linear-gradient(145deg, #1877f2, #0d52b1); box-shadow: 0 8px 15px rgba(24, 119, 242, 0.4), inset 0 2px 2px rgba(255,255,255,0.4); }
     .btn-wa { background: linear-gradient(145deg, #25d366, #1b9a4a); box-shadow: 0 8px 15px rgba(37, 211, 102, 0.4), inset 0 2px 2px rgba(255,255,255,0.4); }
     .btn-yt { background: linear-gradient(145deg, #ff0000, #b30000); box-shadow: 0 8px 15px rgba(255, 0, 0, 0.4), inset 0 2px 2px rgba(255,255,255,0.4); }
     .btn-tt { background: linear-gradient(145deg, #00f2fe, #4facfe, #000); box-shadow: 0 8px 15px rgba(0, 242, 254, 0.4), inset 0 2px 2px rgba(255,255,255,0.4); }
     .btn-ig { background: linear-gradient(145deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); box-shadow: 0 8px 15px rgba(220, 39, 67, 0.4), inset 0 2px 2px rgba(255,255,255,0.4); }
 
-    /* 3D Hover Effects */
     .social-icon-btn:hover {
       transform: translateY(-8px) rotateX(15deg) rotateY(-10deg) scale(1.1);
       box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5), inset 0 2px 4px rgba(255,255,255,0.6);
+    }
+
+    /* Modal / Pop-up Window Style */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.6);
+      backdrop-filter: blur(4px);
+      z-index: 100;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+    .modal-card {
+      background: #fff;
+      max-width: 500px;
+      width: 100%;
+      border-radius: 16px;
+      padding: 25px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+      text-align: left;
+      position: relative;
+      animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    @keyframes popIn {
+      from { transform: scale(0.8); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+    .modal-close {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: #f3f4f6;
+      border: none;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: bold;
     }
 
     footer{text-align:center;padding:20px;background:#0d1117;color:#8b949e}
@@ -143,13 +186,11 @@
     <h2>Contact</h2>
     <p id="contactText" class="muted" style="margin-bottom: 5px;">Email: monirahmedshakib.mb@gmail.com</p>
 
-    <!-- 3D আইকন সহ ফোন নাম্বার -->
     <div class="phone-3d-box">
       <span class="phone-icon-3d"><i class="fa-solid fa-phone"></i></span>
       <span style="font-weight:bold; font-size:16px;">+8801726232108</span>
     </div>
 
-    <!-- 3D সোশ্যাল মিডিয়া আইকন ও লিঙ্কসমূহ -->
     <div class="social-links">
       <a href="https://www.facebook.com/share/19Wk9h9VMz/" target="_blank" class="social-icon-btn btn-fb" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
       <a href="https://wa.me/8801726232108" target="_blank" class="social-icon-btn btn-wa" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
@@ -158,6 +199,16 @@
       <a href="https://www.instagram.com/monirahmed.shakib" target="_blank" class="social-icon-btn btn-ig" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
     </div>
   </section>
+
+  <!-- Modal Pop-up Structure -->
+  <div class="modal-overlay" id="featureModal">
+    <div class="modal-card">
+      <button class="modal-close" onclick="closeModal()">&times;</button>
+      <h3 id="modalTitle" style="margin-top:0; color:#2563eb; font-size:22px;"></h3>
+      <hr style="border:0; border-top:1px solid #eee; margin:15px 0;">
+      <p id="modalDesc" style="color:#4b5563; font-size:15px; white-space:pre-line;"></p>
+    </div>
+  </div>
 
   <footer>
     &copy; 2026 Monir Ahmed Shakib - All Rights Reserved
@@ -207,7 +258,7 @@
   </div>
 
   <script>
-    const K = "MAS_PRO_V3D_PHONE";
+    const K = "MAS_PRO_V3D_POPUP";
     let edit = -1;
     let d = JSON.parse(localStorage.getItem(K)) || {
       about: "আমি Monir Ahmed Shakib! This website contains My information ❤️",
@@ -221,11 +272,13 @@
         {title: "Digital Marketing", desc: "Digital marketing services.", type: "services"},
         {title: "Data Entry", desc: "Professional data entry services.", type: "services"},
         {title: "Professional Project", desc: "Portfolio project details can be added here.", type: "portfolio"},
-        {title: "📖 আল-কুরআন শরীফ", desc: "অনলাইন কুরআন শরীফ তিলাওয়াত ও অনুবাদ।", type: "blog"},
-        {title: "🕌 নামাযের সময়সূচী ও নিয়ম", desc: "দৈনন্দিন নামাযের সঠিক সময়, ওয়াজিব ও সুন্নাত নিয়ম।", type: "blog"},
-        {title: "🤲 প্রয়োজনীয় দোয়া ও মাসআলা", desc: "দৈনন্দিন জীবনের গুরুত্বপূর্ণ দোয়া সমূহ।", type: "blog"},
-        {title: "🔍 ডিজিটাল তাসবিহ", desc: "অনলাইনে তাসবিহ ও জিকির গণনার সুবিধা।", type: "blog"},
-        {title: "📚 ইসলামিক বই ও পিডিএফ", desc: "গুরুত্বপূর্ণ ইসলামিক বই ডাউনলোড ও পড়ার সুবিধা।", type: "blog"}
+        
+        /* Islamic Corner Detailed Content */
+        {title: "📖 আল-কুরআন শরীফ", desc: "এখানে আপনি আল-কুরআন শরীফের ১১৪ টি সূরার তিলাওয়াত, বাংলা অনুবাদ এবং অডিও শুনতে পারবেন। প্রতিদিন নিয়মিত কুরআন তিলাওয়াত করুন ও এর অর্থ অনুধাবন করুন।", type: "blog"},
+        {title: "🕌 নামাযের সময়সূচী ও নিয়ম", desc: "পাঁচ ওয়াক্ত নামাযের সঠিক সময়সূচী, নামাযের ফারাজ, ওয়াজিব ও সুন্নাত নিয়মসমূহ এখানে বিস্তারিত পেয়ে যাবেন। এছাড়া কসর ও কাজা নামাযের নিয়মাবলি যুক্ত করা রয়েছে।", type: "blog"},
+        {title: "🤲 প্রয়োজনীয় দোয়া ও মাসআলা", desc: "দৈনন্দিন জীবনের প্রয়োজনীয় দোয়াসমূহ যেমন: ঘুম থেকে ওঠার দোয়া, খাওয়ার আগের ও পরের দোয়া, সফরের দোয়া এবং গুরুত্বপূর্ণ পারিবারিক ও সামাজিক মাসআলা-মাসায়েল।", type: "blog"},
+        {title: "🔍 ডিজিটাল তাসবিহ", desc: "আপনার জিকির ও তাসবিহ গণনার সুবিধার্থে ডিজিটাল তাসবিহ ফিচার। এর মাধ্যমে আপনি যেকোনো স্থান থেকে সহজেই সুবহানাল্লাহ, আলহামদুলিল্লাহ, আল্লাহু আকবার গণনা করতে পারবেন।", type: "blog"},
+        {title: "📚 ইসলামিক বই ও পিডিএফ", desc: "এখানে পাবেন গুরুত্বপূর্ণ ইসলামিক বই, বুখারী ও মুসলিম শরীফের হাদিস গ্রন্থ এবং ইসলামিক সাহিত্যের বিনামূল্যে পড়ার ও ডাউনলোড করার সুবিধা।", type: "blog"}
       ]
     };
 
@@ -238,14 +291,35 @@
       ["skills", "education", "experience", "services", "portfolio", "blog"].forEach(t => {
         const e = document.getElementById(t === "blog" ? "blogGrid" : t + "Grid");
         if(e){
-          e.innerHTML = d.items.filter(x => x.type === t).map(x => `
-            <div class="card">
-              <h3>${esc(x.title)}</h3>
-              <p>${esc(x.desc)}</p>
-            </div>
-          `).join('');
+          e.innerHTML = d.items.filter(x => x.type === t).map(x => {
+            if(t === "blog"){
+              return `
+                <div class="card clickable-card" onclick="openModal('${esc(x.title)}', '${esc(x.desc)}')">
+                  <h3>${esc(x.title)}</h3>
+                  <p>${esc(x.desc).substring(0, 55)}...</p>
+                  <small style="color:#2563eb; font-weight:bold;">বিস্তারিত দেখতে ক্লিক করুন &rarr;</small>
+                </div>
+              `;
+            }
+            return `
+              <div class="card">
+                <h3>${esc(x.title)}</h3>
+                <p>${esc(x.desc)}</p>
+              </div>
+            `;
+          }).join('');
         }
       });
+    }
+
+    function openModal(title, desc){
+      document.getElementById("modalTitle").innerText = title;
+      document.getElementById("modalDesc").innerText = desc;
+      document.getElementById("featureModal").style.display = "flex";
+    }
+
+    function closeModal(){
+      document.getElementById("featureModal").style.display = "none";
     }
 
     function renderList(){
