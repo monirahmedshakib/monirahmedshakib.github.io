@@ -26,8 +26,7 @@ section{max-width:1100px;margin:auto;padding:65px 5%}h2{text-align:center;font-s
 
 <div id="admin"><div class="admin">
 <div style="display:flex;justify-content:space-between;gap:10px"><h2>Admin Panel</h2><button class="btn danger" onclick="closeAdmin()">Close</button></div>
-<div id="login"><div class="form"><input id="u" placeholder="Username"><input id="p" type="password" placeholder="Password"><button class="btn" onclick="login()">Login</button></div><p class="muted">Demo login: admin / 123456</p></div>
-<div id="panel" style="display:none">
+<div id="login"><div class="form"><input id="u" placeholder="Username"><input id="p" type="password" placeholder="Password"><button type="button" class="btn" onclick="login(event)">Login</button></div><p class="muted">Enter your admin credentials to login.</p></div><div id="panel" style="display:none">
 <h3>Content Management</h3><div class="form"><div class="row"><input id="title" placeholder="Title"><select id="type"><option>skills</option><option>education</option><option>experience</option><option>services</option><option>portfolio</option><option>blog</option></select></div><textarea id="desc" rows="3" placeholder="Description"></textarea><button class="btn" onclick="saveItem()">Add / Update</button></div>
 <div id="list"></div><hr><h3>About & Contact Update</h3><div class="form"><textarea id="aboutEdit" rows="3"></textarea><input id="contactEdit"><button class="btn" onclick="saveInfo()">Save Information</button></div></div>
 </div></div>
