@@ -1,113 +1,245 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Monir Ahmed Shakib | Professional Portfolio</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<style>
-*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#f5f7fb;color:#172033;line-height:1.6}
-header{position:sticky;top:0;background:#111827;color:#fff;z-index:10}.nav{max-width:1100px;margin:auto;padding:15px 5%;display:flex;justify-content:space-between;align-items:center;gap:15px}.brand{font-weight:bold;font-size:20px}.links{display:flex;gap:15px;justify-content:center}
-.hero{padding:75px 5%;background:linear-gradient(135deg,#fff,#eaf2ff)}.heroIn{max-width:1100px;margin:auto;display:grid;grid-template-columns:1.2fr .8fr;align-items:center;gap:40px}.hero h1{font-size:clamp(38px,6vw,62px);margin:10px 0}.hero h1 span{color:#2563eb}
-.photo{width:260px;height:260px;border-radius:50%;object-fit:cover;border:5px solid #2563eb;box-shadow:0 10px 25px rgba(0,0,0,0.15)}
-section{max-width:1100px;margin:auto;padding:65px 5%;text-align:center}h2{font-size:30px;margin-bottom:30px;text-align:center}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;justify-content:center}.card{background:#fff;padding:22px;border-radius:16px;box-shadow:0 4px 6px -1px rgba(0,0,0,0.1);text-align:center}
-.dark{background:#111827;color:#fff;text-align:center}
-#admin{display:none;position:fixed;inset:0;z-index:50;background:#f3f4f6;overflow:auto;padding:25px;text-align:left}.admin{max-width:950px;margin:auto;background:#fff;border-radius:16px;padding:25px}.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}.form{display:grid;gap:10px;margin-bottom:20px}
-.btn{background:#2563eb;color:#fff;border:none;padding:10px 18px;border-radius:8px;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:8px;font-weight:bold}.btn.danger{background:#dc2626}
-.social-icon-btn{display:flex;align-items:center;justify-content:center;width:50px;height:50px;background:rgba(255,255,255,0.1);border-radius:12px;transition:all 0.3s ease}.social-icon-btn:hover{background:rgba(255,255,255,0.2);transform:translateY(-3px)}.social-icon-btn img{width:32px;height:32px}
-footer{text-align:center;padding:20px;background:#0d1117;color:#8b949e}
-@media(max-width:750px){.nav,.heroIn{display:flex;flex-direction:column;align-items:center}.links{justify-content:center;flex-wrap:wrap}.hero{text-align:center}.photo{width:210px;height:210px}.row{grid-template-columns:1fr}}
-</style></head><body>
-<header><div class="nav"><div class="brand">Monir Ahmed Shakib</div><nav class="links"><a href="#about" style="color:#fff;">About</a><a href="#skills" style="color:#fff;">Skills</a><a href="#education" style="color:#fff;">Education</a><a href="#experience" style="color:#fff;">Experience</a><a href="#services" style="color:#fff;">Services</a><a href="#contact" style="color:#fff;">Contact</a></nav></div></header>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Monir Ahmed Shakib | Professional Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    *{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#f5f7fb;color:#172033;line-height:1.6}
+    header{position:sticky;top:0;background:#111827;color:#fff;z-index:10}.nav{max-width:1100px;margin:auto;padding:15px 5%;display:flex;justify-content:space-between;align-items:center}.links a{color:#fff;text-decoration:none;margin-left:15px}
+    .hero{padding:75px 5%;background:linear-gradient(135deg,#fff,#eaf2ff)}.hero{max-width:1100px;margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:center}
+    .photo{width:260px;height:260px;border-radius:50%;object-fit:cover;border:5px solid #2563eb;box-shadow:0 10px 25px rgba(0,0,0,.1)}
+    section{max-width:1100px;margin:auto;padding:65px 5%;text-align:center}h2{font-size:30px;margin-bottom:30px;text-align:center}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+    .card{background:#fff;padding:20px;border-radius:10px;box-shadow:0 4px 10px rgba(0,0,0,.05);text-align:left}
+    .dark{background:#011827;color:#fff;text-align:center}
+    #admin{display:none;position:fixed;inset:0;z-index:50;background:#f3f4f6;overflow:auto;padding:25px;text-align:left}
+    .btn{background:#2563eb;color:#fff;border:none;padding:10px 18px;border-radius:8px;cursor:pointer}.btn.danger{background:#dc2626}
+    .social-icon-btn{display:flex;align-items:center;justify-content:center;content:width;width:50px;height:50px;background:rgba(255,255,255,.1);border-radius:50%;color:#fff;font-size:20px;text-decoration:none}
+    footer{text-align:center;padding:20px;background:#0d1117;color:#8b949e}
+    @media(max-width:750px){.nav,.hero{display:flex;flex-direction:column;align-items:center}.links{justify-content:center;margin-top:10px}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <div class="brand">Monir Ahmed Shakib</div>
+      <div class="links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
+        <a href="#experience">Experience</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#blog">Blog</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </header>
 
-<div class="hero"><div class="heroIn">
-<div><p style="color:#2563eb;font-weight:bold">PROFESSIONAL PERSONAL BRAND</p><h1>Monir Ahmed <span>Shakib</span></h1><p class="lead">Welcome to my professional portfolio. Here about Me, Skills, Education, Experience, Services and Contact information standard presentation.</p></div>
-<div style="text-align:center;"><img src="monir-ahmed-shakib-1.jpg" alt="Monir Ahmed Shakib" class="photo"></div>
-</div></div>
+  <div class="hero">
+    <div>
+      <p style="color:#2563eb;font-weight:bold">PROFESSIONAL PERSONAL BRAND</p>
+      <h1>Monir Ahmed <span style="color:#2563eb">Shakib</span></h1>
+      <p>Welcome to my professional portfolio. Here about Me, Skills, Education, Experience, Services and Contact information standard presentation.</p>
+    </div>
+    <div style="text-align:center">
+      <img src="monir-ahmed-shakib-1.jpg" alt="Monir Ahmed Shakib" class="photo">
+    </div>
+  </div>
 
-<section id="about"><h2>About Me</h2><div class="card"><p id="aboutText">আমি Monir Ahmed Shakib! This website contains My পেশাগত About, Skills, Education, Experience, কাজ and Contactএর information উপস্থাপন করা হয়েছে।</p></div></section>
-<section id="skills"><h2>Skills</h2><div class="grid" id="skillsGrid"></div></section>
-<section id="education"><h2>Education</h2><div class="grid" id="educationGrid"></div></section>
-<section id="experience"><h2>Experience</h2><div class="grid" id="experienceGrid"></div></section>
-<section id="services"><h2>Services</h2><div class="grid" id="servicesGrid"></div></section>
-<section id="portfolio"><h2>Portfolio</h2><div class="grid" id="portfolioGrid"></div></section>
-<section id="cv"><h2>CV / Resume</h2><div class="card" style="text-align:center"><p class="muted">Your CV file can be added here later.</p></div></section>
+  <section id="about">
+    <h2>About Me</h2>
+    <div class="card"><p id="aboutText"></p></div>
+  </section>
 
-<section id="blog"><h2>Islamic Corner</h2><div class="grid" id="blogGrid"></div></section>
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="grid" id="skillsGrid"></div>
+  </section>
 
-<section class="dark" id="contact"><h2>Contact</h2><p id="contactText" class="muted">Email: <a href="mailto:monirahmedshakib.mb@gmail.com" style="color:inherit;text-decoration:underline;">monirahmedshakib.mb@gmail.com</a></p><div class="contact-buttons" style="display:flex;justify-content:center;gap:15px;flex-wrap:wrap;margin-top:20px;"><a href="tel:+8801726232108" class="social-icon-btn"><img src="https://img.icons8.com/color/48/phone.png" alt="Call"/></a><a href="https://wa.me/8801726232108" target="_blank" class="social-icon-btn"><img src="https://img.icons8.com/color/48/whatsapp.png" alt="WhatsApp"/></a><a href="https://www.facebook.com/Monir.Ahmed.B" target="_blank" class="social-icon-btn"><img src="https://img.icons8.com/color/48/facebook-new.png" alt="Facebook"/></a><a href="https://instagram.com/monirahmed.shakib" target="_blank" class="social-icon-btn"><img src="https://img.icons8.com/color/48/instagram-new.png" alt="Instagram"/></a><a href="https://youtube.com/@mb.monirahmed" target="_blank" class="social-icon-btn"><img src="https://img.icons8.com/color/48/youtube-play.png" alt="YouTube"/></a><a href="https://tiktok.com/@mb.creation.mb" target="_blank" class="social-icon-btn"><img src="https://img.icons8.com/color/48/tiktok.png" alt="TikTok"/></a></div></section>
+  <section id="education">
+    <h2>Education</h2>
+    <div class="grid" id="educationGrid"></div>
+  </section>
 
-<footer>© 2026 Monir Ahmed Shakib · All Rights Reserved</footer>
-<button class="btn" style="position:fixed;bottom:15px;right:15px;z-index:40;" onclick="openAdmin()">⚙️</button>
+  <section id="experience">
+    <h2>Experience</h2>
+    <div class="grid" id="experienceGrid"></div>
+  </section>
 
-<div id="admin"><div class="admin">
-<div style="display:flex;justify-content:space-between;gap:10px"><h2>Admin Panel</h2><button class="btn danger" onclick="closeAdmin()">close</button></div>
-<div id="login"><form class="form" onsubmit="login(event)"><input id="u" placeholder="Username"><input id="p" type="password" placeholder="Password"><button type="submit" class="btn">Login</button></form><p class="muted">Enter your admin credentials to manage content.</p></div>
-<div id="list" style="display:none;"><h3>Content Management</h3><div class="form"><div class="row"><input id="title" placeholder="Title"><select id="type"><option value="skills">skills</option><option value="education">education</option><option value="experience">experience</option><option value="services">services</option><option value="portfolio">portfolio</option><option value="blog">blog</option></select></div><textarea id="desc" placeholder="Description" rows="3"></textarea><button class="btn" onclick="saveItem()">Add Item</button></div><div id="itemsList"></div><hr><h3>About & Contact Update</h3><div class="form"><textarea id="aboutEdit" rows="3"></textarea><input id="contactEdit"><button class="btn" onclick="saveInfo()">Save Information</button></div></div>
-</div></div>
+  <section id="services">
+    <h2>Services</h2>
+    <div class="grid" id="servicesGrid"></div>
+  </section>
 
-<script>
-const K="MAS_PRO";let edit=-1;
-let d=JSON.parse(localStorage.getItem(K)||"null")||{about:"আমি Monir Ahmed Shakib! This website contains My পেশাগত About, Skills, Education, Experience, কাজ and Contactএর information উপস্থাপন করা হয়েছে।",contact:"Email: monirahmedshakib.mb@gmail.com",items:[
-  {title:"Digital Marketing",desc:"Digital marketing related services and solutions.",type:"skills"},
-  {title:"MS Office",desc:"Professional office productivity skills.",type:"skills"},
-  {title:"Data Entry",desc:"Accurate and organized data entry.",type:"skills"},
-  {title:"HSC - 2021",desc:"Dhap Satgara Model Kamil Madrasah, Rangpur · GPA 2.37",type:"education"},
-  {title:"SSC - 2019",desc:"Jafarganj School and College, Rangpur · GPA 3.65",type:"education"},
-  {title:"Data Entry",desc:"Steadfast Courier · 3 years experience.",type:"experience"},
-  {title:"Digital Marketing",desc:"Digital marketing services.",type:"services"},
-  {title:"Data Entry",desc:"Professional data entry services.",type:"services"},
-  {title:"Professional Project",desc:"Portfolio project details can be added here.",type:"portfolio"},
-  {title:"📖 আল-কুরআন শরিফ",desc:"অনলাইন পূর্ণাঙ্গ কুরআন শরিফ তিলাওয়াত ও অনুবাদ।",type:"blog"},
-  {title:"🕌 নামাযের সময়সূচী ও নিয়ম",desc:"দৈনন্দিন নামাযের সঠিক সময়, ওয়াজিব ও সুন্নত নিয়ম।",type:"blog"},
-  {title:"🤲 প্রয়োজনীয় দোয়া ও মাসআলা",desc:"দৈনন্দিন জীবনের গুরুত্বপূর্ণ দোয়াসমূহ।",type:"blog"},
-  {title:"📿 ডিজিটাল তাসবিহ",desc:"অনলাইনে তাসবিহ ও জিকির গণনার সুবিধা।",type:"blog"},
-  {title:"📚 ইসলামিক বই ও পিডিএফ",desc:"গুরুত্বপূর্ণ ইসলামিক বই ডাউনলোড ও পড়ার সুবিধা।",type:"blog"}
-]};
+  <section id="portfolio">
+    <h2>Portfolio</h2>
+    <div class="grid" id="portfolioGrid"></div>
+  </section>
 
-function esc(s){return String(s).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]))}
-function save(){localStorage.setItem(K,JSON.stringify(d));render();}
+  <section id="blog">
+    <h2>Islamic Corner / Blog</h2>
+    <div class="grid" id="blogGrid"></div>
+  </section>
 
-function render(){
-  const aEl=document.getElementById("aboutText");if(aEl)aEl.textContent=d.about;
-  const cEl=document.getElementById("contactText");if(cEl)cEl.innerHTML='Email: <a href="mailto:monirahmedshakib.mb@gmail.com" style="color:inherit;text-decoration:underline;">monirahmedshakib.mb@gmail.com</a>';
-  ["skills","education","experience","services","portfolio","blog"].forEach(t=>{
-    const e=document.getElementById(t+"Grid");
-    if(e){
-      e.innerHTML=d.items.filter(x=>x.type===t).map(x=>`
-        <div class="card">
-          <h3>${esc(x.title)}</h3>
-          <p>${esc(x.desc)}</p>
+  <section class="dark" id="contact">
+    <h2>Contact</h2>
+    <p id="contactText" class="muted"></p>
+  </section>
+
+  <footer>
+    &copy; 2026 Monir Ahmed Shakib - All Rights Reserved
+  </footer>
+
+  <button class="btn" style="position:fixed;bottom:15px;right:15px;z-index:40;" onclick="openAdmin()"><i class="fa-solid fa-gear"></i></button>
+
+  <div id="admin">
+    <div class="admin-content">
+      <div style="display:flex;justify-content:space-between;align-items:center;">
+        <h2>Admin Panel</h2>
+        <button class="btn danger" onclick="closeAdmin()">Close</button>
+      </div>
+
+      <div id="login">
+        <form onsubmit="login(event)">
+          <input id="u" placeholder="Username" style="padding:8px;margin-right:5px;">
+          <input id="p" type="password" placeholder="Password" style="padding:8px;margin-right:5px;">
+          <button class="btn">Login</button>
+        </form>
+      </div>
+
+      <div id="list" style="display:none;">
+        <h3>Content Management</h3>
+        <div class="form">
+          <div class="row">
+            <input id="title" placeholder="Title" style="padding:8px;width:100%;margin-bottom:10px;">
+            <textarea id="desc" placeholder="Description" style="padding:8px;width:100%;margin-bottom:10px;"></textarea>
+            <select id="type" style="padding:8px;margin-bottom:10px;">
+              <option value="skills">skills</option>
+              <option value="education">education</option>
+              <option value="experience">experience</option>
+              <option value="services">services</option>
+              <option value="portfolio">portfolio</option>
+              <option value="blog">blog</option>
+            </select>
+            <button class="btn" onclick="saveItem()">Add Item</button>
+          </div>
+        </div>
+        <div id="itemsList" style="margin-top:20px;"></div>
+
+        <h3 style="margin-top:30px;">About & Contact Update</h3>
+        <textarea id="aboutEdit" style="padding:8px;width:100%;margin-bottom:10px;"></textarea>
+        <input id="contactEdit" style="padding:8px;width:100%;margin-bottom:10px;">
+        <button class="btn" onclick="saveInfo()">Save Information</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const K = "MAS_PRO";
+    let edit = -1;
+    let d = JSON.parse(localStorage.getItem(K)) || {
+      about: "আমি Monir Ahmed Shakib! This website contains My information ❤️",
+      contact: "Email: monirahmedshakib.mb@gmail.com",
+      items: [
+        {title: "Digital Marketing", desc: "Digital marketing related services and solutions.", type: "skills"},
+        {title: "MS Office", desc: "Professional office productivity skills.", type: "skills"},
+        {title: "Data Entry", desc: "Accurate and organized data entry.", type: "skills"},
+        {title: "HSC - 2021", desc: "Dhap Satgara Model Kamil Madrasah, Rangpur - GPA 2.37", type: "education"},
+        {title: "SSC - 2019", desc: "Jafarganj School and College, Rangpur - GPA 3.65", type: "education"},
+        {title: "Data Entry", desc: "Steadfast Courier - 3 years experience.", type: "experience"},
+        {title: "Digital Marketing", desc: "Digital marketing services.", type: "services"},
+        {title: "Data Entry", desc: "Professional data entry services.", type: "services"},
+        {title: "Professional Project", desc: "Portfolio project details can be added here.", type: "portfolio"},
+        {title: "📖 আল-কুরআন শিক্ষা", desc: "অনলাইন কুরআন শরীফ তেলাওয়াত ও অনুবাদ।", type: "blog"},
+        {title: "🕌 নামাযের সময়সূচী ও নিয়ম", desc: "দৈনন্দিন নামাযের সঠিক সময়, ওয়াজিব ও সুন্নাত নিয়ম।", type: "blog"},
+        {title: "🤲 প্রয়োজনীয় দোয়া ও জিকিরসমূহ", desc: "দৈনন্দিন জীবনের গুরুত্বপূর্ণ দোয়া সমূহ।", type: "blog"},
+        {title: "📿 ডিজিটাল তাসবিহ", desc: "অনলাইনে তাসবিহ ও জিকির গণনার সুবিধা।", type: "blog"},
+        {title: "📚 ইসলামিক বই ও পিডিএফ", desc: "গুরুত্বপূর্ণ ইসলামিক বই ডাউনলোড ও পড়ার সুবিধা।", type: "blog"}
+      ]
+    };
+
+    function esc(s){ return String(s).replace(/[&<>"']/g, m => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m])); }
+    function save(){ localStorage.setItem(K, JSON.stringify(d)); render(); }
+
+    function render(){
+      const aEl = document.getElementById("aboutText"); if(aEl) aEl.textContent = d.about;
+      const cEl = document.getElementById("contactText"); if(cEl) cEl.innerHTML = d.contact;
+      
+      ["skills", "education", "experience", "services", "portfolio", "blog"].forEach(t => {
+        const e = document.getElementById(t === "blog" ? "blogGrid" : t + "Grid");
+        if(e){
+          e.innerHTML = d.items.filter(x => x.type === t).map(x => `
+            <div class="card">
+              <h3>${esc(x.title)}</h3>
+              <p>${esc(x.desc)}</p>
+            </div>
+          `).join('');
+        }
+      });
+    }
+
+    function renderList(){
+      document.getElementById("aboutEdit").value = d.about;
+      document.getElementById("contactEdit").value = d.contact;
+      document.getElementById("itemsList").innerHTML = d.items.map((x, i) => `
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid #eee">
+          <div><b>${esc(x.title)}</b> (${esc(x.type)})<br><small class="muted">${esc(x.desc)}</small></div>
+          <div>
+            <button class="btn" onclick="editItem(${i})">Edit</button>
+            <button class="btn danger" onclick="delItem(${i})">Delete</button>
+          </div>
         </div>
       `).join('');
     }
-  });
-}
 
-function renderList(){
-  document.getElementById("aboutEdit").value=d.about;
-  document.getElementById("contactEdit").value=d.contact;
-  document.getElementById("itemsList").innerHTML=d.items.map((x,i)=>`
-    <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid #eee;">
-      <div><b>${esc(x.title)}</b> (${esc(x.type)})<br><small class="muted">${esc(x.desc)}</small></div>
-      <div><button class="btn" onclick="editItem(${i})">Edit</button> <button class="btn danger" onclick="delItem(${i})">Delete</button></div>
-    </div>
-  `).join('');
-}
+    function saveItem(){
+      let t = document.getElementById("title").value.trim(), x = document.getElementById("desc").value.trim(), tp = document.getElementById("type").value;
+      if(!t) return alert("Please enter a title");
+      let o = {title: t, desc: x, type: tp};
+      if(edit > -1){ d.items[edit] = o; edit = -1; }
+      else { d.items.push(o); }
+      document.getElementById("title").value = ""; document.getElementById("desc").value = "";
+      save(); renderList();
+    }
 
-function saveItem(){
-  let t=document.getElementById("title").value.trim(),x=document.getElementById("desc").value.trim(),tp=document.getElementById("type").value;
-  if(!t)return alert("Please enter a title");
-  let o={title:t,desc:x,type:tp};
-  if(edit<0)d.items.push(o);else{d.items[edit]=o;edit=-1;}
-  document.getElementById("title").value="";document.getElementById("desc").value="";
-  save();renderList();
-}
+    function editItem(i){
+      edit = i; let x = d.items[i];
+      document.getElementById("title").value = x.title;
+      document.getElementById("desc").value = x.desc;
+      document.getElementById("type").value = x.type;
+    }
 
-function editItem(i){
-  edit=i;let x=d.items[i];
-  document.getElementById("title").value=x.title;
-  document.getElementById("desc").value=x.desc;
-  document.getElementById("type").value=x.type;
-}
+    function delItem(i){
+      if(confirm("Delete this item?")){ d.items.splice(i, 1); save(); renderList(); }
+    }
 
+    function saveInfo(){
+      d.about = document.getElementById("aboutEdit").value;
+      d.contact = document.getElementById("contactEdit").value;
+      save(); alert("Updated successfully!");
+    }
+
+    function openAdmin(){ document.getElementById("admin").style.display = "block"; }
+    function closeAdmin(){ document.getElementById("admin").style.display = "none"; }
+
+    function login(e){
+      e.preventDefault();
+      if(document.getElementById("u").value.toLowerCase() === "admin" && document.getElementById("p").value.toLowerCase() === "mas_pro"){
+        document.getElementById("login").style.display = "none";
+        document.getElementById("list").style.display = "block";
+        renderList();
+      } else {
+        alert("Wrong credentials");
+      }
+    }
+
+    render();
+  </script>
+</body>
+</html>
 function delItem(i){
   if(confirm("Delete this item?")){d.items.splice(i,1);save();renderList();}
 }
