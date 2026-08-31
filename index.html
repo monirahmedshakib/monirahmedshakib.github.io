@@ -6,6 +6,7 @@
 *{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#f5f7fb;color:#172033;line-height:1.6}
 header{position:sticky;top:0;background:#111827;color:#fff;z-index:10}.nav{max-width:1100px;margin:auto;padding:15px 5%;display:flex;justify-content:space-between;align-items:center;gap:15px}.brand{font-weight:bold;font-size:20px}.links{display:flex;gap:15px}
 .hero{padding:75px 5%;background:linear-gradient(135deg,#fff,#eaf2ff)}.heroIn{max-width:1100px;margin:auto;display:grid;grid-template-columns:1.2fr .8fr;align-items:center;gap:40px}.hero h1{font-size:clamp(38px,6vw,62px);margin:10px 0}.hero h1 span{color:#2563eb}
+.photo{width:260px;height:260px;border-radius:50%;object-fit:cover;border:5px solid #2563eb;box-shadow:0 10px 25px rgba(0,0,0,0.15)}
 section{max-width:1100px;margin:auto;padding:65px 5%}h2{font-size:30px;margin-bottom:30px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}.card{background:#fff;padding:22px;border-radius:16px;box-shadow:0 4px 6px -1px rgba(0,0,0,0.1)}
 .dark{background:#111827;color:#fff}
 #admin{display:none;position:fixed;inset:0;z-index:50;background:#f3f4f6;overflow:auto;padding:25px}.admin{max-width:950px;margin:auto;background:#fff;border-radius:16px;padding:25px}.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}.form{display:grid;gap:10px;margin-bottom:20px}
@@ -15,7 +16,11 @@ section{max-width:1100px;margin:auto;padding:65px 5%}h2{font-size:30px;margin-bo
 </style></head><body>
 <header><div class="nav"><div class="brand">Monir Ahmed Shakib</div><nav class="links"><a href="#about" style="color:#fff;">About</a><a href="#skills" style="color:#fff;">Skills</a><a href="#education" style="color:#fff;">Education</a><a href="#experience" style="color:#fff;">Experience</a><a href="#services" style="color:#fff;">Services</a><a href="#contact" style="color:#fff;">Contact</a></nav></div></header>
 
-<div class="hero"><div class="heroIn"><div><p style="color:#2563eb;font-weight:bold">PROFESSIONAL PERSONAL BRAND</p><h1>Monir Ahmed <span>Shakib</span></h1><p class="lead">Welcome to my professional portfolio. Here about Me, Skills, Education, Experience, Services and Contact information standard presentation.</p></div></div></div>
+<div class="hero"><div class="heroIn">
+<div><p style="color:#2563eb;font-weight:bold">PROFESSIONAL PERSONAL BRAND</p><h1>Monir Ahmed <span>Shakib</span></h1><p class="lead">Welcome to my professional portfolio. Here about Me, Skills, Education, Experience, Services and Contact information standard presentation.</p></div>
+<div style="text-align:center;"><img src="profile.jpg" alt="Monir Ahmed Shakib" class="photo" onerror="this.src='https://img.icons8.com/color/150/user-male-circle--v1.png'"></div>
+</div></div>
+
 <section id="about"><h2>About Me</h2><div class="card"><p id="aboutText">আমি Monir Ahmed Shakib! This website contains My পেশাগত About, Skills, Education, Experience, কাজ and Contactএর information উপস্থাপন করা হয়েছে।</p></div></section>
 <section id="skills"><h2>Skills</h2><div class="grid" id="skillsGrid"></div></section>
 <section id="education"><h2>Educationগত যোগ্যতা</h2><div class="grid" id="educationGrid"></div></section>
