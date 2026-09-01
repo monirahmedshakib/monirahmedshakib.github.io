@@ -150,14 +150,15 @@
     }
     .bangla-text { font-size: 14px; color: #334155; }
 
-    .dua-card {
+    .dua-card, .masala-card {
       background: #f8fafc;
       padding: 15px;
       border-radius: 8px;
       margin-bottom: 15px;
       border-left: 4px solid #10b981;
     }
-    .dua-card h4 { margin: 0 0 8px 0; color: #1e293b; font-size: 16px; }
+    .masala-card { border-left-color: #f59e0b; }
+    .dua-card h4, .masala-card h4 { margin: 0 0 8px 0; color: #1e293b; font-size: 16px; }
 
     /* Interactive Tasbih Styles */
     .tasbih-btn {
@@ -257,30 +258,46 @@
   <section id="blog">
     <h2>Islamic Corner / Blog</h2>
     <div class="grid">
+      <!-- ১. কুরআন শরীফ -->
       <div class="card clickable-card" onclick="openIslamicFeature('quran')">
         <h3>📖 আল-কুরআন শরীফ</h3>
         <p>অনলাইন কুরআন শরীফ ১১৪ টি সূরা ও অনুবাদসহ পড়ুন।</p>
         <small style="color:#2563eb; font-weight:bold;">সূরাগুলো দেখুন &rarr;</small>
       </div>
+      
+      <!-- ২. নামাযের সময়সূচী -->
       <div class="card clickable-card" onclick="openIslamicFeature('namaz')">
         <h3>🕌 নামাযের সময়সূচী ও নিয়ম</h3>
         <p>দৈনন্দিন নামাযের সঠিক সময়, ফরজ, ওয়াজিব ও সুন্নাত নিয়ম।</p>
         <small style="color:#2563eb; font-weight:bold;">সময়সূচী ও নিয়ম দেখুন &rarr;</small>
       </div>
+
+      <!-- ৩. প্রয়োজনীয় দোয়া (শুধু দোয়া) -->
       <div class="card clickable-card" onclick="openIslamicFeature('dua')">
-        <h3>🤲 প্রয়োজনীয় দোয়া ও মাসআলা</h3>
+        <h3>🤲 প্রয়োজনীয় দোয়া</h3>
         <p>দৈনন্দিন জীবনের ৫০টি অত্যন্ত গুরুত্বপূর্ণ প্রয়োজনীয় দোয়া।</p>
         <small style="color:#2563eb; font-weight:bold;">দোয়াগুলো দেখুন &rarr;</small>
       </div>
+
+      <!-- ৪. ডিজিটাল তাসবিহ -->
       <div class="card clickable-card" onclick="openIslamicFeature('tasbih')">
         <h3>🔍 ডিজিটাল তাসবিহ</h3>
         <p>অনলাইনে ডিজিটাল তাসবিহ ও জিকির গণনা।</p>
         <small style="color:#2563eb; font-weight:bold;">তাসবিহ গুনুন &rarr;</small>
       </div>
+
+      <!-- ৫. ইসলামিক বই -->
       <div class="card clickable-card" onclick="openIslamicFeature('books')">
         <h3>📚 ইসলামিক বই ও পিডিএফ</h3>
         <p>গুরুত্বপূর্ণ ইসলামিক বই ও হাদিস কিতাব সমুহ।</p>
         <small style="color:#2563eb; font-weight:bold;">বইগুলো দেখুন &rarr;</small>
+      </div>
+
+      <!-- ৬. প্রয়োজনীয় মাসআলা (নতুন ফাঁকা জায়গায় যুক্ত করা হলো) -->
+      <div class="card clickable-card" onclick="openIslamicFeature('masala')">
+        <h3>📜 প্রয়োজনীয় মাসআলা</h3>
+        <p>দৈনন্দিন জীবনের প্রয়োজনীয় শরীয়তের মাসআলা-মাসায়েল।</p>
+        <small style="color:#2563eb; font-weight:bold;">মাসআলাগুলো দেখুন &rarr;</small>
       </div>
     </div>
   </section>
@@ -430,6 +447,18 @@
       { title: "৫০. সংক্ষিপ্ত দরুদ শরীফ", ar: "صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ", pron: "সাল্লাল্লাহু আলাইহি ওয়াসাল্লাম।", mean: "আল্লাহ তাঁর ওপর রহমত ও শান্তি বর্ষণ করুন।" }
     ];
 
+    // Important Masala List
+    const masalaList = [
+      { title: "১. ওজুর ফরজ সমূহ", details: "ওজুতে ৪টি ফরজ কাজ রয়েছে:<br>১. পুরো মুখমণ্ডল একবার ধৌত করা।<br>২. দুই হাতের কনুইসহ একবার ধৌত করা।<br>৩. মাথার চারভাগের একভাগ মাসেহ করা।<br>৪. দুই পায়ের গ্রন্থি (টাখনু) সহ একবার ধৌত করা।" },
+      { title: "২. গোসলের ফরজ সমূহ", details: "গোসলে ৩টি ফরজ কাজ রয়েছে:<br>১. ভালোভাবে কুলি করা।<br>২. নাকে পানি দিয়ে নাক পরিষ্কার করা।<br>৩. সমস্ত শরীরে এমনভাবে পানি পৌঁছানো যেন একটি চুল পরিমাণ জায়গাও শুকনো না থাকে।" },
+      { title: "৩. তায়াম্মুমের ফরজ সমূহ", details: "তায়াম্মুমে ৩টি ফরজ কাজ রয়েছে:<br>১. নিয়ত করা।<br>২. পবিত্র মাটিতে হাত মেরে পুরো মুখমণ্ডল মাসেহ করা।<br>৩. পুনরায় মাটিতে হাত মেরে উভয় হাত কনুইসহ মাসেহ করা।" },
+      { title: "৪. যেসব কারণে ওজু ভেঙে যায়", details: "১. পায়খানা বা প্রস্রাবের রাস্তা দিয়ে কিছু বের হওয়া।<br>২. মুখ ভরে বমি করা।<br>৩. শরীর থেকে রক্ত বা পুঁজ বের হয়ে গড়িয়ে পড়া।<br>৪. থুথুর সাথে রক্তের ভাগ সমান বা বেশি হওয়া।<br>৫. কাত হয়ে বা হেলান দিয়ে ঘুমিয়ে পড়া।<br>৬. নামাজে উচ্চস্বরে হেসে ওঠা।" },
+      { title: "৫. নামাজের ওয়াজিব সমূহ", details: "নামাজে ১৪টি ওয়াজিব রয়েছে। যেমন: আল-ফাতিহা পড়া, সুরা মিলানো, রুকু ও সিজদায় ধীরস্থিরতা অবলম্বন করা, প্রথম ও শেষ বৈঠকে বসা, তাশাহহুদ পড়া, সালামের মাধ্যমে নামাজ শেষ করা ইত্যাদি।" },
+      { title: "৬. সিজদায়ে সাহু কখন দিতে হয়?", details: "নামাজে কোনো ওয়াজিব ভুলবশত ছুটে গেলে বা বিলম্বে আদায় করলে শেষ বৈঠকে ডান দিকে সালাম ফিরিয়ে অতিরিক্ত দুটি সিজদা দেওয়াই হলো সিজদায়ে সাহু।" },
+      { title: "৭. রোজার ফরজ ও কাজা হওয়ার কারণ", details: "সুবহে সাদিক থেকে সূর্যাস্ত পর্যন্ত নিয়তের সাথে পানাহার ও স্ত্রী সহবাস থেকে বিরত থাকা ফরজ। ইচ্ছাকৃতভাবে খেলে রোজা ভেঙে যায় এবং কাজা ও কাফফারা দুই-ই ওয়াজিব হয়।" },
+      { title: "৮. জাকাত ফরজ হওয়ার শর্ত", details: "নেসাব পরিমাণ ধন-সম্পদ (সাড়ে ৭ তোলা সোনা বা সাড়ে ৫২ তোলা রূপা অথবা সমপরিমাণ অর্থ) নিজের কাছে পূর্ণ এক বছর বজায় থাকলে জাকাত দেওয়া ফরজ।" }
+    ];
+
     let tasbihCount = 0;
 
     function openIslamicFeature(feature) {
@@ -513,6 +542,21 @@
         
         body.innerHTML = duaHtml;
       } 
+      else if(feature === 'masala') {
+        title.innerHTML = "📜 প্রয়োজনীয় মাসআলা-মাসায়েল";
+        let masalaHtml = '<div style="margin-bottom:15px; font-size:14px; color:#64748b;">দৈনন্দিন জীবনের অতি গুরুত্বপূর্ণ কয়েকটি শরীয়তের মাসআলা:</div>';
+        
+        masalaList.forEach(m => {
+          masalaHtml += `
+            <div class="masala-card">
+              <h4>${m.title}</h4>
+              <div class="bangla-text">${m.details}</div>
+            </div>
+          `;
+        });
+        
+        body.innerHTML = masalaHtml;
+      }
       else if(feature === 'tasbih') {
         title.innerHTML = "🔍 ডিজিটাল জিকির ও তাসবিহ";
         body.innerHTML = `
