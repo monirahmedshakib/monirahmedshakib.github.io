@@ -11,11 +11,29 @@
     .hero{padding:75px 5%;background:linear-gradient(135deg,#fff,#eaf2ff)}.hero{max-width:1100px;margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:center}
     .photo{width:260px;height:260px;border-radius:50%;object-fit:cover;border:5px solid #2563eb;box-shadow:0 10px 25px rgba(0,0,0,.1)}
     section{max-width:1100px;margin:auto;padding:65px 5%;text-align:center}h2{font-size:30px;margin-bottom:30px;text-align:center}
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
-    .card{background:#fff;padding:20px;border-radius:10px;box-shadow:0 4px 10px rgba(0,0,0,.05);text-align:left;transition:transform 0.3s ease, box-shadow 0.3s ease}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px}
+    
+    /* থ্রিডি ও পপ-আপ কার্ড ডিজাইন */
+    .card{
+      background: linear-gradient(145deg, #ffffff, #f0f4f8);
+      padding: 25px;
+      border-radius: 16px;
+      box-shadow: 0 12px 30px -5px rgba(37, 99, 235, 0.12), 
+                  0 8px 12px -6px rgba(0, 0, 0, 0.08);
+      text-align: left;
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+                  box-shadow 0.4s ease;
+      position: relative;
+    }
+    
+    .card:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 20px 40px -8px rgba(37, 99, 235, 0.2), 
+                  0 12px 20px -8px rgba(0, 0, 0, 0.12);
+    }
     
     .clickable-card { cursor: pointer; border-top: 4px solid #2563eb; }
-    .clickable-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
     
     .dark{background:#011827;color:#fff;text-align:center}
     #admin{display:none;position:fixed;inset:0;z-index:50;background:#f3f4f6;overflow:auto;padding:25px;text-align:left}
@@ -111,7 +129,6 @@
       font-weight: bold;
     }
 
-    /* Quran List & Ayah Styles */
     .quran-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
@@ -160,7 +177,6 @@
     .masala-card { border-left-color: #f59e0b; }
     .dua-card h4, .masala-card h4 { margin: 0 0 8px 0; color: #1e293b; font-size: 16px; }
 
-    /* Interactive Tasbih Styles */
     .tasbih-btn {
       width: 130px;
       height: 130px;
@@ -177,7 +193,6 @@
     }
     .tasbih-btn:active { transform: scale(0.95); }
 
-    /* Namaz Section Custom Box */
     .namaz-table { width: 100%; border-collapse: collapse; margin-top: 10px; margin-bottom: 20px; }
     .namaz-table td, .namaz-table th { padding: 10px; border-bottom: 1px solid #eee; text-align: left; }
     .namaz-table th { background: #f8fafc; color: #2563eb; }
@@ -272,7 +287,7 @@
         <small style="color:#2563eb; font-weight:bold;">সময়সূচী ও নিয়ম দেখুন &rarr;</small>
       </div>
 
-      <!-- ৩. প্রয়োজনীয় দোয়া (শুধু দোয়া) -->
+      <!-- ৩. প্রয়োজনীয় দোয়া -->
       <div class="card clickable-card" onclick="openIslamicFeature('dua')">
         <h3>🤲 প্রয়োজনীয় দোয়া</h3>
         <p>দৈনন্দিন জীবনের ৫০টি অত্যন্ত গুরুত্বপূর্ণ প্রয়োজনীয় দোয়া।</p>
@@ -293,7 +308,7 @@
         <small style="color:#2563eb; font-weight:bold;">বইগুলো দেখুন &rarr;</small>
       </div>
 
-      <!-- ৬. প্রয়োজনীয় মাসআলা (নতুন ফাঁকা জায়গায় যুক্ত করা হলো) -->
+      <!-- ৬. প্রয়োজনীয় মাসআলা -->
       <div class="card clickable-card" onclick="openIslamicFeature('masala')">
         <h3>📜 প্রয়োজনীয় মাসআলা</h3>
         <p>দৈনন্দিন জীবনের প্রয়োজনীয় শরীয়তের মাসআলা-মাসায়েল।</p>
@@ -377,23 +392,21 @@
   </div>
 
   <script>
-    // 114 Surah List
     const surahs = [
       "১. আল-ফাতিহা", "২. আল-বাকারা", "৩. আল-ইমরান", "৪. আন-নিসা", "৫. আল-মায়িদাহ", "৬. আল-আনআম", "৭. আল-আরাফ", "৮. আল-আনফাল", "৯. আত-তাওবাহ", "১০. ইউনুস",
       "১১. হুদ", "১২. ইউসুফ", "১৩. আর-রাঅ্দ", "১৪. ইব্রাহিম", "১৫. আল-হিজর", "১৬. আন-নাহল", "১৭. বনী ইসরাইল", "১৮. আল-কাহফ", "১৯. মারইয়াম", "২০. ত্বা-হা",
       "২১. আল-আনবিয়া", "২২. আল-হাজ্জ", "২৩. আল-মু'মিনুন", "২৪. আন-নূর", "২৫. আল-ফুরকান", "২৬. আশ-শুআরা", "২৭. আন-নামল", "২৮. আল-কাসাস", "২৯. আল-আনকাবুত", "৩০. আর-রূম",
       "৩১. লুকমান", "৩২. আস-সাজদাহ", "৩৩. আল-আহজাব", "৩৪. সাবা", "৩৫. ফাতির", "৩৬. ইয়াসীন", "৩৭. আস-ফাফফাত", "৩৮. সোয়াদ", "৩৯. আজ-জুমার", "৪০. গাফির",
       "৪১. ফুসসিলাত", "৪২. আশ-শুরা", "৪৩. আজ-জুখরুফ", "৪৪. আদ-দুখান", "৪৫. আল-জাসিয়াহ", "৪৬. আল-আহকাফ", "৪৭. মুহাম্মদ", "৪৮. আল-ফাতহ", "৪৯. আল-হুজুরাত", "৫০. ক্বাফ",
-      "৫১. আজ-যারিয়াত", "৫২. আত-তূর", "৫৩. আন-নাজম", "৫৪. আল-কামার", "৫৫. আর-রহমান", "৫৬. আল-ওয়াকিয়াহ", "৫৭. আল-হাদীদ", "৫৮. আল-মুجাদালাহ", "৫৯. আল-হাশর", "৬০. আল-মুমতাহিনাহ",
+      "৫১. আজ-যারিয়াত", "৫২. আত-তূর", "৫৩. আন-নাজম", "৫৪. আল-কামার", "৫৫. আর-রহমান", "৫৬. আল-ওয়াকিয়াহ", "৫৭. আল-হাদীদ", "৫৮. আল-মুজাদালাহ", "৫৯. আল-হাশর", "৬০. আল-মুমতাহিনাহ",
       "৬১. আস-সফ", "৬২. আল-জুমুআহ", "৬৩. আল-মুনাফিকুন", "৬৪. আত-তাগাবুন", "৬৫. আত-ত্বলাক", "৬৬. আত-তাহরীম", "৬৭. আল-মুলক", "৬৮. আল-কলাম", "৬৯. আল-হাক্কাহ", "৭০. আল-মাআরিজ",
-      "৭১. নূহ", "৭২. আল-জিন", "৭৩. আল-মুযযামমিল", "৭৪. আল-মুদ্দাসসির", "৭୫. আল-কিয়ামাহ", "৭৬. আল-ইনসান", "৭৭. আল-মুর্সালাত", "৭৮. আন-নাবা", "৭৯. আন-নাজিআত", "৮০. আবাসা",
+      "৭১. নূহ", "৭২. আল-জিন", "৭৩. আল-মুযযামমিল", "৭৪. আল-মুদ্দাসসির", "৭৫. আল-কিয়ামাহ", "৭৬. আল-ইনসান", "৭৭. আল-মুর্সালাত", "৭৮. আন-নাবা", "৭৯. আন-নাজিআত", "৮০. আবাসা",
       "৮১. আত-তাকভীর", "৮২. আল-ইনফিতার", "৮৩. আল-মুত্বাফফিফীন", "৮৪. আল-ইনশিকাক", "৮৫. আল-বুরূজ", "৮৬. আত-তারিক", "৮৭. আল-আলা", "৮৮. আল-গাশিয়াহ", "৮৯. আল-ফজর", "৯০. আল-বালাদ",
       "৯১. আশ-শামস", "৯২. আল-লাইল", "৯৩. আদ-দুহা", "৯৪. আশ-শারহ", "৯৫. আত-তীন", "৯৬. আল-আলাক", "৯৭. আল-কদর", "৯৮. আল-বায়্যিনাহ", "৯৯. আল-যালযালাহ", "১০০. আল-আদিয়াত",
       "১০১. আল-কারিয়াহ", "১০২. আত-তাকাছুর", "১০৩. আল-আসর", "১০৪. আল-হুমাযাহ", "১০৫. আল-ফীল", "১০৬. কুরাইশ", "১০৭. আল-মাউন", "১০৮. আল-কাওছার", "১০৯. আল-কাফিরুন", "১১০. আন-নসর",
       "১১১. আল-লাহাব", "১১২. আল-ইখলাস", "১১৩. আল-ফালাক", "১১৪. আন-নাস"
     ];
 
-    // 50 Important Duas
     const duasList = [
       { title: "১. ঘুমানোর পূর্বের দোয়া", ar: "اللَّهُمَّ بِاسْمِكَ أَمُوتُ وَأَحْيَا", pron: "আল্লা-হুম্মা বিস্মিকা আমূতু ওয়া আহ্ইয়া।", mean: "হে আল্লাহ! আপনার নামে আমি মৃত্যুবরণ (ঘুম) করছি এবং আপনার নামেই জীবিত (জাগ্রত) হচ্ছি।" },
       { title: "২. ঘুম থেকে ওঠার পর দোয়া", ar: "الْحَمْدُ لِلَّهِ الَّذِي أَحْيَانَا بَعْدَ مَا أَمَاتَنَا وَإِلَيْهِ النُّشُورُ", pron: "আলহামদু লিল্লাহিল্লাজি আহইয়ানা বা'দা মা আমাতানা ওয়া ইলাইহিন নুশূর।", mean: "সমস্ত প্রশংসা সেই আল্লাহর জন্য যিনি মৃত্যুর পর আমাদের জীবন দান করলেন, এবং তাঁর দিকেই আমাদের পুনরুত্থান।" },
@@ -447,7 +460,6 @@
       { title: "৫০. সংক্ষিপ্ত দরুদ শরীফ", ar: "صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ", pron: "সাল্লাল্লাহু আলাইহি ওয়াসাল্লাম।", mean: "আল্লাহ তাঁর ওপর রহমত ও শান্তি বর্ষণ করুন।" }
     ];
 
-    // Important Masala List
     const masalaList = [
       { title: "১. ওজুর ফরজ সমূহ", details: "ওজুতে ৪টি ফরজ কাজ রয়েছে:<br>১. পুরো মুখমণ্ডল একবার ধৌত করা।<br>২. দুই হাতের কনুইসহ একবার ধৌত করা।<br>৩. মাথার চারভাগের একভাগ মাসেহ করা।<br>৪. দুই পায়ের গ্রন্থি (টাখনু) সহ একবার ধৌত করা।" },
       { title: "২. গোসলের ফরজ সমূহ", details: "গোসলে ৩টি ফরজ কাজ রয়েছে:<br>১. ভালোভাবে কুলি করা।<br>২. নাকে পানি দিয়ে নাক পরিষ্কার করা।<br>৩. সমস্ত শরীরে এমনভাবে পানি পৌঁছানো যেন একটি চুল পরিমাণ জায়গাও শুকনো না থাকে।" },
@@ -469,7 +481,7 @@
       modal.style.display = 'flex';
 
       if(feature === 'quran') {
-        title.innerHTML = "📖 আল-কুরআন শরীফ (১১৪ টি সূরা)";
+        title.innerHTML = "📖 আল-কুরআন শরীফ (১ টি সূরা)";
         let gridHtml = `<p style="font-size:14px; color:#64748b;">যে কোন সূরায় ক্লিক করে তেলওয়াত শুনুন ও বাংলা অনুবাদ পড়ুন:</p><div class="quran-grid">`;
         surahs.forEach(s => {
           gridHtml += `<div class="surah-box" onclick="showSurahDetails('${s}')">${s}</div>`;
@@ -607,7 +619,6 @@
       document.getElementById('featureModal').style.display = 'none';
     }
 
-    // Default Storage Data
     const defaultData = {
       about: "I am Monir Ahmed Shakib. Experienced professional dedicated to digital solutions, creative design, and technical services.",
       skills: [
