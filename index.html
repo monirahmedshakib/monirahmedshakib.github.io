@@ -349,77 +349,99 @@
     &copy; 2026 Monir Ahmed Shakib - All Rights Reserved
   </footer>
 
-</footer>
+// আল-কুরআনের সূরার বাংলা নাম ও নম্বর দেখানোর জন্য ফাংশন
+    function openIslamicFeature(feature) {
+      document.getElementById('featureModal').style.display = 'flex';
+      const modalTitle = document.getElementById('modalTitle');
+      const modalBody = document.getElementById('modalBody');
 
-  <button class="btn" style="position:fixed;bottom:15px;right:15px;z-index:40;" onclick="openAdmin()"><i class="fa-solid fa-gear"></i></button>
+      if (feature === 'quran') {
+        modalTitle.innerText = "📖 আল-কুরআন শরীফ (১ থেকে ১১৪টি সূরা)";
+        let html = '<p style="margin-bottom:12px; font-size:13px; color:#64748b; text-align:center;">যে কোনো সূরার ওপর ক্লিক করে সম্পূর্ণ পড়ুন:</p><div class="quran-grid">';
+        
+        // ১ থেকে ১১৪ পর্যন্ত লুপ চালিয়ে স্বয়ংক্রিয়ভাবে বোতাম তৈরি হবে
+        const defaultNames = [
+          "", "আল-ফাতিহা", "আল-বাকারা", "আল-ইমরান", "আন-নিসা", "আল-মায়িদাহ", "আল-আনআম", "আল-আরাফ", "আল-আনফাল", "আত-তাওবাহ", "ইউনুস",
+          "হুদ", "ইউসুফ", "আর-রাঅ্দ", "ইব্রাহিম", "আল-হিজর", "আন-নাহল", "বনী ইসরাইল", "আল-কাহফ", "মারইয়াম", "ত্বা-হা",
+          "আল-আনবিয়া", "আল-হাজ্জ", "আল-মু'মিনুন", "আন-নূর", "আল-ফুরকান", "আশ-শুআরা", "আন-নামল", "আল-কাসাস", "আল-আনকাবুত", "আর-রূম",
+          "লুকমান", "আস-সাজদাহ", "আল-আহজাব", "সাবা", "ফাতির", "ইয়াসীন", "আস-ফাফফাত", "সোয়াদ", "আজ-জুমার", "গাফির",
+          "ফুসসিলাত", "আশ-শুরা", "আজ-জুখরুফ", "আদ-দুখান", "আল-জাসিয়াহ", "আল-আহকাফ", "মুহাম্মদ", "আল-ফাতহ", "আল-হুজুরাত", "ক্বাফ",
+          "আজ-যারিয়াত", "আত-তূর", "আন-নাজম", "আল-কামার", "আর-রহমান", "আল-ওয়াকিয়াহ", "আল-হাদীদ", "আল-মুজাদালাহ", "আল-হাশর", "আল-মুমতাহিনাহ",
+          "আস-সফ", "আল-জুমুআহ", "আল-মুনাফিকুন", "আত-তাগাবুন", "আত-ত্বলাক", "আত-তাহরীম", "আল-মুলক", "আল-কলাম", "আল-হাক্কাহ", "আল-মাআরিজ",
+          "নূহ", "আল-জিন", "আল-মুযযামমিল", "আল-মুদ্দাসসির", "আল-কিয়ামাহ", "আল-ইনসান", "আল-মুর্সালাত", "আন-নাবা", "আন-নাজিআত", "আবাসা",
+          "আত-তাকভীর", "আল-ইনফিতার", "আল-মুত্বাফফিফীন", "আল-ইনশিকাক", "আল-বুরূজ", "আত-তারিক", "আল-আলা", "আল-গাশিয়াহ", "আল-ফজর", "আল-বালাদ",
+          "আশ-শামস", "আল-লাইল", "আদ-দুহা", "আল-ইনশিরাহ", "আত-তীন", "আল-আলাক", "আল-কদর", "আল-বাইয়িনাহ", "আল-যালযালাহ", "আল-আদিয়াত",
+          "আল-কারিয়াহ", "আত-তাকাসুর", "আল-আসর", "আল-হুমাযাহ", "আল-ফীল", "কুরাইশ", "আল-মাউন", "আল-কাউসার", "আল-কাফিরুন", "আন-নাসর",
+          "আল-লাহাব", "আল-ইখলাস", "আল-ফালাক", "আন-নাস"
+        ];
 
-  <div id="admin">
-    <div class="admin-content">
-      <div style="display:flex;justify-content:space-between;align-items:center;">
-        <h2>Admin Panel</h2>
-        <button class="btn danger" onclick="closeAdmin()">Close</button>
-      </div>
+        for (let i = 1; i <= 114; i++) {
+          html += `<div class="surah-box" onclick="showSurahDetails(${i})">${i}. ${defaultNames[i]}</div>`;
+        }
+        
+        html += '</div>';
+        modalBody.innerHTML = html;
+      } 
+      else if (feature === 'namaz') {
+        modalTitle.innerText = "🕌 নামাযের সময়সূচী ও নিয়মকানুন";
+        modalBody.innerHTML = `<div style="font-size:14px; color:#334155;"><p>ফজর, জোহর, আসর, মাগরিব ও এশার সঠিক সময়সূচী।</p></div>`;
+      }
+      else if (feature === 'dua') {
+        modalTitle.innerText = "🤲 প্রয়োজনীয় দোয়া সমূহ";
+        modalBody.innerHTML = `<div style="font-size:14px; color:#334155;"><p>দৈনন্দিন জীবনের প্রয়োজনীয় দোয়া ও জিকির।</p></div>`;
+      }
+      else if (feature === 'tasbih') {
+        modalTitle.innerText = "🔍 ডিজিটাল তাসবিহ ও জিকির";
+        modalBody.innerHTML = `<div style="text-align:center;"><div id="tasbihDisplay" class="tasbih-btn" onclick="countTasbih()">0</div></div>`;
+      }
+    }
 
-      <div id="login">
-        <form onsubmit="login(event)">
-          <input id="u" placeholder="Username" style="padding:8px;margin-right:5px;">
-          <input id="p" type="password" placeholder="Password" style="padding:8px;margin-right:5px;">
-          <button class="btn">Login</button>
-        </form>
-      </div>
+    // সূরায় ক্লিক করলে সরাসরি এপিআই থেকে আয়াত ও বাংলা অর্থ লোড করার ফাংশন
+    async function showSurahDetails(num) {
+      document.getElementById('modalTitle').innerText = `📖 ${num} নং সূরা লোড হচ্ছে...`;
+      document.getElementById('modalBody').innerHTML = `<div style="text-align: center; padding: 30px;"><p style="color: #2563eb; font-weight: bold;">⏳ অনুগ্রহ করে অপেক্ষা করুন...</p></div>`;
 
-      <div id="list" style="display:none;">
-        <h3>Content Management</h3>
-        <div class="form">
-          <div class="row">
-            <input id="title" placeholder="Title" style="padding:8px;width:100%;margin-bottom:10px;">
-            <textarea id="desc" placeholder="Description" style="padding:8px;width:100%;margin-bottom:10px;"></textarea>
-            <select id="type" style="padding:8px;margin-bottom:10px;">
-              <option value="skills">skills</option>
-              <option value="education">education</option>
-              <option value="experience">experience</option>
-              <option value="services">services</option>
-              <option value="portfolio">portfolio</option>
-            </select>
-            <button class="btn" onclick="saveItem()">Add Item</button>
-          </div>
-        </div>
-        <div id="itemsList" style="margin-top:20px;"></div>
+      try {
+        let response = await fetch(`https://api.alquran.cloud/v1/surah/${num}/editions/quran-uthmani,bn.bengali`);
+        let data = await response.json();
+        
+        if(data.code === 200) {
+          let arabicAyahs = data.data[0].ayahs;
+          let banglaAyahs = data.data[1].ayahs;
+          let sName = data.data[0].englishName;
+          
+          let html = `
+            <div style="padding: 5px 0;">
+              <button class="btn" style="margin-bottom: 15px; padding: 6px 14px; font-size: 12px; border-radius: 8px;" onclick="openIslamicFeature('quran')">&larr; সকল সূরায় ফিরে যান</button>
+              <div style="background: #f8fafc; padding: 20px; border-radius: 12px; border-left: 5px solid #2563eb; max-height: 60vh; overflow-y: auto;">
+          `;
 
-        <h3 style="margin-top:30px;">About Update</h3>
-        <textarea id="aboutEdit" style="padding:8px;width:100%;margin-bottom:10px;"></textarea>
-        <button class="btn" onclick="saveInfo()">Save Information</button>
-      </div>
-    </div>
-  </div>
+          if(num !== 9) {
+            html += `<div style="text-align: center; font-size: 22px; margin-bottom: 20px; color: #0f172a; font-weight: bold;">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>`;
+          }
 
-  <script>
-    // 114 Surah List
-    const surahs = [
-      "১. আল-ফাতিহা", "২. আল-বাকারা", "৩. আল-ইমরান", "৪. আন-নিসা", "৫. আল-মায়িদাহ",
-      "৬. আল-আনআম", "৭. আল-আরাফ", "৮. আল-আনফাল", "৯. আত-তাওবাহ", "১০. ইউনুস",
-      "১১. হুদ", "১২. ইউসুফ", "১৩. আর-রাঅ্দ", "১৪. ইব্রাহিম", "১৫. আল-হিজর",
-      "১৬. আন-নাহল", "১৭. বনী ইসরাইল", "১৮. আল-কাহফ", "১৯. মারইয়াম", "২০. ত্বা-হা",
-      "২১. আল-আনবিয়া", "২২. আল-হাজ্জ", "২৩. আল-মু'মিনুন", "২৪. আন-নূর", "২৫. আল-ফুরকান",
-      "২৬. আশ-শুআরা", "২৭. আন-নামল", "২৮. আল-কাসাস", "২৯. আল-আনকাবুত", "৩০. আর-রূম",
-      "৩১. লুকমান", "৩২. আস-সাজদাহ", "৩৩. আল-আহজাব", "৩৪. সাবা", "৩৫. ফাতির",
-      "৩৬. ইয়াসীন", "৩৭. আস-ফাফফাত", "৩৮. সোয়াদ", "৩৯. আজ-জুমার", "৪০. গাফির",
-      "৪১. ফুসসিলাত", "৪২. আশ-শুরা", "৪৩. আজ-জুখরুফ", "৪৪. আদ-দুখান", "৪৫. আল-জাসিয়াহ",
-      "৪৬. আল-আহকাফ", "৪৭. মুহাম্মদ", "৪৮. আল-ফাতহ", "৪৯. আল-হুজুরাত", "৫০. ক্বাফ",
-      "৫১. আজ-যারিয়াত", "৫২. আত-তূর", "৫৩. আন-নাজম", "৫৪. আল-কামার", "৫৫. আর-রহমান",
-      "৫৬. আল-ওয়াকিয়াহ", "৫৭. আল-হাদীদ", "৫৮. আল-মুজাদালাহ", "৫৯. আল-হাশর", "৬০. আল-মুমতাহিনাহ",
-      "৬১. আস-সফ", "৬২. আল-জুমুআহ", "৬৩. আল-মুনাফিকুন", "৬৪. আত-তাগাবুন", "৬৫. আত-ত্বলাক",
-      "৬৬. আত-তাহরীম", "৬৭. আল-মুলক", "৬৮. আল-কলাম", "৬৯. আল-হাক্কাহ", "৭০. আল-মাআরিজ",
-      "৭১. নূহ", "৭২. আল-জিন", "৭৩. আল-মুযযামমিল", "৭৪. আল-মুদ্দাসসির", "৭৫. আল-কিয়ামাহ",
-      "৭৬. আল-ইনসান", "৭৭. আল-মুর্সালাত", "৭৮. আন-নাবা", "৭৯. আন-নাজিআত", "৮০. আবাসা",
-      "৮১. আত-তাকভীর", "৮২. আল-ইনফিতার", "৮৩. আল-মুত্বাফফিফীন", "৮৪. আল-ইনশিকাক", "৮৫. আল-বুরূজ",
-      "৮৬. আত-তারিক", "৮৭. আল-আলা", "৮৮. আল-গাশিয়াহ", "৮৯. আল-ফজর", "৯০. আল-বালাদ",
-      "৯১. আশ-শামস", "৯২. আল-লাইল", "৯৩. আদ-দুহা", "৯৪. আল-ইনশিরাহ", "৯৫. আত-তীন",
-      "৯৬. আল-আলাক", "৯৭. আল-কদর", "৯৮. আল-বাইয়িনাহ", "৯৯. আল-যালযালাহ", "১০০. আল-আদিয়াত",
-      "১০১. আল-কারিয়াহ", "১০২. আত-তাকাসুর", "১০৩. আল-আসর", "১০৪. আল-হুমাযাহ", "১০৫. আল-ফীল",
-      "১০৬. কুরাইশ", "১০৭. আল-মাউন", "১০৮. আল-কাউসার", "১০৯. আল-কাফিরুন", "১১০. আন-নাসর",
-      "১১১. আল-লাহাব", "১১২. আল-ইখলাস", "১১৩. আল-ফালাক", "১১৪. আন-নাস"
-    ];
+          for(let i = 0; i < arabicAyahs.length; i++) {
+            html += `
+              <div style="margin-bottom: 20px; border-bottom: 1px solid #e2e8f0; padding-bottom: 15px;">
+                <div style="font-size: 22px; text-align: right; color: #0f172a; margin-bottom: 8px; line-height: 1.8; font-family: serif;">
+                  ${arabicAyahs[i].text} 
+                  <span style="font-size: 13px; border: 1px solid #cbd5e1; border-radius: 50%; padding: 2px 6px; display: inline-block; color: #64748b;">${arabicAyahs[i].numberInSurah}</span>
+                </div>
+                <div style="font-size: 14px; text-align: left; color: #334155; line-height: 1.6;">
+                  <b>${banglaAyahs[i].numberInSurah}.</b> ${banglaAyahs[i].text}
+                </div>
+              </div>
+            `;
+          }
+
+          html += `</div></div>`;
+          document.getElementById('modalTitle').innerText = `📖 সূরা ${num}`;
+          document.getElementById('modalBody').innerHTML = html;
+        }
+      } catch (error) {
+        document.getElementById('modalBody').innerHTML = `<div style="text-align: center; padding: 20px; color: #dc2626;"><p>ইন্টারনেট সংযোগ না থাকায় আয়াত লোড করা যায়নি।</p></div>`;
+      }
+    }
     const duasList = [
       { title: "১. ঘুমানোর পূর্বের দোয়া", ar: "اللَّهُمَّ بِاسْمِكَ أَمُوتُ وَأَحْيَا", pron: "আল্লা-হুম্মা বিস্মিকা আমূতু ওয়া আহ্ইয়া।", mean: "হে আল্লাহ! আপনার নামে আমি মৃত্যুবরণ (ঘুম) করছি এবং আপনার নামেই জীবিত (জাগ্রত) হচ্ছি।" },
       { title: "২. ঘুম থেকে ওঠার পর দোয়া", ar: "الْحَمْدُ لِلَّهِ الَّذِي أَحْيَانَا بَعْدَ مَا أَمَاتَنَا وَإِلَيْهِ النُّشُورُ", pron: "আলহামদু লিল্লাহিল্লাজি আহইয়ানা বা'দা মা আমাতানা ওয়া ইলাইহিন নুশূর।", mean: "সমস্ত প্রশংসা সেই আল্লাহর জন্য যিনি মৃত্যুর পর আমাদের জীবন দান করলেন, এবং তাঁর দিকেই আমাদের পুনরুত্থান।" },
