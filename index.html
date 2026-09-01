@@ -14,15 +14,13 @@
     .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
     .card{background:#fff;padding:20px;border-radius:10px;box-shadow:0 4px 10px rgba(0,0,0,.05);text-align:left;transition:transform 0.3s ease, box-shadow 0.3s ease}
     
-    /* Interactive Card Style for Blog/Islamic Corner */
-    .clickable-card { cursor: pointer; position: relative; }
-    .clickable-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); border-left: 4px solid #2563eb; }
+    .clickable-card { cursor: pointer; border-top: 3px solid #2563eb; }
+    .clickable-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
     
     .dark{background:#011827;color:#fff;text-align:center}
     #admin{display:none;position:fixed;inset:0;z-index:50;background:#f3f4f6;overflow:auto;padding:25px;text-align:left}
     .btn{background:#2563eb;color:#fff;border:none;padding:10px 18px;border-radius:8px;cursor:pointer}.btn.danger{background:#dc2626}
     
-    /* 3D Social & Phone Icons Style */
     .social-links{display:flex;justify-content:center;gap:20px;margin-top:25px;flex-wrap:wrap;perspective:1000px}
     .social-icon-btn{
       display:inline-flex;
@@ -63,24 +61,24 @@
       box-shadow: 0 5px 12px rgba(16, 185, 129, 0.4), inset 0 2px 2px rgba(255, 255, 255, 0.5);
     }
 
-    .btn-fb { background: linear-gradient(145deg, #1877f2, #0d52b1); box-shadow: 0 8px 15px rgba(24, 119, 242, 0.4), inset 0 2px 2px rgba(255,255,255,0.4); }
-    .btn-wa { background: linear-gradient(145deg, #25d366, #1b9a4a); box-shadow: 0 8px 15px rgba(37, 211, 102, 0.4), inset 0 2px 2px rgba(255,255,255,0.4); }
-    .btn-yt { background: linear-gradient(145deg, #ff0000, #b30000); box-shadow: 0 8px 15px rgba(255, 0, 0, 0.4), inset 0 2px 2px rgba(255,255,255,0.4); }
-    .btn-tt { background: linear-gradient(145deg, #00f2fe, #4facfe, #000); box-shadow: 0 8px 15px rgba(0, 242, 254, 0.4), inset 0 2px 2px rgba(255,255,255,0.4); }
-    .btn-ig { background: linear-gradient(145deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); box-shadow: 0 8px 15px rgba(220, 39, 67, 0.4), inset 0 2px 2px rgba(255,255,255,0.4); }
+    .btn-fb { background: linear-gradient(145deg, #1877f2, #0d52b1); box-shadow: 0 8px 15px rgba(24, 119, 242, 0.4); }
+    .btn-wa { background: linear-gradient(145deg, #25d366, #1b9a4a); box-shadow: 0 8px 15px rgba(37, 211, 102, 0.4); }
+    .btn-yt { background: linear-gradient(145deg, #ff0000, #b30000); box-shadow: 0 8px 15px rgba(255, 0, 0, 0.4); }
+    .btn-tt { background: linear-gradient(145deg, #00f2fe, #4facfe, #000); box-shadow: 0 8px 15px rgba(0, 242, 254, 0.4); }
+    .btn-ig { background: linear-gradient(145deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); box-shadow: 0 8px 15px rgba(220, 39, 67, 0.4); }
 
     .social-icon-btn:hover {
       transform: translateY(-8px) rotateX(15deg) rotateY(-10deg) scale(1.1);
-      box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5), inset 0 2px 4px rgba(255,255,255,0.6);
+      box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
     }
 
-    /* Modal / Pop-up Window Style */
+    /* Modal / Popup Feature Window */
     .modal-overlay {
       display: none;
       position: fixed;
       inset: 0;
-      background: rgba(0,0,0,0.6);
-      backdrop-filter: blur(4px);
+      background: rgba(0,0,0,0.7);
+      backdrop-filter: blur(5px);
       z-index: 100;
       justify-content: center;
       align-items: center;
@@ -88,18 +86,15 @@
     }
     .modal-card {
       background: #fff;
-      max-width: 500px;
+      max-width: 600px;
       width: 100%;
+      max-height: 85vh;
+      overflow-y: auto;
       border-radius: 16px;
       padding: 25px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
       text-align: left;
       position: relative;
-      animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    }
-    @keyframes popIn {
-      from { transform: scale(0.8); opacity: 0; }
-      to { transform: scale(1); opacity: 1; }
     }
     .modal-close {
       position: absolute;
@@ -107,13 +102,33 @@
       right: 15px;
       background: #f3f4f6;
       border: none;
-      width: 30px;
-      height: 30px;
+      width: 32px;
+      height: 32px;
       border-radius: 50%;
       cursor: pointer;
-      font-size: 16px;
+      font-size: 18px;
       font-weight: bold;
     }
+
+    /* Interactive Feature Styles */
+    .tasbih-btn {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: linear-gradient(145deg, #2563eb, #1d4ed8);
+      color: #fff;
+      font-size: 36px;
+      font-weight: bold;
+      border: none;
+      box-shadow: 0 10px 20px rgba(37, 99, 235, 0.4);
+      cursor: pointer;
+      margin: 20px auto;
+      display: block;
+    }
+    .tasbih-btn:active { transform: scale(0.95); }
+    .namaz-table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+    .namaz-table td, .namaz-table th { padding: 10px; border-bottom: 1px solid #eee; text-align: left; }
+    .namaz-table th { background: #f8fafc; }
 
     footer{text-align:center;padding:20px;background:#0d1117;color:#8b949e}
     @media(max-width:750px){.nav,.hero{display:flex;flex-direction:column;align-items:center}.links{justify-content:center;margin-top:10px}}
@@ -200,13 +215,13 @@
     </div>
   </section>
 
-  <!-- Modal Pop-up Structure -->
+  <!-- Interactive Modal Screen -->
   <div class="modal-overlay" id="featureModal">
     <div class="modal-card">
       <button class="modal-close" onclick="closeModal()">&times;</button>
       <h3 id="modalTitle" style="margin-top:0; color:#2563eb; font-size:22px;"></h3>
       <hr style="border:0; border-top:1px solid #eee; margin:15px 0;">
-      <p id="modalDesc" style="color:#4b5563; font-size:15px; white-space:pre-line;"></p>
+      <div id="modalBody"></div>
     </div>
   </div>
 
@@ -258,8 +273,10 @@
   </div>
 
   <script>
-    const K = "MAS_PRO_V3D_POPUP";
+    const K = "MAS_PRO_V3D_LIVE_FEATURES";
     let edit = -1;
+    let tasbihCount = 0;
+
     let d = JSON.parse(localStorage.getItem(K)) || {
       about: "আমি Monir Ahmed Shakib! This website contains My information ❤️",
       items: [
@@ -273,12 +290,12 @@
         {title: "Data Entry", desc: "Professional data entry services.", type: "services"},
         {title: "Professional Project", desc: "Portfolio project details can be added here.", type: "portfolio"},
         
-        /* Islamic Corner Detailed Content */
-        {title: "📖 আল-কুরআন শরীফ", desc: "এখানে আপনি আল-কুরআন শরীফের ১১৪ টি সূরার তিলাওয়াত, বাংলা অনুবাদ এবং অডিও শুনতে পারবেন। প্রতিদিন নিয়মিত কুরআন তিলাওয়াত করুন ও এর অর্থ অনুধাবন করুন।", type: "blog"},
-        {title: "🕌 নামাযের সময়সূচী ও নিয়ম", desc: "পাঁচ ওয়াক্ত নামাযের সঠিক সময়সূচী, নামাযের ফারাজ, ওয়াজিব ও সুন্নাত নিয়মসমূহ এখানে বিস্তারিত পেয়ে যাবেন। এছাড়া কসর ও কাজা নামাযের নিয়মাবলি যুক্ত করা রয়েছে।", type: "blog"},
-        {title: "🤲 প্রয়োজনীয় দোয়া ও মাসআলা", desc: "দৈনন্দিন জীবনের প্রয়োজনীয় দোয়াসমূহ যেমন: ঘুম থেকে ওঠার দোয়া, খাওয়ার আগের ও পরের দোয়া, সফরের দোয়া এবং গুরুত্বপূর্ণ পারিবারিক ও সামাজিক মাসআলা-মাসায়েল।", type: "blog"},
-        {title: "🔍 ডিজিটাল তাসবিহ", desc: "আপনার জিকির ও তাসবিহ গণনার সুবিধার্থে ডিজিটাল তাসবিহ ফিচার। এর মাধ্যমে আপনি যেকোনো স্থান থেকে সহজেই সুবহানাল্লাহ, আলহামদুলিল্লাহ, আল্লাহু আকবার গণনা করতে পারবেন।", type: "blog"},
-        {title: "📚 ইসলামিক বই ও পিডিএফ", desc: "এখানে পাবেন গুরুত্বপূর্ণ ইসলামিক বই, বুখারী ও মুসলিম শরীফের হাদিস গ্রন্থ এবং ইসলামিক সাহিত্যের বিনামূল্যে পড়ার ও ডাউনলোড করার সুবিধা।", type: "blog"}
+        /* Interactive Islamic Features */
+        {title: "📖 আল-কুরআন শরীফ", desc: "অনলাইন কুরআন শরীফ তিলাওয়াত ও অনুবাদ।", type: "blog", id: "quran"},
+        {title: "🕌 নামাযের সময়সূচী ও নিয়ম", desc: "দৈনন্দিন নামাযের সঠিক সময়, ওয়াজিব ও সুন্নাত নিয়ম।", type: "blog", id: "namaz"},
+        {title: "🤲 প্রয়োজনীয় দোয়া ও মাসআলা", desc: "দৈনন্দিন জীবনের গুরুত্বপূর্ণ দোয়া সমূহ।", type: "blog", id: "dua"},
+        {title: "🔍 ডিজিটাল তাসবিহ", desc: "অনলাইনে তাসবিহ ও জিকির গণনার সুবিধা।", type: "blog", id: "tasbih"},
+        {title: "📚 ইসলামিক বই ও পিডিএফ", desc: "গুরুত্বপূর্ণ ইসলামিক বই ডাউনলোড ও পড়ার সুবিধা।", type: "blog", id: "books"}
       ]
     };
 
@@ -294,28 +311,96 @@
           e.innerHTML = d.items.filter(x => x.type === t).map(x => {
             if(t === "blog"){
               return `
-                <div class="card clickable-card" onclick="openModal('${esc(x.title)}', '${esc(x.desc)}')">
+                <div class="card clickable-card" onclick="openFeature('${x.id || 'quran'}', '${esc(x.title)}')">
                   <h3>${esc(x.title)}</h3>
-                  <p>${esc(x.desc).substring(0, 55)}...</p>
-                  <small style="color:#2563eb; font-weight:bold;">বিস্তারিত দেখতে ক্লিক করুন &rarr;</small>
+                  <p>${esc(x.desc)}</p>
+                  <small style="color:#2563eb; font-weight:bold;">ওপেন করতে চাপ দিন &rarr;</small>
                 </div>
               `;
             }
-            return `
-              <div class="card">
-                <h3>${esc(x.title)}</h3>
-                <p>${esc(x.desc)}</p>
-              </div>
-            `;
+              return `
+                <div class="card">
+                  <h3>${esc(x.title)}</h3>
+                  <p>${esc(x.desc)}</p>
+                </div>
+              `;
           }).join('');
         }
       });
     }
 
-    function openModal(title, desc){
+    /* Feature Content Viewer */
+    function openFeature(type, title){
       document.getElementById("modalTitle").innerText = title;
-      document.getElementById("modalDesc").innerText = desc;
+      let content = "";
+
+      if(type === "tasbih"){
+        content = `
+          <div style="text-align:center;">
+            <p style="font-size:18px; color:#4b5563;">সুভাষণে জিকির সম্পন্ন করুন</p>
+            <button class="tasbih-btn" id="tCounter" onclick="countTasbih()">0</button>
+            <button class="btn danger" onclick="resetTasbih()" style="margin-top:10px;">Reset</button>
+          </div>
+        `;
+      } else if(type === "namaz"){
+        content = `
+          <h4>দৈনন্দিন নামাযের আনুমানিক সময়সূচী:</h4>
+          <table class="namaz-table">
+            <tr><th>ওয়াক্ত</th><th>সময়</th></tr>
+            <tr><td>ফজর</td><td>০৪:৪৫ AM</td></tr>
+            <tr><td>জোহর</td><td>১২:১৫ PM</td></tr>
+            <tr><td>আসর</td><td>০৪:৩০ PM</td></tr>
+            <tr><td>মাগরিব</td><td>০৬:১৫ PM</td></tr>
+            <tr><td>এশা</td><td>০৭:৩০ PM</td></tr>
+          </table>
+          <p style="font-size:13px; color:#6b7280; margin-top:10px;">* স্থানভেদে ১-২ মিনিট পরিবর্তন হতে পারে।</p>
+        `;
+      } else if(type === "dua"){
+        content = `
+          <div style="line-height:1.8;">
+            <h4>১. ঘুম থেকে ওঠার দোয়া:</h4>
+            <p style="background:#f8fafc; padding:10px; border-radius:6px;"><b>الْحَمْدُ لِلَّهِ الَّذِي أَحْيَانَا بَعْدَ مَا أَمَاتَنَا وَإِلَيْهِ النُّشُورُ</b><br>অর্থ: সকল প্রশংসা আল্লাহর জন্য, যিনি আমাদের মৃত্যুর (ঘুমের) পর পুনরায় জীবিত করলেন।</p>
+            <h4>২. খাওয়ার শুরুর দোয়া:</h4>
+            <p style="background:#f8fafc; padding:10px; border-radius:6px;"><b>بِسْمِ اللهِ الرَّحْمَنِ الرَّحِيمِ</b><br>অর্থ: পরম করুণাময় অসীম দয়ালু আল্লাহর নামে শুরু করছি।</p>
+          </div>
+        `;
+      } else if(type === "books"){
+        content = `
+          <div>
+            <h4>ইসলামিক কিতাব ও সাহিত্য:</h4>
+            <ul>
+              <li>সহীহ আল-বুখারী (পিডিএফ পড়া)</li>
+              <li>সহীহ মুসলিম (পিডিএফ পড়া)</li>
+              <li>রিয়াদুস সালেহীন</li>
+            </ul>
+            <p style="color:#2563eb;">* শীঘ্রই বইগুলোর সরাসরি ডাউনলোড লিংক যুক্ত করা হবে।</p>
+          </div>
+        `;
+      } else {
+        content = `
+          <div>
+            <h4>অনলাইন আল-কুরআন:</h4>
+            <p>১. সূরা আল-ফাতিহা (সূচনা)</p>
+            <p>২. সূরা আল-বাকারা</p>
+            <p>৩. সূরা আল-ইমরান</p>
+            <p>৪. সূরা আন-নিসা</p>
+            <p style="color:#2563eb; font-weight:bold;">সম্পূর্ণ ১১৪ টি সূরার তালিকা ও অডিও অপশন শীঘ্রই যুক্ত হচ্ছে।</p>
+          </div>
+        `;
+      }
+
+      document.getElementById("modalBody").innerHTML = content;
       document.getElementById("featureModal").style.display = "flex";
+    }
+
+    function countTasbih(){
+      tasbihCount++;
+      document.getElementById("tCounter").innerText = tasbihCount;
+    }
+
+    function resetTasbih(){
+      tasbihCount = 0;
+      document.getElementById("tCounter").innerText = 0;
     }
 
     function closeModal(){
