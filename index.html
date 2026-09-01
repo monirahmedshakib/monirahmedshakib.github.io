@@ -50,6 +50,9 @@
     .clickable-card { cursor: pointer; border-top: 5px solid #2563eb; }
     
     .dark{background:#0b0f19;color:#fff;text-align:center}
+    /* ডার্ক সেকশনের শিরোনাম ও আন্ডারলাইন ঠিক করার জন্য */
+    .dark h2 { color: #ffffff; }
+    .dark h2::after { background: #60a5fa; }
     
     /* নতুন গ্লাস-মর্ফিজম এডমিন প্যানেল ডিজাইন */
     #admin {
@@ -465,7 +468,7 @@
 
   <section class="dark" id="contact">
     <h2>Contact</h2>
-    <p id="contactText" style="color: #94a3b8; margin-bottom: 10px; font-size: 16px;">Email: monirahmedshakib.mb@gmail.com</p>
+    <p id="contactText" style="color: #ffffff; margin-bottom: 10px; font-size: 16px; font-weight: 500;">Email: monirahmedshakib.mb@gmail.com</p>
 
     <div class="phone-3d-box">
       <span class="phone-icon-3d"><i class="fa-solid fa-phone"></i></span>
@@ -617,7 +620,7 @@
 
     const masalaList = [
       { title: "১. ওজুর ফরজ সমূহ", details: "ওজুতে ৪টি ফরজ কাজ রয়েছে:<br>১. পুরো মুখমণ্ডল একবার ধৌত করা。<br>২. দুই হাতের কনুইসহ একবার ধৌত করা。<br>৩. মাথার চারভাগের একভাগ মাসেহ করা。<br>৪. দুই পায়ের গ্রন্থি (টাখনু) সহ একবার ধৌত করা।" },
-      { title: "২. গোসলের ফরজ সমূহ", details: "গোসলে ৩টি ফরজ কাজ রয়েছে:<br>১. ভালোভাবে কুলি করা。<br>২. নাকে পানি দিয়ে নাক পরিষ্কার করা。<br>৩. সমস্ত শরীরে এমনভাবে পানি পৌঁছানো যেন একটি চুল পরিমাণ জায়গাও শুকনো না থাকে।" },
+      { title: "২. গোসলের ফরজ সমূহ", details: "গোسলে ৩টি ফরজ কাজ রয়েছে:<br>১. ভালোভাবে কুলি করা。<br>২. নাকে পানি দিয়ে নাক পরিষ্কার করা。<br>৩. সমস্ত শরীরে এমনভাবে পানি পৌঁছানো যেন একটি চুল পরিমাণ জায়গাও শুকনো না থাকে।" },
       { title: "৩. তায়াম্মুমের ফরজ সমূহ", details: "তায়াম্মুমে ৩টি ফরজ কাজ রয়েছে:<br>১. নিয়ত করা。<br>২. পবিত্র মাটিতে হাত মেরে পুরো মুখমণ্ডল মাসেহ করা。<br>৩. পুনরায় মাটিতে হাত মেরে উভয় হাত কনুইসহ মাসেহ করা।" },
       { title: "৪. যেসব কারণে ওজু ভেঙে যায়", details: "১. পায়খানা বা প্রস্রাবের রাস্তা দিয়ে কিছু বের হওয়া。<br>২. মুখ ভরে বমি করা。<br>৩. শরীর থেকে রক্ত বা পুঁজ বের হয়ে গড়িয়ে পড়া。<br>৪. থুথুর সাথে রক্তের ভাগ সমান বা বেশি হওয়া。<br>৫. কাত হয়ে বা হেলান দিয়ে ঘুমিয়ে পড়া。<br>৬. নামাজে উচ্চস্বরে হেসে ওঠা।" },
       { title: "৫. নামাজের ওয়াজিব সমূহ", details: "নামাজে ১৪টি ওয়াজিব রয়েছে। যেমন: আল-ফাতিহা পড়া, সুরা মিলানো, রুকু ও সিজদায় ধীরস্থিরতা অবলম্বন করা, প্রথম ও শেষ বৈঠকে বসা, তাশাহহুদ পড়া, সালামের মাধ্যমে নামাজ শেষ করা ইত্যাদি।" },
@@ -919,7 +922,7 @@
 
     function saveInfo(){
       const data = JSON.parse(localStorage.getItem("siteData"));
-      data.about = document.getElementById("aboutEdit").value;
+      data.about = document.getElementById("aboutEdit5").value;
       localStorage.setItem("siteData", JSON.stringify(data));
       loadData();
       alert("সফলভাবে আপডেট করা হয়েছে!");
