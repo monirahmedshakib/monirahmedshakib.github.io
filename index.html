@@ -86,7 +86,7 @@
     }
     .modal-card {
       background: #fff;
-      max-width: 650px;
+      max-width: 750px;
       width: 100%;
       max-height: 85vh;
       overflow-y: auto;
@@ -111,7 +111,7 @@
       font-weight: bold;
     }
 
-    /* Quran List Styles */
+    /* Quran List & Ayah Styles */
     .quran-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
@@ -121,11 +121,39 @@
     .surah-box {
       background: #f8fafc;
       border: 1px solid #e2e8f0;
-      padding: 8px 10px;
-      border-radius: 6px;
+      padding: 10px;
+      border-radius: 8px;
       font-size: 13px;
-      font-weight: 500;
+      font-weight: 600;
       color: #1e293b;
+      cursor: pointer;
+      text-align: center;
+      transition: background 0.2s;
+    }
+    .surah-box:hover {
+      background: #2563eb;
+      color: #fff;
+    }
+    
+    .ayah-card {
+      background: #f8fafc;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 12px;
+      border-left: 4px solid #2563eb;
+    }
+    .arabic-text {
+      font-size: 24px;
+      font-family: 'Amiri', 'Traditional Arabic', serif;
+      text-align: right;
+      color: #0f172a;
+      direction: rtl;
+      line-height: 1.8;
+      margin-bottom: 8px;
+    }
+    .bangla-text {
+      font-size: 14px;
+      color: #334155;
     }
 
     /* Interactive Tasbih Styles */
@@ -215,7 +243,7 @@
     <div class="grid">
       <div class="card clickable-card" onclick="openIslamicFeature('quran')">
         <h3>📖 আল-কুরআন শরীফ</h3>
-        <p>অনলাইন কুরআন শরীফ ১১৪ টি সূরা তিলাওয়াত ও তালিকা।</p>
+        <p>অনলাইন কুরআন শরীফ ১১৪ টি সূরা ও অনুবাদসহ পড়ুন।</p>
         <small style="color:#2563eb; font-weight:bold;">সূরাগুলো দেখুন &rarr;</small>
       </div>
       <div class="card clickable-card" onclick="openIslamicFeature('namaz')">
@@ -387,9 +415,9 @@
 
       if(type === 'quran'){
         mTitle.innerText = "📖 আল-কুরআন শরীফ (১১৪ টি সূরা)";
-        let surahHTML = `<p style="font-size:14px; color:#4b5563;">পবিত্র কুরআনের ১১৪ টি সূরার তালিকা নিচে দেওয়া হলো:</p><div class="quran-grid">`;
-        surahs.forEach(s => {
-          surahHTML += `<div class="surah-box">${s}</div>`;
+        let surahHTML = `<p style="font-size:14px; color:#4b5563;">পড়া ও আয়াত দেখতে যে কোনো সূরায় ক্লিক করুন:</p><div class="quran-grid">`;
+        surahs.forEach((s, index) => {
+          surahHTML += `<div class="surah-box" onclick="loadSurah(${index + 1}, '${s}')">${s}</div>`;
         });
         surahHTML += `</div>`;
         mBody.innerHTML = surahHTML;
@@ -449,6 +477,45 @@
       }
 
       document.getElementById("featureModal").style.display = "flex";
+    }
+
+    /* Fetch Quran Surah Verses Dynamically */
+    async function loadSurah(surahNo, surahName){
+      const mTitle = document.getElementById("modalTitle");
+      const mBody = document.getElementById("modalBody");
+      
+      mTitle.innerText = surahName;
+      mBody.innerHTML = `
+        <button onclick="openIslamicFeature('quran')" class="btn" style="margin-bottom:15px; padding:6px 12px; font-size:12px;">&larr; সব সূরার তালিকায় ফিরুন</button>
+        <div style="text-align:center; padding:30px;"><i class="fa-solid fa-spinner fa-spin" style="font-size:30px; color:#2563eb;"></i><p>সূরাটি লোড হচ্ছে...</p></div>
+      `;
+
+      try {
+        // Fetch Arabic and Bangla translation
+        const resAr = await fetch(`https://api.alquran.cloud/v1/surah/${surahNo}`);
+        const resBn = await fetch(`https://api.alquran.cloud/v1/surah/${surahNo}/bn.bengali`);
+        
+        const dataAr = await resAr.json();
+        const dataBn = await resBn.json();
+
+        let html = `<button onclick="openIslamicFeature('quran')" class="btn" style="margin-bottom:15px; padding:6px 12px; font-size:12px;">&larr; সব সূরার তালিকায় ফিরুন</button>`;
+        
+        dataAr.data.ayahs.forEach((ayah, i) => {
+          html += `
+            <div class="ayah-card">
+              <div class="arabic-text">${ayah.text} ۝${ayah.numberInSurah}</div>
+              <div class="bangla-text"><b>${ayah.numberInSurah}.</b> ${dataBn.data.ayahs[i].text}</div>
+            </div>
+          `;
+        });
+
+        mBody.innerHTML = html;
+      } catch (err) {
+        mBody.innerHTML = `
+          <button onclick="openIslamicFeature('quran')" class="btn" style="margin-bottom:15px; padding:6px 12px; font-size:12px;">&larr; ফিরুন</button>
+          <p style="color:red;">আয়াত লোড করতে সমস্যা হয়েছে। দয়া করে আপনার ইন্টারনেট সংযোগ চেক করুন।</p>
+        `;
+      }
     }
 
     function countTasbih(){
