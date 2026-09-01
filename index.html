@@ -14,7 +14,7 @@
     .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
     .card{background:#fff;padding:20px;border-radius:10px;box-shadow:0 4px 10px rgba(0,0,0,.05);text-align:left;transition:transform 0.3s ease, box-shadow 0.3s ease}
     
-    .clickable-card { cursor: pointer; border-top: 3px solid #2563eb; }
+    .clickable-card { cursor: pointer; border-top: 4px solid #2563eb; }
     .clickable-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
     
     .dark{background:#011827;color:#fff;text-align:center}
@@ -77,16 +77,16 @@
       display: none;
       position: fixed;
       inset: 0;
-      background: rgba(0,0,0,0.7);
+      background: rgba(0,0,0,0.75);
       backdrop-filter: blur(5px);
       z-index: 100;
       justify-content: center;
       align-items: center;
-      padding: 20px;
+      padding: 15px;
     }
     .modal-card {
       background: #fff;
-      max-width: 600px;
+      max-width: 650px;
       width: 100%;
       max-height: 85vh;
       overflow-y: auto;
@@ -100,7 +100,8 @@
       position: absolute;
       top: 15px;
       right: 15px;
-      background: #f3f4f6;
+      background: #fee2e2;
+      color: #dc2626;
       border: none;
       width: 32px;
       height: 32px;
@@ -110,14 +111,31 @@
       font-weight: bold;
     }
 
-    /* Interactive Feature Styles */
+    /* Quran List Styles */
+    .quran-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+      gap: 10px;
+      margin-top: 15px;
+    }
+    .surah-box {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      padding: 8px 10px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 500;
+      color: #1e293b;
+    }
+
+    /* Interactive Tasbih Styles */
     .tasbih-btn {
-      width: 120px;
-      height: 120px;
+      width: 130px;
+      height: 130px;
       border-radius: 50%;
       background: linear-gradient(145deg, #2563eb, #1d4ed8);
       color: #fff;
-      font-size: 36px;
+      font-size: 38px;
       font-weight: bold;
       border: none;
       box-shadow: 0 10px 20px rgba(37, 99, 235, 0.4);
@@ -194,7 +212,33 @@
 
   <section id="blog">
     <h2>Islamic Corner / Blog</h2>
-    <div class="grid" id="blogGrid"></div>
+    <div class="grid">
+      <div class="card clickable-card" onclick="openIslamicFeature('quran')">
+        <h3>📖 আল-কুরআন শরীফ</h3>
+        <p>অনলাইন কুরআন শরীফ ১১৪ টি সূরা তিলাওয়াত ও তালিকা।</p>
+        <small style="color:#2563eb; font-weight:bold;">সূরাগুলো দেখুন &rarr;</small>
+      </div>
+      <div class="card clickable-card" onclick="openIslamicFeature('namaz')">
+        <h3>🕌 নামাযের সময়সূচী ও নিয়ম</h3>
+        <p>দৈনন্দিন নামাযের সঠিক সময়, ওয়াজিব ও সুন্নাত নিয়ম।</p>
+        <small style="color:#2563eb; font-weight:bold;">সময়সূচী দেখুন &rarr;</small>
+      </div>
+      <div class="card clickable-card" onclick="openIslamicFeature('dua')">
+        <h3>🤲 প্রয়োজনীয় দোয়া ও মাসআলা</h3>
+        <p>দৈনন্দিন জীবনের গুরুত্বপূর্ণ দোয়া সমূহ।</p>
+        <small style="color:#2563eb; font-weight:bold;">দোয়াগুলো দেখুন &rarr;</small>
+      </div>
+      <div class="card clickable-card" onclick="openIslamicFeature('tasbih')">
+        <h3>🔍 ডিজিটাল তাসবিহ</h3>
+        <p>অনলাইনে ডিজিটাল তাসবিহ ও জিকির গণনা।</p>
+        <small style="color:#2563eb; font-weight:bold;">তাসবিহ গুনুন &rarr;</small>
+      </div>
+      <div class="card clickable-card" onclick="openIslamicFeature('books')">
+        <h3>📚 ইসলামিক বই ও পিডিএফ</h3>
+        <p>গুরুত্বপূর্ণ ইসলামিক বই ও হাদিস কিতাব সমুহ।</p>
+        <small style="color:#2563eb; font-weight:bold;">বইগুলো দেখুন &rarr;</small>
+      </div>
+    </div>
   </section>
 
   <section class="dark" id="contact">
@@ -258,7 +302,6 @@
               <option value="experience">experience</option>
               <option value="services">services</option>
               <option value="portfolio">portfolio</option>
-              <option value="blog">blog</option>
             </select>
             <button class="btn" onclick="saveItem()">Add Item</button>
           </div>
@@ -273,11 +316,37 @@
   </div>
 
   <script>
-    const K = "MAS_PRO_V3D_FIXED_FINAL_V1";
-    let edit = -1;
-    let tasbihCount = 0;
+    // 114 Surah List
+    const surahs = [
+      "১. আল-ফাতিহা", "২. আল-বাকারা", "৩. আল-ইমরান", "৪. আন-নিসা", "৫. আল-মায়িদাহ",
+      "৬. আল-আনআম", "৭. আল-আরাফ", "৮. আল-আনফাল", "৯. আত-তাওবাহ", "১০. ইউনুস",
+      "১১. হুদ", "১২. ইউসুফ", "১৩. আর-রাঅ্দ", "১৪. ইব্রাহিম", "১৫. আল-হিজর",
+      "১৬. আন-নাহল", "১৭. বনী ইসরাইল", "১৮. আল-কাহফ", "১৯. মারইয়াম", "২০. ত্বা-হা",
+      "২১. আল-আনবিয়া", "২২. আল-হাজ্জ", "২৩. আল-মু'মিনুন", "২৪. আন-নূর", "২৫. আল-ফুরকান",
+      "২৬. আশ-শুআরা", "২৭. আন-নামল", "২৮. আল-কাসাস", "২৯. আল-আনকাবুত", "৩০. আর-রূম",
+      "৩১. লুকমান", "৩২. আস-সাজদাহ", "৩৩. আল-আহজাব", "৩৪. সাবা", "৩৫. ফাতির",
+      "৩৬. ইয়াসীন", "৩৭. আস-ফাফফাত", "৩৮. সোয়াদ", "৩৯. আজ-জুমার", "৪০. গাফির",
+      "৪১. ফুসসিলাত", "৪২. আশ-শুরা", "৪৩. আজ-জুখরুফ", "৪৪. আদ-দুখান", "৪৫. আল-জাসিয়াহ",
+      "৪৬. আল-আহকাফ", "৪৭. মুহাম্মদ", "৪৮. আল-ফাতহ", "৪৯. আল-হুজুরাত", "৫০. ক্বাফ",
+      "৫১. আজ-যারিয়াত", "৫২. আত-তূর", "৫৩. আন-নাজম", "৫৪. আল-কামার", "৫৫. আর-রহমান",
+      "৫৬. আল-ওয়াকিয়াহ", "৫৭. আল-হাদীদ", "৫৮. আল-মুজাদালাহ", "৫৯. আল-হাশর", "৬০. আল-মুমতাহিনাহ",
+      "৬১. আস-সফ", "৬২. আল-জুমুআহ", "৬৩. আল-মুনাফিকুন", "৬৪. আত-তাগাবুন", "৬৫. আত-ত্বলাক",
+      "৬৬. আত-তাহরীম", "৬৭. আল-মুলক", "৬৮. আল-কলাম", "৬৯. আল-হাক্কাহ", "৭০. আল-মাআরিজ",
+      "৭১. নূহ", "৭২. আল-জিন", "৭৩. আল-মুযযামমিল", "৭৪. আল-মুদ্দাসসির", "৭৫. আল-কিয়ামাহ",
+      "৭৬. আল-ইনসান", "৭৭. আল-মুর্সালাত", "৭৮. আন-নাবা", "৭৯. আন-নাজিআত", "৮০. আবাসা",
+      "৮১. আত-তাকভীর", "৮২. আল-ইনফিতার", "৮৩. আল-মুত্বাফফিফীন", "৮৪. আল-ইনশিকাক", "৮৫. আল-বুরূজ",
+      "৮৬. আত-তারিক", "৮৭. আল-আলা", "৮৮. আল-গাশিয়াহ", "৮৯. আল-ফজর", "৯০. আল-বালাদ",
+      "৯১. আশ-শামস", "৯২. আল-লাইল", "৯৩. আদ-দুহা", "৯৪. আল-ইনশিরাহ", "৯৫. আত-তীন",
+      "৯৬. আল-আলাক", "৯৭. আল-কদর", "৯৮. আল-বাইয়িনাহ", "৯৯. আল-যালযালাহ", "১০০. আল-আদিয়াত",
+      "১০১. আল-কারিয়াহ", "১০২. আত-তাকাসুর", "১০৩. আল-আসর", "১০৪. আল-হুমাযাহ", "১০৫. আল-ফীল",
+      "১০৬. কুরাইশ", "১০৭. আল-মাউন", "১০৮. আল-কাউসার", "১০৯. আল-কাফিরুন", "১১০. আন-নাসর",
+      "১১১. আল-লাহাব", "১১২. আল-ইখলাস", "১১৩. আল-ফালাক", "১১৪. আন-নাস"
+    ];
 
-    let d = {
+    let tasbihCount = 0;
+    const K = "MAS_PORTFOLIO_DATA_V9";
+
+    let d = JSON.parse(localStorage.getItem(K)) || {
       about: "আমি Monir Ahmed Shakib! This website contains My information ❤️",
       items: [
         {title: "Digital Marketing", desc: "Digital marketing related services and solutions.", type: "skills"},
@@ -288,22 +357,9 @@
         {title: "Data Entry", desc: "Steadfast Courier - 3 years experience.", type: "experience"},
         {title: "Digital Marketing", desc: "Digital marketing services.", type: "services"},
         {title: "Data Entry", desc: "Professional data entry services.", type: "services"},
-        {title: "Professional Project", desc: "Portfolio project details can be added here.", type: "portfolio"},
-        
-        /* Fixed Interactive Islamic Cards */
-        {title: "📖 আল-কুরআন শরীফ", desc: "অনলাইন কুরআন শরীফ তিলাওয়াত ও অনুবাদ।", type: "blog"},
-        {title: "🕌 নামাযের সময়সূচী ও নিয়ম", desc: "দৈনন্দিন নামাযের সঠিক সময়, ওয়াজিব ও সুন্নাত নিয়ম।", type: "blog"},
-        {title: "🤲 প্রয়োজনীয় দোয়া ও মাসআলা", desc: "দৈনন্দিন জীবনের গুরুত্বপূর্ণ দোয়া সমূহ।", type: "blog"},
-        {title: "🔍 ডিজিটাল তাসবিহ", desc: "অনলাইনে তাসবিহ ও জিকির গণনার সুবিধা।", type: "blog"},
-        {title: "📚 ইসলামিক বই ও পিডিএফ", desc: "গুরুত্বপূর্ণ ইসলামিক বই ডাউনলোড ও পড়ার সুবিধা।", type: "blog"}
+        {title: "Professional Project", desc: "Portfolio project details can be added here.", type: "portfolio"}
       ]
     };
-
-    // Auto load saved admin updates if any
-    const saved = localStorage.getItem(K);
-    if(saved){
-      try { d = JSON.parse(saved); } catch(e){}
-    }
 
     function esc(s){ return String(s).replace(/[&<>"']/g, m => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m])); }
     function save(){ localStorage.setItem(K, JSON.stringify(d)); render(); }
@@ -311,48 +367,37 @@
     function render(){
       const aEl = document.getElementById("aboutText"); if(aEl) aEl.textContent = d.about;
       
-      ["skills", "education", "experience", "services", "portfolio", "blog"].forEach(t => {
-        const e = document.getElementById(t === "blog" ? "blogGrid" : t + "Grid");
+      ["skills", "education", "experience", "services", "portfolio"].forEach(t => {
+        const e = document.getElementById(t + "Grid");
         if(e){
-          e.innerHTML = d.items.filter(x => x.type === t).map(x => {
-            if(t === "blog"){
-              // Direct identification by title string
-              let clickTitle = esc(x.title);
-              return `
-                <div class="card clickable-card" onclick="openFeatureByTitle('${clickTitle}')">
-                  <h3>${clickTitle}</h3>
-                  <p>${esc(x.desc)}</p>
-                  <small style="color:#2563eb; font-weight:bold;">ওপেন করতে চাপ দিন &rarr;</small>
-                </div>
-              `;
-            }
-            return `
-              <div class="card">
-                <h3>${esc(x.title)}</h3>
-                <p>${esc(x.desc)}</p>
-              </div>
-            `;
-          }).join('');
+          e.innerHTML = d.items.filter(x => x.type === t).map(x => `
+            <div class="card">
+              <h3>${esc(x.title)}</h3>
+              <p>${esc(x.desc)}</p>
+            </div>
+          `).join('');
         }
       });
     }
 
-    /* Dynamic Popup Renderer based on exact Title */
-    function openFeatureByTitle(title){
-      document.getElementById("modalTitle").innerText = title;
-      let content = "";
+    /* Islamic Direct Popup Launcher */
+    function openIslamicFeature(type){
+      const mTitle = document.getElementById("modalTitle");
+      const mBody = document.getElementById("modalBody");
 
-      if(title.includes("তাসবিহ")){
-        content = `
-          <div style="text-align:center;">
-            <p style="font-size:18px; color:#4b5563;">সুভাষণে জিকির সম্পন্ন করুন</p>
-            <button class="tasbih-btn" id="tCounter" onclick="countTasbih()">0</button>
-            <button class="btn danger" onclick="resetTasbih()" style="margin-top:10px;">Reset</button>
-          </div>
-        `;
-      } else if(title.includes("নামাযের")){
-        content = `
-          <h4>দৈনন্দিন নামাযের আনুমানিক সময়সূচী:</h4>
+      if(type === 'quran'){
+        mTitle.innerText = "📖 আল-কুরআন শরীফ (১১৪ টি সূরা)";
+        let surahHTML = `<p style="font-size:14px; color:#4b5563;">পবিত্র কুরআনের ১১৪ টি সূরার তালিকা নিচে দেওয়া হলো:</p><div class="quran-grid">`;
+        surahs.forEach(s => {
+          surahHTML += `<div class="surah-box">${s}</div>`;
+        });
+        surahHTML += `</div>`;
+        mBody.innerHTML = surahHTML;
+      }
+      else if(type === 'namaz'){
+        mTitle.innerText = "🕌 নামাযের সময়সূচী ও নিয়ম";
+        mBody.innerHTML = `
+          <h4>দৈনন্দিন নামাযের সময়সূচী (বাংলাদেশ):</h4>
           <table class="namaz-table">
             <tr><th>ওয়াক্ত</th><th>সময়</th></tr>
             <tr><td>ফজর</td><td>০৪:৪৫ AM</td></tr>
@@ -361,43 +406,48 @@
             <tr><td>মাগরিব</td><td>০৬:১৫ PM</td></tr>
             <tr><td>এশা</td><td>০৭:৩০ PM</td></tr>
           </table>
-          <p style="font-size:13px; color:#6b7280; margin-top:10px;">* স্থানভেদে ১-২ মিনিট পরিবর্তন হতে পারে।</p>
+          <p style="font-size:13px; color:#6b7280; margin-top:15px;">* ভৌগোলিক অবস্থানভেদে ১-২ মিনিট পরিবর্তন হতে পারে।</p>
         `;
-      } else if(title.includes("দোয়া")){
-        content = `
+      }
+      else if(type === 'dua'){
+        mTitle.innerText = "🤲 প্রয়োজনীয় দোয়া ও মাসআলা";
+        mBody.innerHTML = `
           <div style="line-height:1.8;">
             <h4>১. ঘুম থেকে ওঠার দোয়া:</h4>
-            <p style="background:#f8fafc; padding:10px; border-radius:6px;"><b>الْحَمْدُ لِلَّهِ الَّذِي أَحْيَانَا بَعْدَ مَا أَمَاتَنَا وَإِلَيْهِ النُّشُورُ</b><br>অর্থ: সকল প্রশংসা আল্লাহর জন্য, যিনি আমাদের মৃত্যুর (ঘুমের) পর পুনরায় জীবিত করলেন।</p>
+            <p style="background:#f8fafc; padding:12px; border-radius:8px;"><b>الْحَمْدُ لِلَّهِ الَّذِي أَحْيَانَا بَعْدَ مَا أَمَاتَنَا وَإِلَيْهِ النُّشُورُ</b><br>অর্থ: সকল প্রশংসা আল্লাহর জন্য, যিনি আমাদের মৃত্যুর (ঘুমের) পর পুনরায় জীবিত করলেন।</p>
             <h4>২. খাওয়ার শুরুর দোয়া:</h4>
-            <p style="background:#f8fafc; padding:10px; border-radius:6px;"><b>بِسْمِ اللهِ الرَّحْمَنِ الرَّحِيمِ</b><br>অর্থ: পরম করুণাময় অসীম দয়ালু আল্লাহর নামে শুরু করছি।</p>
+            <p style="background:#f8fafc; padding:12px; border-radius:8px;"><b>بِسْمِ اللهِ الرَّحْمَنِ الرَّحِيمِ</b><br>অর্থ: পরম করুণাময় অসীম দয়ালু আল্লাহর নামে শুরু করছি।</p>
+            <h4>৩. ঘর থেকে বের হওয়ার দোয়া:</h4>
+            <p style="background:#f8fafc; padding:12px; border-radius:8px;"><b>بِسْمِ اللهِ تَوَكَّلْتُ عَلَى اللهِ وَلاَ حَوْلَ وَلاَ قُوَّةَ إِلاَّ بِاللهِ</b><br>অর্থ: আল্লাহর নামে বের হচ্ছি, আল্লাহর ওপর ভরসা করলাম।</p>
           </div>
         `;
-      } else if(title.includes("বই")){
-        content = `
+      }
+      else if(type === 'tasbih'){
+        mTitle.innerText = "🔍 ডিজিটাল তাসবিহ";
+        mBody.innerHTML = `
+          <div style="text-align:center; padding:10px 0;">
+            <p style="font-size:18px; color:#4b5563; margin-bottom:5px;">জিকির গণনা করতে নিচে চাপ দিন</p>
+            <button class="tasbih-btn" id="tCounter" onclick="countTasbih()">${tasbihCount}</button>
+            <button class="btn danger" onclick="resetTasbih()" style="margin-top:10px;">Reset Counter</button>
+          </div>
+        `;
+      }
+      else if(type === 'books'){
+        mTitle.innerText = "📚 ইসলামিক বই ও পিডিএফ";
+        mBody.innerHTML = `
           <div>
-            <h4>ইসলামিক কিতাব ও সাহিত্য:</h4>
-            <ul>
-              <li>সহীহ আল-বুখারী (পিডিএফ পড়া)</li>
-              <li>সহীহ মুসলিম (পিডিএফ পড়া)</li>
-              <li>রিয়াদুস সালেহীন</li>
+            <h4>গুরুত্বপূর্ণ হাদীস ও কিতাবসমূহ:</h4>
+            <ul style="line-height:2;">
+              <li><b>সহীহ আল-বুখারী</b> (১ম - ১০ম খণ্ড)</li>
+              <li><b>সহীহ মুসলিম</b> (১ম - ৮ম খণ্ড)</li>
+              <li><b>রিয়াদুস সালেহীন</b></li>
+              <li><b>আর-রাহীকুল মাখতূম</b> (সীরাত গ্রন্থ)</li>
             </ul>
-            <p style="color:#2563eb;">* শীঘ্রই বইগুলোর সরাসরি ডাউনলোড লিংক যুক্ত করা হবে।</p>
-          </div>
-        `;
-      } else {
-        content = `
-          <div>
-            <h4>অনলাইন আল-কুরআন:</h4>
-            <p>১. সূরা আল-ফাতিহা (সূচনা)</p>
-            <p>২. সূরা আল-বাকারা</p>
-            <p>৩. সূরা আল-ইমরান</p>
-            <p>৪. সূরা আন-নিসা</p>
-            <p style="color:#2563eb; font-weight:bold;">সম্পূর্ণ ১১৪ টি সূরার তালিকা ও অডিও অপশন শীঘ্রই যুক্ত হচ্ছে।</p>
+            <p style="color:#2563eb; font-weight:bold; margin-top:15px;">* বইগুলোর সরাসরি অনলাইন পড়া ও ডিরেক্ট লিংক শিগগিরই যুক্ত হচ্ছে।</p>
           </div>
         `;
       }
 
-      document.getElementById("modalBody").innerHTML = content;
       document.getElementById("featureModal").style.display = "flex";
     }
 
@@ -415,6 +465,8 @@
       document.getElementById("featureModal").style.display = "none";
     }
 
+    /* Admin Management System */
+    let edit = -1;
     function renderList(){
       document.getElementById("aboutEdit").value = d.about;
       document.getElementById("itemsList").innerHTML = d.items.map((x, i) => `
