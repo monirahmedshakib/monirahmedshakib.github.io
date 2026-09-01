@@ -6,107 +6,207 @@
   <title>Monir Ahmed Shakib | Professional Portfolio</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    *{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#f0f3f8;color:#172033;line-height:1.6}
+    *{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#f5f7fb;color:#172033;line-height:1.6}
     header{position:sticky;top:0;background:#111827;color:#fff;z-index:10}.nav{max-width:1100px;margin:auto;padding:15px 5%;display:flex;justify-content:space-between;align-items:center}.links a{color:#fff;text-decoration:none;margin-left:15px}
-    .hero{padding:75px 5%;background:linear-gradient(135deg,#ffffff,#e0e7ff)}.hero{max-width:1100px;margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:center}
-    .photo{width:260px;height:260px;border-radius:50%;object-fit:cover;border:5px solid #2563eb;box-shadow:0 10px 25px rgba(0,0,0,.15)}
-    section{max-width:1100px;margin:auto;padding:65px 5%;text-align:center}h2{font-size:30px;margin-bottom:30px;text-align:center;color:#1e293b}
+    .hero{padding:75px 5%;background:linear-gradient(135deg,#fff,#eaf2ff)}.hero{max-width:1100px;margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:center}
+    .photo{width:260px;height:260px;border-radius:50%;object-fit:cover;border:5px solid #2563eb;box-shadow:0 10px 25px rgba(0,0,0,.1)}
+    section{max-width:1100px;margin:auto;padding:65px 5%;text-align:center}h2{font-size:30px;margin-bottom:30px;text-align:center}
     .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px}
     
-    /* কার্ডের পপ-আপ এবং থ্রিডি গ্রেডিয়েন্ট লুক */
+    /* থ্রিডি ও পপ-আপ কার্ড ডিজাইন */
     .card{
-      background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);
+      background: linear-gradient(145deg, #ffffff, #f0f4f8);
       padding: 25px;
       border-radius: 16px;
+      box-shadow: 0 12px 30px -5px rgba(37, 99, 235, 0.12), 
+                  0 8px 12px -6px rgba(0, 0, 0, 0.08);
       text-align: left;
-      color: #172033;
-      position: relative;
-      cursor: pointer;
-      border: 1px solid rgba(226, 232, 240, 0.8);
-      box-shadow: 0 12px 30px -5px rgba(0, 0, 0, 0.1), 
-                  0 4px 6px -4px rgba(0, 0, 0, 0.05),
-                  inset 0 2px 4px rgba(255, 255, 255, 0.9),
-                  inset 0 -3px 6px rgba(0, 0, 0, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.9);
       transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
                   box-shadow 0.4s ease;
+      position: relative;
     }
     
     .card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 22px 40px -8px rgba(0, 0, 0, 0.15), 
-                  0 8px 12px -4px rgba(0, 0, 0, 0.08),
-                  inset 0 3px 6px rgba(255, 255, 255, 1),
-                  inset 0 -4px 8px rgba(0, 0, 0, 0.08);
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 20px 40px -8px rgba(37, 99, 235, 0.2), 
+                  0 12px 20px -8px rgba(0, 0, 0, 0.12);
     }
-
-    .card h3 { margin-top: 0; font-size: 20px; color: #1e293b; }
-    .card p, .card small { color: #475569; }
     
-    .dark{background:#0b0f19;color:#fff;text-align:center}
+    .clickable-card { cursor: pointer; border-top: 4px solid #2563eb; }
+    
+    .dark{background:#011827;color:#fff;text-align:center}
     #admin{display:none;position:fixed;inset:0;z-index:50;background:#f3f4f6;overflow:auto;padding:25px;text-align:left}
     .btn{background:#2563eb;color:#fff;border:none;padding:10px 18px;border-radius:8px;cursor:pointer}.btn.danger{background:#dc2626}
     
-    .social-links{display:flex;justify-content:center;gap:20px;margin-top:25px;flex-wrap:wrap}
+    .social-links{display:flex;justify-content:center;gap:20px;margin-top:25px;flex-wrap:wrap;perspective:1000px}
     .social-icon-btn{
-      display:inline-flex;align-items:center;justify-content:center;width:55px;height:55px;border-radius:16px;color:#fff;font-size:24px;text-decoration:none;transition:all 0.4s ease;box-shadow:0 8px 20px rgba(0,0,0,0.3);
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      width:55px;
+      height:55px;
+      border-radius:16px;
+      color:#fff;
+      font-size:24px;
+      text-decoration:none;
+      transition:all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      position:relative;
+      transform-style:preserve-3d;
     }
-    .social-icon-btn:hover { transform: translateY(-8px) scale(1.1); }
-
+    
     .phone-3d-box {
-      display: inline-flex;align-items: center;gap: 10px;background: rgba(255, 255, 255, 0.05);padding: 8px 18px;border-radius: 30px;border: 1px solid rgba(255, 255, 255, 0.1);box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);margin-top: 10px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 8px 18px;
+      border-radius: 30px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      margin-top: 10px;
     }
     .phone-icon-3d {
-      width: 38px;height: 38px;border-radius: 50%;background: linear-gradient(145deg, #10b981, #059669);display: inline-flex;align-items: center;justify-content: center;color: #fff;font-size: 18px;box-shadow: 0 5px 12px rgba(16, 185, 129, 0.4);
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: linear-gradient(145deg, #10b981, #059669);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 18px;
+      box-shadow: 0 5px 12px rgba(16, 185, 129, 0.4), inset 0 2px 2px rgba(255, 255, 255, 0.5);
     }
 
-    .btn-fb { background: linear-gradient(145deg, #1877f2, #0d52b1); }
-    .btn-wa { background: linear-gradient(145deg, #25d366, #1b9a4a); }
-    .btn-yt { background: linear-gradient(145deg, #ff0000, #b30000); }
-    .btn-tt { background: linear-gradient(145deg, #00f2fe, #000); }
-    .btn-ig { background: linear-gradient(145deg, #f09433, #dc2743, #bc1888); }
+    .btn-fb { background: linear-gradient(145deg, #1877f2, #0d52b1); box-shadow: 0 8px 15px rgba(24, 119, 242, 0.4); }
+    .btn-wa { background: linear-gradient(145deg, #25d366, #1b9a4a); box-shadow: 0 8px 15px rgba(37, 211, 102, 0.4); }
+    .btn-yt { background: linear-gradient(145deg, #ff0000, #b30000); box-shadow: 0 8px 15px rgba(255, 0, 0, 0.4); }
+    .btn-tt { background: linear-gradient(145deg, #00f2fe, #4facfe, #000); box-shadow: 0 8px 15px rgba(0, 242, 254, 0.4); }
+    .btn-ig { background: linear-gradient(145deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); box-shadow: 0 8px 15px rgba(220, 39, 67, 0.4); }
 
-    /* Modal Styles */
+    .social-icon-btn:hover {
+      transform: translateY(-8px) rotateX(15deg) rotateY(-10deg) scale(1.1);
+      box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Modal / Popup Feature Window */
     .modal-overlay {
-      display: none;position: fixed;inset: 0;background: rgba(0,0,0,0.75);backdrop-filter: blur(5px);z-index: 100;justify-content: center;align-items: center;padding: 15px;
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.75);
+      backdrop-filter: blur(5px);
+      z-index: 100;
+      justify-content: center;
+      align-items: center;
+      padding: 15px;
     }
     .modal-card {
-      background: #fff;max-width: 750px;width: 100%;max-height: 85vh;overflow-y: auto;border-radius: 16px;padding: 25px;box-shadow: 0 20px 40px rgba(0,0,0,0.3);text-align: left;position: relative;color: #172033;
+      background: #fff;
+      max-width: 750px;
+      width: 100%;
+      max-height: 85vh;
+      overflow-y: auto;
+      border-radius: 16px;
+      padding: 25px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+      text-align: left;
+      position: relative;
     }
     .modal-close {
-      position: absolute;top: 15px;right: 15px;background: #fee2e2;color: #dc2626;border: none;width: 32px;height: 32px;border-radius: 50%;cursor: pointer;font-size: 18px;font-weight: bold;
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: #fee2e2;
+      color: #dc2626;
+      border: none;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 18px;
+      font-weight: bold;
     }
 
-    /* ১১৪ টি সূরার গ্রিড লেআউট */
     .quran-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
       gap: 10px;
-      max-height: 400px;
-      overflow-y: auto;
-      padding: 5px;
+      margin-top: 15px;
     }
     .surah-box {
-      background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
-      border: 1px solid #cbd5e1;
-      padding: 10px 6px;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      padding: 10px;
       border-radius: 8px;
-      font-size: 12px;
+      font-size: 13px;
       font-weight: 600;
       color: #1e293b;
       cursor: pointer;
       text-align: center;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.02);
-      transition: all 0.2s ease;
+      transition: background 0.2s;
     }
-    .surah-box:hover {
-      background: #2563eb;
-      color: #fff;
-      transform: translateY(-2px);
-      box-shadow: 0 4px 8px rgba(37, 99, 235, 0.3);
+    .surah-box:hover { background: #2563eb; color: #fff; }
+    
+    .ayah-card {
+      background: #f8fafc;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 12px;
+      border-left: 4px solid #2563eb;
     }
+    .arabic-text {
+      font-size: 24px;
+      font-family: 'Amiri', 'Traditional Arabic', serif;
+      text-align: right;
+      color: #0f172a;
+      direction: rtl;
+      line-height: 1.8;
+      margin-bottom: 8px;
+    }
+    .bangla-text { font-size: 14px; color: #334155; }
+
+    .dua-card, .masala-card {
+      background: #f8fafc;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      border-left: 4px solid #10b981;
+    }
+    .masala-card { border-left-color: #f59e0b; }
+    .dua-card h4, .masala-card h4 { margin: 0 0 8px 0; color: #1e293b; font-size: 16px; }
+
     .tasbih-btn {
-      width: 120px; height: 120px; border-radius: 50%; background: linear-gradient(135deg, #2563eb, #1d4ed8); color: #fff; font-size: 32px; font-weight: bold; margin: 20px auto; cursor: pointer; box-shadow: 0 10px 20px rgba(37,99,235,0.3); user-select: none;
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      background: linear-gradient(145deg, #2563eb, #1d4ed8);
+      color: #fff;
+      font-size: 38px;
+      font-weight: bold;
+      border: none;
+      box-shadow: 0 10px 20px rgba(37, 99, 235, 0.4);
+      cursor: pointer;
+      margin: 20px auto;
+      display: block;
     }
+    .tasbih-btn:active { transform: scale(0.95); }
+
+    .namaz-table { width: 100%; border-collapse: collapse; margin-top: 10px; margin-bottom: 20px; }
+    .namaz-table td, .namaz-table th { padding: 10px; border-bottom: 1px solid #eee; text-align: left; }
+    .namaz-table th { background: #f8fafc; color: #2563eb; }
+    
+    .namaz-rules-box {
+      background: #f8fafc;
+      border-left: 4px solid #2563eb;
+      padding: 15px;
+      border-radius: 8px;
+      margin-top: 15px;
+    }
+    .namaz-rules-box h4 { margin-top: 0; color: #1e293b; font-size: 16px; }
+    .namaz-rules-box ol, .namaz-rules-box ul { padding-left: 20px; margin-bottom: 0; font-size: 14px; }
+    .namaz-rules-box li { margin-bottom: 6px; color: #334155; }
 
     footer{text-align:center;padding:20px;background:#0d1117;color:#8b949e}
     @media(max-width:750px){.nav,.hero{display:flex;flex-direction:column;align-items:center}.links{justify-content:center;margin-top:10px}}
@@ -173,35 +273,46 @@
   <section id="blog">
     <h2>Islamic Corner / Blog</h2>
     <div class="grid">
-      <div class="card" onclick="openIslamicFeature('quran')">
+      <!-- ১. কুরআন শরীফ -->
+      <div class="card clickable-card" onclick="openIslamicFeature('quran')">
         <h3>📖 আল-কুরআন শরীফ</h3>
-        <p>অনলাইন কুরআন শরীফ ১ টি থেকে ১১৪ টি সূরা ও অনুবাদসহ পড়ুন।</p>
-        <small style="font-weight:bold;">সূরাগুলো দেখুন &rarr;</small>
+        <p>অনলাইন কুরআন শরীফ ১১৪ টি সূরা ও অনুবাদসহ পড়ুন।</p>
+        <small style="color:#2563eb; font-weight:bold;">সূরাগুলো দেখুন &rarr;</small>
       </div>
-      <div class="card" onclick="openIslamicFeature('namaz')">
+      
+      <!-- ২. নামাযের সময়সূচী -->
+      <div class="card clickable-card" onclick="openIslamicFeature('namaz')">
         <h3>🕌 নামাযের সময়সূচী ও নিয়ম</h3>
         <p>দৈনন্দিন নামাযের সঠিক সময়, ফরজ, ওয়াজিব ও সুন্নাত নিয়ম।</p>
-        <small style="font-weight:bold;">সময়সূচী ও নিয়ম দেখুন &rarr;</small>
+        <small style="color:#2563eb; font-weight:bold;">সময়সূচী ও নিয়ম দেখুন &rarr;</small>
       </div>
-      <div class="card" onclick="openIslamicFeature('dua')">
+
+      <!-- ৩. প্রয়োজনীয় দোয়া -->
+      <div class="card clickable-card" onclick="openIslamicFeature('dua')">
         <h3>🤲 প্রয়োজনীয় দোয়া</h3>
         <p>দৈনন্দিন জীবনের ৫০টি অত্যন্ত গুরুত্বপূর্ণ প্রয়োজনীয় দোয়া।</p>
-        <small style="font-weight:bold;">দোয়াগুলো দেখুন &rarr;</small>
+        <small style="color:#2563eb; font-weight:bold;">দোয়াগুলো দেখুন &rarr;</small>
       </div>
-      <div class="card" onclick="openIslamicFeature('tasbih')">
+
+      <!-- ৪. ডিজিটাল তাসবিহ -->
+      <div class="card clickable-card" onclick="openIslamicFeature('tasbih')">
         <h3>🔍 ডিজিটাল তাসবিহ</h3>
         <p>অনলাইনে ডিজিটাল তাসবিহ ও জিকির গণনা।</p>
-        <small style="font-weight:bold;">তাসবিহ গুনুন &rarr;</small>
+        <small style="color:#2563eb; font-weight:bold;">তাসবিহ গুনুন &rarr;</small>
       </div>
-      <div class="card" onclick="openIslamicFeature('books')">
+
+      <!-- ৫. ইসলামিক বই -->
+      <div class="card clickable-card" onclick="openIslamicFeature('books')">
         <h3>📚 ইসলামিক বই ও পিডিএফ</h3>
         <p>গুরুত্বপূর্ণ ইসলামিক বই ও হাদিস কিতাব সমুহ।</p>
-        <small style="font-weight:bold;">বইগুলো দেখুন &rarr;</small>
+        <small style="color:#2563eb; font-weight:bold;">বইগুলো দেখুন &rarr;</small>
       </div>
-      <div class="card" onclick="openIslamicFeature('masala')">
+
+      <!-- ৬. প্রয়োজনীয় মাসআলা -->
+      <div class="card clickable-card" onclick="openIslamicFeature('masala')">
         <h3>📜 প্রয়োজনীয় মাসআলা</h3>
         <p>দৈনন্দিন জীবনের প্রয়োজনীয় শরীয়তের মাসআলা-মাসায়েল।</p>
-        <small style="font-weight:bold;">মাসআলাগুলো দেখুন &rarr;</small>
+        <small style="color:#2563eb; font-weight:bold;">মাসআলাগুলো দেখুন &rarr;</small>
       </div>
     </div>
   </section>
@@ -209,23 +320,26 @@
   <section class="dark" id="contact">
     <h2>Contact</h2>
     <p id="contactText" class="muted" style="margin-bottom: 5px;">Email: monirahmedshakib.mb@gmail.com</p>
+
     <div class="phone-3d-box">
       <span class="phone-icon-3d"><i class="fa-solid fa-phone"></i></span>
       <span style="font-weight:bold; font-size:16px;">+8801726232108</span>
     </div>
+
     <div class="social-links">
-      <a href="https://www.facebook.com/share/19Wk9h9VMz/" target="_blank" class="social-icon-btn btn-fb"><i class="fa-brands fa-facebook-f"></i></a>
-      <a href="https://wa.me/8801726232108" target="_blank" class="social-icon-btn btn-wa"><i class="fa-brands fa-whatsapp"></i></a>
-      <a href="https://www.youtube.com/@mb.monirahmed" target="_blank" class="social-icon-btn btn-yt"><i class="fa-brands fa-youtube"></i></a>
-      <a href="https://www.tiktok.com/@mb.creation.mb" target="_blank" class="social-icon-btn btn-tt"><i class="fa-brands fa-tiktok"></i></a>
-      <a href="https://www.instagram.com/monirahmed.shakib" target="_blank" class="social-icon-btn btn-ig"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://www.facebook.com/share/19Wk9h9VMz/" target="_blank" class="social-icon-btn btn-fb" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+      <a href="https://wa.me/8801726232108" target="_blank" class="social-icon-btn btn-wa" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+      <a href="https://www.youtube.com/@mb.monirahmed" target="_blank" class="social-icon-btn btn-yt" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+      <a href="https://www.tiktok.com/@mb.creation.mb" target="_blank" class="social-icon-btn btn-tt" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+      <a href="https://www.instagram.com/monirahmed.shakib" target="_blank" class="social-icon-btn btn-ig" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
     </div>
   </section>
 
+  <!-- Interactive Modal Screen -->
   <div class="modal-overlay" id="featureModal">
     <div class="modal-card">
       <button class="modal-close" onclick="closeModal()">&times;</button>
-      <h3 id="modalTitle" style="margin-top:0; color:#2563eb; font-size:20px;"></h3>
+      <h3 id="modalTitle" style="margin-top:0; color:#2563eb; font-size:22px;"></h3>
       <hr style="border:0; border-top:1px solid #eee; margin:15px 0;">
       <div id="modalBody"></div>
     </div>
@@ -243,6 +357,7 @@
         <h2>Admin Panel</h2>
         <button class="btn danger" onclick="closeAdmin()">Close</button>
       </div>
+
       <div id="login">
         <form onsubmit="login(event)">
           <input id="u" placeholder="Username" style="padding:8px;margin-right:5px;">
@@ -250,19 +365,25 @@
           <button class="btn">Login</button>
         </form>
       </div>
+
       <div id="list" style="display:none;">
         <h3>Content Management</h3>
-        <input id="title" placeholder="Title" style="padding:8px;width:100%;margin-bottom:10px;">
-        <textarea id="desc" placeholder="Description" style="padding:8px;width:100%;margin-bottom:10px;"></textarea>
-        <select id="type" style="padding:8px;margin-bottom:10px;">
-          <option value="skills">skills</option>
-          <option value="education">education</option>
-          <option value="experience">experience</option>
-          <option value="services">services</option>
-          <option value="portfolio">portfolio</option>
-        </select>
-        <button class="btn" onclick="saveItem()">Add Item</button>
+        <div class="form">
+          <div class="row">
+            <input id="title" placeholder="Title" style="padding:8px;width:100%;margin-bottom:10px;">
+            <textarea id="desc" placeholder="Description" style="padding:8px;width:100%;margin-bottom:10px;"></textarea>
+            <select id="type" style="padding:8px;margin-bottom:10px;">
+              <option value="skills">skills</option>
+              <option value="education">education</option>
+              <option value="experience">experience</option>
+              <option value="services">services</option>
+              <option value="portfolio">portfolio</option>
+            </select>
+            <button class="btn" onclick="saveItem()">Add Item</button>
+          </div>
+        </div>
         <div id="itemsList" style="margin-top:20px;"></div>
+
         <h3 style="margin-top:30px;">About Update</h3>
         <textarea id="aboutEdit" style="padding:8px;width:100%;margin-bottom:10px;"></textarea>
         <button class="btn" onclick="saveInfo()">Save Information</button>
@@ -271,156 +392,267 @@
   </div>
 
   <script>
+    const surahs = [
+      "১. আল-ফাতিহা", "২. আল-বাকারা", "৩. আল-ইমরান", "৪. আন-নিসা", "৫. আল-মায়িদাহ", "৬. আল-আনআম", "৭. আল-আরাফ", "৮. আল-আনফাল", "৯. আত-তাওবাহ", "১০. ইউনুস",
+      "১১. হুদ", "১২. ইউসুফ", "১৩. আর-রাঅ্দ", "১৪. ইব্রাহিম", "১৫. আল-হিজর", "১৬. আন-নাহল", "১৭. বনী ইসরাইল", "১৮. আল-কাহফ", "১৯. মারইয়াম", "২০. ত্বা-হা",
+      "২১. আল-আনবিয়া", "২২. আল-হাজ্জ", "২৩. আল-মু'মিনুন", "২৪. আন-নূর", "২৫. আল-ফুরকান", "২৬. আশ-শুআরা", "২৭. আন-নামল", "২৮. আল-কাসাস", "২৯. আল-আনকাবুত", "৩০. আর-রূম",
+      "৩১. লুকমান", "৩২. আস-সাজদাহ", "৩৩. আল-আহজাব", "৩৪. সাবা", "৩৫. ফাতির", "৩৬. ইয়াসীন", "৩৭. আস-ফাফফাত", "৩৮. সোয়াদ", "৩৯. আজ-জুমার", "৪০. গাফির",
+      "৪১. ফুসসিলাত", "৪২. আশ-শুরা", "৪৩. আজ-জুখরুফ", "৪৪. আদ-দুখান", "৪৫. আল-জাসিয়াহ", "৪৬. আল-আহকাফ", "৪৭. মুহাম্মদ", "৪৮. আল-ফাতহ", "৪৯. আল-হুজুরাত", "৫০. ক্বাফ",
+      "৫১. আজ-যারিয়াত", "৫২. আত-তূর", "৫৩. আন-নাজম", "৫৪. আল-কামার", "৫৫. আর-রহমান", "৫৬. আল-ওয়াকিয়াহ", "৫৭. আল-হাদীদ", "৫৮. আল-মুজাদালাহ", "৫৯. আল-হাশর", "৬০. আল-মুমতাহিনাহ",
+      "৬১. আস-সফ", "৬২. আল-জুমুআহ", "৬৩. আল-মুনাফিকুন", "৬৪. আত-তাগাবুন", "৬৫. আত-ত্বলাক", "৬৬. আত-তাহরীম", "৬৭. আল-মুলক", "৬৮. আল-কলাম", "৬৯. আল-হাক্কাহ", "৭০. আল-মাআরিজ",
+      "৭১. নূহ", "৭২. আল-জিন", "৭৩. আল-মুযযামমিল", "৭৪. আল-মুদ্দাসসির", "৭৫. আল-কিয়ামাহ", "৭৬. আল-ইনসান", "৭৭. আল-মুর্সালাত", "৭৮. আন-নাবা", "৭৯. আন-নাজিআত", "৮০. আবাসা",
+      "৮১. আত-তাকভীর", "৮২. আল-ইনফিতার", "৮৩. আল-মুত্বাফফিফীন", "৮৪. আল-ইনশিকাক", "৮৫. আল-বুরূজ", "৮৬. আত-তারিক", "৮৭. আল-আলা", "৮৮. আল-গাশিয়াহ", "৮৯. আল-ফজর", "৯০. আল-বালাদ",
+      "৯১. আশ-শামস", "৯২. আল-লাইল", "৯৩. আদ-দুহা", "৯৪. আশ-শারহ", "৯৫. আত-তীন", "৯৬. আল-আলাক", "৯৭. আল-কদর", "৯৮. আল-বায়্যিনাহ", "৯৯. আল-যালযালাহ", "১০০. আল-আদিয়াত",
+      "১০১. আল-কারিয়াহ", "১০২. আত-তাকাছুর", "১০৩. আল-আসর", "১০৪. আল-হুমাযাহ", "১০৫. আল-ফীল", "১০৬. কুরাইশ", "১০৭. আল-মাউন", "১০৮. আল-কাওছার", "১০৯. আল-কাফিরুন", "১১০. আন-নসর",
+      "১১১. আল-লাহাব", "১১২. আল-ইখলাস", "১১৩. আল-ফালাক", "১১৪. আন-নাস"
+    ];
+
     const duasList = [
-      { title: "১. ঘুমানোর পূর্বের দোয়া", ar: "اللَّهُمَّ بِاسْمِكَ أَمُوتُ وَأَحْيَا", mean: "হে আল্লাহ! আপনার নামে আমি ঘুম যাচ্ছি এবং জীবিত হব।" },
-      { title: "২. ঘুম থেকে ওঠার দোয়া", ar: "الْحَمْدُ لِلَّهِ الَّذِي أَحْيَانَا بَعْدَ مَا أَمَاتَنَا وَإِلَيْهِ النُّشُورُ", mean: "সমস্ত প্রশংসা আল্লাহর জন্য, যিনি মৃত্যুর পর আমাদের জীবন দান করলেন এবং তাঁর দিকেই সবার প্রত্যাবর্তন।" }
+      { title: "১. ঘুমানোর পূর্বের দোয়া", ar: "اللَّهُمَّ بِاسْمِكَ أَمُوتُ وَأَحْيَا", pron: "আল্লা-হুম্মা বিস্মিকা আমূতু ওয়া আহ্ইয়া।", mean: "হে আল্লাহ! আপনার নামে আমি মৃত্যুবরণ (ঘুম) করছি এবং আপনার নামেই জীবিত (জাগ্রত) হচ্ছি।" },
+      { title: "২. ঘুম থেকে ওঠার পর দোয়া", ar: "الْحَمْدُ لِلَّهِ الَّذِي أَحْيَانَا بَعْدَ مَا أَمَاتَنَا وَإِلَيْهِ النُّشُورُ", pron: "আলহামদু লিল্লাহিল্লাজি আহইয়ানা বা'দা মা আমাতানা ওয়া ইলাইহিন নুশূর।", mean: "সমস্ত প্রশংসা সেই আল্লাহর জন্য যিনি মৃত্যুর পর আমাদের জীবন দান করলেন, এবং তাঁর দিকেই আমাদের পুনরুত্থান।" },
+      { title: "৩. খাবার খাওয়ার শুরুতে দোয়া", ar: "بِسْمِ اللَّهِ وَعَلَى بَرَكَةِ اللَّهِ", pron: "বিসমিল্লাহি ওয়া 'আলা বারাকাতিল্লাহ।", mean: "আল্লাহর নামে এবং আল্লাহর বরকতের সাথে খাওয়া শুরু করছি।" },
+      { title: "৪. খাবার শেষে দোয়া", ar: "الْحَمْدُ لِلَّهِ الَّذِي أَطْعَمَنَا وَسَقَانَا وَجَعَلَنَا مِنَ الْمُسْلِمِينَ", pron: "আলহামদু লিল্লাহিল্লাজি অত্'আমানা ওয়া সাকানা ওয়া জা'আলানা মিনাল মুসলিমিন।", mean: "প্রশংসা আল্লাহর যিনি আমাদের আহার করিয়েছেন, পান করিয়েছেন এবং মুসলিম বানিয়েছেন।" },
+      { title: "৫. ঘর থেকে বের হওয়ার দোয়া", ar: "بِسْمِ اللَّهِ تَوَكَّلْتُ عَلَى اللَّهِ وَلَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللَّهِ", pron: "বিসমিল্লাহি তাওয়াক্কালতু 'আলাল্লাহি ওয়া লা হাওয়ালা ওয়া লা কুওয়াতা ইল্লা বিল্লাহ।", mean: "আল্লাহর নামে বের হচ্ছি, আল্লাহর ওপর ভরসা করছি। আল্লাহ ছাড়া কোনো উপায় ও ক্ষমতা নেই।" },
+      { title: "৬. ঘরে প্রবেশের দোয়া", ar: "بِسْمِ اللَّهِ وَلَجْنَا، وَبِسْمِ اللَّهِ خَرَجْنَا، وَعَلَى رَبِّنَا تَوَكَّلْنَا", pron: "বিসমিল্লাহি ওয়ালাজনা, ওয়া বিসমিল্লাহি খারাজনা, ওয়া আলা রাব্বিনা তাওয়াক্কালনা।", mean: "আল্লাহর নামে আমরা প্রবেশ করলাম, আল্লাহর নামে বের হলাম এবং আমাদের রবের ওপর ভরসা করলাম।" },
+      { title: "৭. মসজিদে প্রবেশের দোয়া", ar: "اللَّهُمَّ افْتَحْ لِي أَبْوَابَ رَحْمَتِكَ", pron: "আল্লাহুম্মাফ তাহলি আবওয়াবা রাহমাতিক।", mean: "হে আল্লাহ! আমার জন্য আপনার রহমতের দরজাগুলো খুলে দিন।" },
+      { title: "৮. মসজিদ থেকে বের হওয়ার দোয়া", ar: "اللَّهُمَّ إِنِّي أَسْأَلُكَ مِنْ فَضْلِكَ", pron: "আল্লাহুম্মা ইন্নি আসআলুক মিন ফাদলিক।", mean: "হে আল্লাহ! আমি আপনার অনুগ্রহ প্রার্থনা করছি।" },
+      { title: "৯. বাথরুমে প্রবেশের দোয়া", ar: "اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْخُبْثِ وَالْخَبَائِثِ", pron: "আল্লাহুম্মা ইন্নি আউযুবিকা মিনাল খুবসি ওয়াল খাবায়িস।", mean: "হে আল্লাহ! আমি পুরুষ ও নারী শয়তানের অনিষ্ট থেকে আপনার আশ্রয় চাই।" },
+      { title: "১০. বাথরুম থেকে বের হওয়ার দোয়া", ar: "غُفْرَانَكَ", pron: "গুফরানাকা।", mean: "হে আল্লাহ! আমি আপনার কাছে ক্ষমা প্রার্থনা করছি।" },
+      { title: "১১. ওযুর শুরুর দোয়া", ar: "بِسْمِ اللَّهِ", pron: "বিসমিল্লাহ।", mean: "আল্লাহর নামে শুরু করছি।" },
+      { title: "১২. ওযুর শেষের দোয়া", ar: "أَشْهَدُ أَنْ لَا إِلَهَ إِلَّا اللَّهُ وَأَشْهَدُ أَنَّ مُحَمَّدًا عَبْدُهُ وَرَسُولُهُ", pron: "আশহাদু আল্লা ইলাহা ইল্লাল্লাহু ওয়া আশহাদু আন্না মুহাম্মাদান আবদুহু ওয়া রাসূলুহু।", mean: "আমি সাক্ষ্য দিচ্ছি যে, আল্লাহ ছাড়া কোনো মাবুদ নেই এবং মুহাম্মদ (সা.) তাঁর বান্দা ও রাসূল।" },
+      { title: "১৩. আয়না দেখার দোয়া", ar: "اللَّهُمَّ أَنْتَ حَسَّنْتَ خَلْقِي فَحَسِّنْ خُلُقِي", pron: "আল্লাহুম্মা আনতা হাসানতা খালকী ফাহাসসিন খুলুকী।", mean: "হে আল্লাহ! আপনি আমার গঠন সুন্দর করেছেন, আমার চরিত্রও সুন্দর করে দিন।" },
+      { title: "১৪. নতুন কাপড় পরার দোয়া", ar: "الْحَمْدُ لِلَّهِ الَّذِي كَسَانِي هَذَا", pron: "আলহামদুলিল্লাহিল্লাজী কাসানী হা-যা।", mean: "সকল প্রশংসা আল্লাহর, যিনি আমাকে এই কাপড় পরিয়েছেন।" },
+      { title: "১৫. যানবাহনে ওঠার দোয়া", ar: "سُبْحَانَ الَّذِي سَخَّرَ لَنَا هَذَا وَمَا كُنَّا لَهُ مُقْرِنِينَ", pron: "সুবহানাল্লাজী সাখখারা লানা হা-যা ওয়া মা কুননা লাহু মুকরিনীন।", mean: "পবিত্র সেই সত্তা, যিনি এটিকে আমাদের বশীভূত করে দিয়েছেন, নচেৎ আমরা একে বশীভূত করতে পারতাম না।" },
+      { title: "১৬. বিপদের সময়ের দোয়া", ar: "إِنَّا لِلَّهِ وَإِنَّا إِلَيْهِ رَاجِعُونَ", pron: "ইন্নালিল্লাহি ওয়া ইন্না ইলাইহি রাজিউন।", mean: "নিশ্চয়ই আমরা আল্লাহর জন্য এবং আমাদেরকে তাঁর দিকেই ফিরে যেতে হবে।" },
+      { title: "১৭. রাগ দমনের দোয়া", ar: "أَعُوذُ بِاللَّهِ مِنَ الشَّيْطَانِ الرَّجِيمِ", pron: "আউযুবিল্লাহি মিনাশ শাইতানির রাজীম।", mean: "বিতাড়িত শয়তান থেকে আল্লাহর কাছে আশ্রয় চাই।" },
+      { title: "১৮. হাঁচি দিলে", ar: "الْحَمْدُ لِلَّهِ", pron: "আলহামদুলিল্লাহ।", mean: "সমস্ত প্রশংসা আল্লাহর জন্য।" },
+      { title: "১৯. হাঁচির উত্তরে (শুনলে)", ar: "يَرْحَمُكَ اللَّهُ", pron: "ইয়ারহামুকাল্লাহ।", mean: "আল্লাহ আপনার প্রতি রহম করুন।" },
+      { title: "২০. হাঁচির উত্তরের জবাবে", ar: "يَهْدِيكُمُ اللَّهُ وَيُصْلِحُ بَالَكُمْ", pron: "ইয়াহদিকুমুল্লাহু ওয়া ইউসলিহু বালাকুম।", mean: "আল্লাহ আপনাদের হিদায়াত দিন এবং আপনাদের অবস্থা ঠিক করে দিন।" },
+      { title: "২১. জ্ঞান বৃদ্ধির দোয়া", ar: "رَبِّ زِدْنِي عِلْمًا", pron: "রাব্বি যিদনী ইলমা।", mean: "হে আমার প্রতিপালক! আমার জ্ঞান বৃদ্ধি করে দিন।" },
+      { title: "২২. মা-বাবার জন্য দোয়া", ar: "رَبِّ ارْحَمْهُمَا كَمَا رَبَّيَانِي صَغِيرًا", pron: "রাব্বির হামহুমা কামা রাব্বায়ানী সাগীরা।", mean: "হে আমার রব! তাঁদের উভয়ের প্রতি রহম করুন, যেমন তাঁরা আমাকে শৈশবে লালন-পালন করেছেন।" },
+      { title: "২৩. দুনিয়া ও আখিরাতের কল্যাণের দোয়া", ar: "رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الْآخِرَةِ حَسَنَةً وَقِنَا عَذَابَ النَّارِ", pron: "রাব্বানা আতিনা ফিদদুনইয়া হাসানাতাও ওয়া ফিল আখিরাতি হাসানাতাও ওয়াকিনা আজাবান্নার।", mean: "হে আমাদের রব! আমাদের দুনিয়া ও আখিরাতে কল্যাণ দান করুন এবং জাহান্নামের আযাব থেকে বাঁচান।" },
+      { title: "২৪. কেউ উপকার করলে (কৃতজ্ঞতা)", ar: "جَزَاكَ اللَّهُ خَيْرًا", pron: "জাযাকাল্লাহু খাইরান।", mean: "আল্লাহ আপনাকে উত্তম প্রতিদান দিন।" },
+      { title: "২৫. সালামের পূর্ণ রূপ", ar: "السَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللَّهِ وَبَرَكَاتُهُ", pron: "আসসালামু আলাইকুম ওয়া রাহমাতুল্লাহি ওয়া বারাকাতুহ।", mean: "আপনাদের ওপর শান্তি, আল্লাহর রহমত ও বরকত বর্ষিত হোক।" },
+      { title: "২৬. ঋণ মুক্তির দোয়া", ar: "اللَّهُمَّ اكْفِنِي بِحَلَالِكَ عَنْ حَرَامِكَ", pron: "আল্লাহুম্মাকফিনী বিহালালিকা আন হারামিকা।", mean: "হে আল্লাহ! হারামের পরিবর্তে আপনার হালাল রুজিই আমার জন্য যথেষ্ট করে দিন।" },
+      { title: "২৭. ক্ষমা চাওয়ার শ্রেষ্ঠ দোয়া (সাইয়্যিদুল ইস্তিগফার)", ar: "اللَّهُمَّ أَنْتَ رَبِّي لَا إِلَهَ إِلَّا أَنْتَ خَلَقْتَنِي وَأَنَا عَبْدُكَ", pron: "আল্লাহুম্মা আনতা রাব্বি লা ইলাহা ইল্লা আনতা, খালাকতানি ওয়া আনা আবদুকা...", mean: "হে আল্লাহ! আপনি আমার রব, আপনি ছাড়া কোনো ইলাহ নেই। আপনি আমাকে সৃষ্টি করেছেন এবং আমি আপনার বান্দা।" },
+      { title: "২৮. দুঃখ-কষ্ট দূর করার দোয়া (দোয়া ইউনুস)", ar: "لَا إِلَهَ إِلَّا أَنْتَ سُبْحَانَكَ إِنِّي كُنْتُ مِنَ الظَّالِمِينَ", pron: "লা ইলাহা ইল্লা আনতা সুবহানাকা ইন্নি কুনতু মিনাজ জালিমিন।", mean: "আপনি ছাড়া কোনো ইলাহ নেই, আপনি পবিত্র। নিশ্চয়ই আমি জালিমদের অন্তর্ভুক্ত।" },
+      { title: "২৯. অসুস্থ ব্যক্তির খোঁজ নিতে গেলে", ar: "لَا بَأْسَ طَهُورٌ إِنْ شَاءَ اللَّهُ", pron: "লা-বা'সা তহুরুন ইনশাআল্লাহ।", mean: "ভয় নেই, আল্লাহর ইচ্ছায় এটি গুনাহ থেকে পবিত্রকারী হবে।" },
+      { title: "৩০. কবরস্থানে প্রবেশের দোয়া", ar: "السَّلَامُ عَلَيْكُمْ أَهْلَ الدِّيَارِ مِنَ الْمُؤْمِنِينَ وَالْمُسْلِمِينَ", pron: "আসসালামু আলাইকুম আহলাদ দিয়ারি মিনাল মু'মিনিনা ওয়াল মুসলিমিন।", mean: "হে মুমিন ও মুসলিম কবরবাসীরা! আপনাদের ওপর শান্তি বর্ষিত হোক।" },
+      { title: "৩১. বৃষ্টি চাওয়ার দোয়া", ar: "اللَّهُمَّ أَغِثْنَا", pron: "আল্লাহুম্মা আগিসনা।", mean: "হে আল্লাহ! আমাদেরকে বৃষ্টি দান করুন।" },
+      { title: "৩২. বৃষ্টি হতে দেখলে", ar: "اللَّهُمَّ صَيِّبًا نَافِعًا", pron: "আল্লাহুম্মা সায়্যিবান নাফিয়া।", mean: "হে আল্লাহ! উপকারী বৃষ্টি বর্ষণ করুন।" },
+      { title: "৩৩. মেঘের গর্জন শুনলে", ar: "سُبْحَانَ الَّذِي يُسَبِّحُ الرَّعْدُ بِحَمْدِهِ", pron: "সুবহানাল্লাজী ইউসাব্বিহুর রা'দু বিহামদিহী।", mean: "পবিত্র সেই সত্তা, যাঁর প্রশংসার সাথে মেঘমালা তাসবিহ পাঠ করে।" },
+      { title: "৩৪. চাঁদ দেখার দোয়া", ar: "اللَّهُمَّ أَهِلَّهُ عَلَيْنَا بِالْيُمْنِ وَالْإِيمَانِ", pron: "আল্লাহুম্মা আহিল্লাহু আলাইনা বিলয়ুমনি ওয়াল ইমান।", mean: "হে আল্লাহ! এই চাঁদকে আমাদের ওপর বরকত ও ঈমানের সাথে উদিত করুন।" },
+      { title: "৩৫. রোজার ইফতারের দোয়া", ar: "ذَهَبَ الظَّمَأُ وَابْتَلَّتِ الْعُرُوقُ وَثَبَتَ الْأَجْرُ", pron: "যাহাবায যামাউ ওয়াবতাল্লাতিল উরূকু ওয়া সাবাতাল আজরু।", mean: "পিপাসা মিটেছে, শিরা-উপশিরা সিক্ত হয়েছে এবং সওয়াব নির্ধারিত হয়েছে।" },
+      { title: "৩৬. লাইলাতুল কদরের দোয়া", ar: "اللَّهُمَّ إِنَّكَ عَفُوٌّ تُحِبُّ الْعَفْوَ فَاعْفُ عَنِّي", pron: "আল্লাহুম্মা ইন্নাকা আফুয়্যুন তুহিব্বুল আফওয়া ফা'ফু আন্নী।", mean: "হে আল্লাহ! নিশ্চয়ই আপনি ক্ষমাশীল, ক্ষমা করতে ভালোবাসেন। অতএব আমাকে ক্ষমা করুন।" },
+      { title: "৩৭. বিপদ থেকে রক্ষার দোয়া", ar: "بِسْمِ اللَّهِ الَّذِي لَا يَضُرُّ مَعَ اسْمِهِ شَيْءٌ فِي الْأَرْضِ وَلَا فِي السَّمَاءِ", pron: "বিসমিল্লাহিল্লাজি লা ইয়াদুররু মাআসমিহি শাইয়ুন ফিল আরদি ওয়ালা ফিস সামা-ই।", mean: "আল্লাহর নামে, যাঁর নামের বরকতে আসমান ও জমিনের কোনো কিছুই ক্ষতি করতে পারে না।" },
+      { title: "৩৮. শয়তানের প্ররোচনা থেকে বাঁচার দোয়া", ar: "أَعُوذُ بِاللَّهِ السَّمِيعِ الْعَلِيمِ مِنَ الشَّيْطَانِ الرَّجِيمِ", pron: "আউযুবিল্লাহিস সামিয়িল আলীমি মিনাশ শাইতানির রাজীম।", mean: "আমি সর্বশ্রোতা সর্বজ্ঞানী আল্লাহর কাছে বিতাড়িত শয়তান থেকে আশ্রয় চাই।" },
+      { title: "৩৯. অন্তর স্থির রাখার দোয়া", ar: "يَا مُقَلِّبَ الْقُلُوبِ ثَبِّتْ قَلْبِي عَلَى دِينِكَ", pron: "ইয়া মুকাল্লিবাল কুলুব, সাব্বিত কালবী আলা দীনিক।", mean: "হে অন্তর পরিবর্তনকারী! আমার অন্তরকে আপনার দ্বীনের ওপর স্থির রাখুন।" },
+      { title: "৪০. বালা-মুসিবত থেকে বাঁচার দোয়া", ar: "اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنْ جَهْدِ الْبَلَاءِ", pron: "আল্লাহুম্মা ইন্নি আউযুবিকা মিন জাহদিল বালা-ই।", mean: "হে আল্লাহ! আমি কঠিন বালা-মুসিবত থেকে আপনার আশ্রয় চাই।" },
+      { title: "৪১. জান্নাত চাওয়ার দোয়া", ar: "اللَّهُمَّ إِنِّي أَسْأَلُكَ الْجَنَّةَ", pron: "আল্লাহুম্মা ইন্নি আসআলুকাল জান্নাহ।", mean: "হে আল্লাহ! আমি আপনার কাছে জান্নাত চাই।" },
+      { title: "৪২. জাহান্নাম থেকে বাঁচার দোয়া", ar: "اللَّهُمَّ أَجِرْنِي مِنَ النَّارِ", pron: "আল্লাহুম্মা আজিরনী মিনান্নার।", mean: "হে আল্লাহ! আমাকে জাহান্নামের আগুন থেকে রক্ষা করুন।" },
+      { title: "৪৩. সহজ হিসাবের দোয়া", ar: "اللَّهُمَّ حَاسِبْنِي حِسَابًا يَسِيرًا", pron: "আল্লাহুম্মা হাসিবনী হিসাবাই ইয়াসিরা।", mean: "হে আল্লাহ! আমার হিসাব সহজ করে দিন।" },
+      { title: "৪৪. রহমত চাওয়ার দোয়া", ar: "رَبِّ اغْفِرْ وَارْحَمْ وَأَنْتَ خَيْرُ الرَّاحِمِينَ", pron: "রাব্বিগফির ওয়ারহাম ওয়া আনতা খাইরুর রাহিমীন।", mean: "হে আমার রব! আমাকে ক্ষমা করুন ও দয়া করুন, আপনিই শ্রেষ্ঠ দয়ালু।" },
+      { title: "৪৫. দ্বীনের উপর অবিচল থাকার দোয়া", ar: "رَبَّنَا لَا تُزِغْ قُلُوبَنَا بَعْدَ إِذْ هَدَيْتَنَا", pron: "রাব্বানা লা তুযিগ কুলুবানা বা'দা ইজ হাদাইতানা।", mean: "হে আমাদের রব! হিদায়াত দেওয়ার পর আমাদের অন্তরকে বক্র করবেন না।" },
+      { title: "৪৬. ঈমানের সাথে মৃত্যুর দোয়া", ar: "تَوَفَّنِي مُسْلِمًا وَأَلْحِقْنِي بِالصَّالِحِينَ", pron: "তাওয়াফফানী মুসলিমাও ওয়া আলহিকনী বিস সালিহীন।", mean: "আমাকে মুসলিম হিসেবে মৃত্যু দিন এবং সৎকর্মশীলদের অন্তর্ভুক্ত করুন।" },
+      { title: "৪৭. আল্লাহর রহমতের দোয়া", ar: "يَا حَيُّ يَا قَيُّومُ بِرَحْمَتِكَ أَسْتَغِيثُ", pron: "ইয়া হাইয়্যু ইয়া কাইয়্যুম, বিরাহমাতিকা আস্তাগিস।", mean: "হে চিরঞ্জীব, হে চিরস্থায়ী! আমি আপনার রহমতের উসিলায় সাহায্য চাই।" },
+      { title: "৪৮. শত্রুর চক্রান্ত থেকে বাঁচার দোয়া", ar: "اللَّهُمَّ إِنَّا نَجْعَلُكَ فِي نُحُورِهِمْ", pron: "আল্লাহুম্মা ইন্না নাজআলুকা ফী নুহুরিহিম।", mean: "হে আল্লাহ! আমরা আপনাকে তাদের মোকাবেলায় ঢাল বানাচ্ছি।" },
+      { title: "৪৯. ক্ষমা প্রার্থনার দোয়া", ar: "أَسْتَغْفِرُ اللَّهَ الْعَظِيمَ الَّذِي لَا إِلَهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ وَأَتُوبُ إِلَيْهِ", pron: "আস্তাগফিরুল্লাহাল আযীম আল্লাযী লা ইলাহা ইল্লা হুওয়াল হাইয়্যুল কাইয়্যুমু ওয়া আতুবু ইলাইহি।", mean: "আমি সেই মহান আল্লাহর কাছে ক্ষমা চাই, যিনি চিরঞ্জীব ও চিরস্থায়ী।" },
+      { title: "৫০. সংক্ষিপ্ত দরুদ শরীফ", ar: "صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ", pron: "সাল্লাল্লাহু আলাইহি ওয়াসাল্লাম।", mean: "আল্লাহ তাঁর ওপর রহমত ও শান্তি বর্ষণ করুন।" }
     ];
 
     const masalaList = [
-      { title: "১. ওজুর ফরজ কয়টি ও কি কি?", details: "ওজুতে ফরজ ৪টি: ১. সমস্ত মুখমণ্ডল একবার ধোয়া, ২. উভয় হাত কনুইসহ একবার ধোয়া, ৩. এক চতুর্থাংশ মাথা মাসাহ করা, ৪. উভয় পা টাখনুসহ একবার ধোয়া।" },
-      { title: "২. গোসলের ফরজ কয়টি?", details: "গোসলে ফরজ ৩টি: ১. কুলি করা, ২. নাকে পানি দেওয়া, ৩. সমস্ত শরীরে পানি পৌঁছানো।" }
+      { title: "১. ওজুর ফরজ সমূহ", details: "ওজুতে ৪টি ফরজ কাজ রয়েছে:<br>১. পুরো মুখমণ্ডল একবার ধৌত করা।<br>২. দুই হাতের কনুইসহ একবার ধৌত করা।<br>৩. মাথার চারভাগের একভাগ মাসেহ করা।<br>৪. দুই পায়ের গ্রন্থি (টাখনু) সহ একবার ধৌত করা।" },
+      { title: "২. গোসলের ফরজ সমূহ", details: "গোসলে ৩টি ফরজ কাজ রয়েছে:<br>১. ভালোভাবে কুলি করা।<br>২. নাকে পানি দিয়ে নাক পরিষ্কার করা।<br>৩. সমস্ত শরীরে এমনভাবে পানি পৌঁছানো যেন একটি চুল পরিমাণ জায়গাও শুকনো না থাকে।" },
+      { title: "৩. তায়াম্মুমের ফরজ সমূহ", details: "তায়াম্মুমে ৩টি ফরজ কাজ রয়েছে:<br>১. নিয়ত করা।<br>২. পবিত্র মাটিতে হাত মেরে পুরো মুখমণ্ডল মাসেহ করা।<br>৩. পুনরায় মাটিতে হাত মেরে উভয় হাত কনুইসহ মাসেহ করা।" },
+      { title: "৪. যেসব কারণে ওজু ভেঙে যায়", details: "১. পায়খানা বা প্রস্রাবের রাস্তা দিয়ে কিছু বের হওয়া।<br>২. মুখ ভরে বমি করা।<br>৩. শরীর থেকে রক্ত বা পুঁজ বের হয়ে গড়িয়ে পড়া।<br>৪. থুথুর সাথে রক্তের ভাগ সমান বা বেশি হওয়া।<br>৫. কাত হয়ে বা হেলান দিয়ে ঘুমিয়ে পড়া।<br>৬. নামাজে উচ্চস্বরে হেসে ওঠা।" },
+      { title: "৫. নামাজের ওয়াজিব সমূহ", details: "নামাজে ১৪টি ওয়াজিব রয়েছে। যেমন: আল-ফাতিহা পড়া, সুরা মিলানো, রুকু ও সিজদায় ধীরস্থিরতা অবলম্বন করা, প্রথম ও শেষ বৈঠকে বসা, তাশাহহুদ পড়া, সালামের মাধ্যমে নামাজ শেষ করা ইত্যাদি।" },
+      { title: "৬. সিজদায়ে সাহু কখন দিতে হয়?", details: "নামাজে কোনো ওয়াজিব ভুলবশত ছুটে গেলে বা বিলম্বে আদায় করলে শেষ বৈঠকে ডান দিকে সালাম ফিরিয়ে অতিরিক্ত দুটি সিজদা দেওয়াই হলো সিজদায়ে সাহু।" },
+      { title: "৭. রোজার ফরজ ও কাজা হওয়ার কারণ", details: "সুবহে সাদিক থেকে সূর্যাস্ত পর্যন্ত নিয়তের সাথে পানাহার ও স্ত্রী সহবাস থেকে বিরত থাকা ফরজ। ইচ্ছাকৃতভাবে খেলে রোজা ভেঙে যায় এবং কাজা ও কাফফারা দুই-ই ওয়াজিব হয়।" },
+      { title: "৮. জাকাত ফরজ হওয়ার শর্ত", details: "নেসাব পরিমাণ ধন-সম্পদ (সাড়ে ৭ তোলা সোনা বা সাড়ে ৫২ তোলা রূপা অথবা সমপরিমাণ অর্থ) নিজের কাছে পূর্ণ এক বছর বজায় থাকলে জাকাত দেওয়া ফরজ।" }
     ];
-
-    const surahData = {
-      1: { name: "আল-ফাতিহা", arabic: "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ\nالْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ\nالرَّحْمَٰنِ الرَّحِيمِ\nمَالِكِ يَوْمِ الدِِّينِ\nإِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ\nاهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ\nصِرَاطَ الَّذِينَ أَنْعَمْتَ عَلَيْهِمْ غَيْرِ الْمَغْضُوبِ عَلَيْهِمْ وَلَا الضَّالِّينَ", meaning: "১. পরম করুণাময় ও অসীম দয়ালু আল্লাহর নামে শুরু করছি।\n২. সমস্ত প্রশংসা জগতসমূহের প্রতিপালক আল্লাহর জন্য।\n৩. যিনি পরম করুণাময়, অসীম দয়ালু।\n৪. বিচার দিনের মালিক।\n৫. আমরা একমাত্র আপনারই ইবাদত করি এবং কেবল আপনারই সাহায্য প্রার্থনা করি।\n৬. আমাদের সরল পথ দেখান।\n৭. তাদের পথ, যাদের আপনি নেয়ামত দান করেছেন; যারা আপনার গজবপ্রাপ্ত নয় এবং যারা পথভ্রষ্টও নয়।" },
-      2: { name: "আল-বাকারা", arabic: "الم\nذَلِكَ الْكِتَابُ لَا رَيْبَ فِيهِ هُدًى لِلْمُتَّقِينَ", meaning: "১. আলিফ-লাম-মীম।\n২. এটি সেই কিতাব যাতে কোনো সন্দেহ নেই, মুত্তাকীদের জন্য এটি পথপ্রদর্শক।" }
-    };
-
-    const defaultNames = {
-      1: "আল-ফাতিহা", 2: "আল-বাকারা", 3: "আল-ইমরান", 4: "আন-নিসা", 5: "আল-মায়েদাহ", 6: "আল-আনআম", 7: "আল-আরাফ", 8: "আল-আনফাল", 9: "আত-তাওবাহ", 10: "ইউনুস",
-      11: "হুদ", 12: "ইউসুফ", 13: "আর-রাদ", 14: "ইব্রাহিম", 15: "আল-হিজর", 16: "আন-নাহল", 17: "বনী ইসরাইল", 18: "আল-কাহফ", 19: "মারিয়াম", 20: "ত্বহা",
-      21: "আল-আম্বিয়া", 22: "আল-হাজ্জ", 23: "আল-মুমিনুন", 24: "আন-নূর", 25: "আল-ফুরকান", 26: "আশ-শুআরা", 27: "আন-নামল", 28: "আল-কাসাস", 29: "আল-আনকাবুত", 30: "আর-রূম",
-      31: "লুকমান", 32: "আস-সাজদাহ", 33: "আল-আহযাব", 34: "সাবা", 35: "ফাতির", 36: "ইয়াসীন", 37: "আস-সাফফাত", 38: "সোয়াদ", 39: "আয-যুমার", 40: "গাফির",
-      41: "ফুসসিলাত", 42: "আশ-শূরা", 43: "আয-যুখরুফ", 44: "আদ-দুখান", 45: "আল-জাসিয়াহ", 46: "আল-আহকাফ", 47: "মুহাম্মদ", 48: "আল-ফাতহ", 49: "আল-হুজুরাত", 50: "ক্বাফ",
-      51: "আয-যারিয়াত", 52: "আত-তূর", 53: "আন-নাজম", 54: "আল-কামার", 55: "আর-রহমান", 56: "আল-ওয়াকিয়াহ", 57: "আল-হাদিদ", 58: "আল-মুজাদালাহ", 59: "আল-হাশর", 60: "আল-মুমতাহিনাহ",
-      61: "আস-সফ", 62: "আল-জুমুআহ", 63: "আল-মুনাফিকুন", 64: "আত-তাগাবুন", 65: "আত-ত্বালাক", 66: "আত-তাহরীম", 67: "আল-মুলক", 68: "আল-কলম", 69: "আল-হাক্বাহ", 70: "আল-মাআরিজ",
-      71: "নূহ", 72: "আল-জিন", 73: "আল-মুজাম্মিল", 74: "আল-মুদ্দাসসির", 75: "আল-কিয়ামাহ", 76: "আল-ইনসান", 77: "আল-মুরসালাত", 78: "আন-নাবা", 79: "আন-নাযিয়াত", 80: "আবাসা",
-      81: "আত-তাকভীর", 82: "আল-ইনফিতার", 83: "আল-মুতাফফিফিন", 84: "আল-ইনশিকাফ", 85: "আল-বুরূজ", 86: "আত-তারিক্ব", 87: "আল-আলা", 88: "আল-গাশিয়াহ", 89: "আল-ফজ্র", 90: "আল-বালাদ",
-      91: "আশ-শামস", 92: "আল-লাইল", 93: "আদ-দুহা", 94: "আশ-শারহ", 95: "আত-তীন", 96: "আল-আলাক", 97: "আল-কদর", 98: "আল-বাইয়িনাহ", 99: "আল-যিলযাল", 100: "আল-আদিয়াত",
-      101: "আল-কারিয়াহ", 102: "আত-তাকাসুর", 103: "আল-আসর", 104: "আল-হুমাযাহ", 105: "আল-ফীল", 106: "কুরাইশ", 107: "আল-মাউন", 108: "আল-কাওসার", 109: "আল-কাফিরুন", 110: "আন-নসর",
-      111: "আল-লাহাব", 112: "আল-ইখলাস", 113: "আল-ফালাক", 114: "আন-নাস"
-    };
 
     let tasbihCount = 0;
 
     function openIslamicFeature(feature) {
-      document.getElementById('featureModal').style.display = 'flex';
-      const modalTitle = document.getElementById('modalTitle');
-      const modalBody = document.getElementById('modalBody');
+      const modal = document.getElementById('featureModal');
+      const title = document.getElementById('modalTitle');
+      const body = document.getElementById('modalBody');
 
-      if (feature === 'quran') {
-        modalTitle.innerText = "📖 আল-কুরআন শরীফ (১ টি থেকে ১১৪ টি সূরা)";
-        let html = '<p style="margin-bottom:12px; font-size:13px; color:#64748b; text-align:center;">যে কোনো সূরার ওপর ক্লিক করে বিস্তারিত পড়ুন:</p><div class="quran-grid">';
-        for (let i = 1; i <= 114; i++) {
-          let sTitle = defaultNames[i] || `সূরা ${i}`;
-          html += `<div class="surah-box" onclick="showSurahDetails(${i})">${i}. ${sTitle}</div>`;
-        }
-        html += '</div>';
-        modalBody.innerHTML = html;
+      modal.style.display = 'flex';
+
+      if(feature === 'quran') {
+        title.innerHTML = "📖 আল-কুরআন শরীফ (১ টি সূরা)";
+        let gridHtml = `<p style="font-size:14px; color:#64748b;">যে কোন সূরায় ক্লিক করে তেলওয়াত শুনুন ও বাংলা অনুবাদ পড়ুন:</p><div class="quran-grid">`;
+        surahs.forEach(s => {
+          gridHtml += `<div class="surah-box" onclick="showSurahDetails('${s}')">${s}</div>`;
+        });
+        gridHtml += `</div>`;
+        body.innerHTML = gridHtml;
       } 
-      else if (feature === 'namaz') {
-        modalTitle.innerText = "🕌 নামাযের সময়সূচী ও নিয়মকানুন";
-        modalBody.innerHTML = `
-          <div style="font-size:14px; color:#334155;">
-            <p><b>ফজর:</b> সুবেহ সাদেক থেকে সূর্যোদয় পর্যন্ত।</p>
-            <p><b>জোহর:</b> দুপুর গড়িয়ে যাওয়ার পর থেকে আসরের পূর্ব পর্যন্ত।</p>
-            <p><b>আসর:</b> সূর্যাস্তের পূর্ব পর্যন্ত।</p>
-            <p><b>মাগরিব:</b> সূর্যাস্তের সাথে সাথে।</p>
-            <p><b>এশা:</b> শাফক্ব আহমার অদৃশ্য হওয়ার পর থেকে সুবেহ সাদেক পর্যন্ত।</p>
+      else if(feature === 'namaz') {
+        title.innerHTML = "🕌 নামাযের সময়সূচী ও নিয়মাবলী";
+        body.innerHTML = `
+          <h4 style="color:#2563eb; margin-top:0;">দৈনন্দিন নামাযের সময়সূচী (বাংলাদেশ):</h4>
+          <table class="namaz-table">
+            <tr><th>ওয়াক্ত</th><th>সময় (আনুমানিক)</th></tr>
+            <tr><td>ফজর</td><td>০৪:৪৫ AM</td></tr>
+            <tr><td>জোহর</td><td>১২:১৫ PM</td></tr>
+            <tr><td>আসর</td><td>০৪:০০ PM</td></tr>
+            <tr><td>মাগরিব</td><td>০৬:১৫ PM</td></tr>
+            <tr><td>এশা</td><td>০৭:৩০ PM</td></tr>
+          </table>
+
+          <h4 style="color:#2563eb; margin-bottom:10px;">পাঁচ ওয়াক্ত নামাজের মোট রাকাত:</h4>
+          <table class="namaz-table">
+            <tr><th>ওয়াক্ত</th><th>সুন্নাত</th><th>ফরজ</th><th>সুন্নাত/বিতর</th><th>মোট রাকাত</th></tr>
+            <tr><td>ফজর</td><td>২ (সুন্নাত)</td><td>২ (ফরজ)</td><td>-</td><td>৪ রাকাত</td></tr>
+            <tr><td>জোহর</td><td>৪ (সুন্নাত)</td><td>৪ (ফরজ)</td><td>২ (সুন্নাত)</td><td>১০ রাকাত</td></tr>
+            <tr><td>আসর</td><td>-</td><td>৪ (ফরজ)</td><td>-</td><td>৪ রাকাত</td></tr>
+            <tr><td>মাগরিব</td><td>-</td><td>৩ (ফরজ)</td><td>২ (সুন্নাত)</td><td>৫ রাকাত</td></tr>
+            <tr><td>এশা</td><td>-</td><td>৪ (ফরজ)</td><td>২ (সুন্নাত) + ৩ (বিতর)</td><td>৯ রাকাত</td></tr>
+          </table>
+
+          <div class="namaz-rules-box">
+            <h4>নামাজের বাইরে ৭টি ফরজ (শর্তাবলী):</h4>
+            <ol>
+              <li>শরীর পাক হওয়া।</li>
+              <li>কাপড় পাক হওয়া।</li>
+              <li>নামাজের স্থান পাক হওয়া।</li>
+              <li>সতর ঢাকা।</li>
+              <li>কিবলামুখী হওয়া।</li>
+              <li>নামাজের সময় হওয়া।</li>
+              <li>নামাজের নিয়ত করা।</li>
+            </ol>
+          </div>
+          
+          <div class="namaz-rules-box">
+            <h4>নামাজের ভেতরে ৬টি ফরজ (রুকন):</h4>
+            <ol>
+              <li>তাকবীরে তাহরীমা (আল্লাহু আকবার) বলা।</li>
+              <li>দাঁড়িয়ে নামাজ পড়া (অক্ষম হলে বসে)।</li>
+              <li>ক্বিরাআত (কুরআন শরীফ) পড়া।</li>
+              <li>রুকু করা।</li>
+              <li>দুই সিজদা করা।</li>
+              <li>শেষ বৈঠকে (আত্তাহিয়্যাতু পরিমাণ) বসা।</li>
+            </ol>
           </div>
         `;
-      }
-      else if (feature === 'dua') {
-        modalTitle.innerText = "🤲 প্রয়োজনীয় দোয়া সমূহ";
-        let html = '';
+      } 
+      else if(feature === 'dua') {
+        title.innerHTML = "🤲 প্রয়োজনীয় মাসনুন দোয়া (৫০টি)";
+        let duaHtml = '<div style="margin-bottom:15px; font-size:14px; color:#64748b;">দৈনন্দিন জীবনের অত্যন্ত গুরুত্বপূর্ণ ৫০টি প্রয়োজনীয় দোয়া নিচে দেওয়া হলো:</div>';
+        
         duasList.forEach(d => {
-          html += `<div style="background:#f8fafc; padding:15px; border-radius:10px; margin-bottom:10px; border-left:4px solid #2563eb;"><h4 style="margin:0 0 8px 0; color:#2563eb;">${d.title}</h4><div style="font-size:20px; font-weight:bold; margin-bottom:5px; direction:rtl; text-align:right;">${d.ar}</div><div style="font-size:13px; color:#475569;"><b>অর্থ:</b> ${d.mean}</div></div>`;
+          duaHtml += `
+            <div class="dua-card">
+              <h4>${d.title}</h4>
+              <p class="arabic-text">${d.ar}</p>
+              <p class="bangla-text"><strong>উচ্চারণ:</strong> ${d.pron}<br><strong>অর্থ:</strong> ${d.mean}</p>
+            </div>
+          `;
         });
-        modalBody.innerHTML = html;
+        
+        body.innerHTML = duaHtml;
+      } 
+      else if(feature === 'masala') {
+        title.innerHTML = "📜 প্রয়োজনীয় মাসআলা-মাসায়েল";
+        let masalaHtml = '<div style="margin-bottom:15px; font-size:14px; color:#64748b;">দৈনন্দিন জীবনের অতি গুরুত্বপূর্ণ কয়েকটি শরীয়তের মাসআলা:</div>';
+        
+        masalaList.forEach(m => {
+          masalaHtml += `
+            <div class="masala-card">
+              <h4>${m.title}</h4>
+              <div class="bangla-text">${m.details}</div>
+            </div>
+          `;
+        });
+        
+        body.innerHTML = masalaHtml;
       }
-      else if (feature === 'tasbih') {
-        modalTitle.innerText = "🔍 ডিজিটাল তাসবিহ ও জিকির";
-        modalBody.innerHTML = `
+      else if(feature === 'tasbih') {
+        title.innerHTML = "🔍 ডিজিটাল জিকির ও তাসবিহ";
+        body.innerHTML = `
           <div style="text-align:center;">
-            <p style="color:#64748b; font-size:14px;">আল্লাহর নাম জপতে নিচের গোল বাটনে ক্লিক করুন</p>
-            <div id="tasbihDisplay" class="tasbih-btn" style="display:flex; align-items:center; justify-content:center;" onclick="countTasbih()">${tasbihCount}</div>
-            <button class="btn danger" onclick="resetTasbih()" style="margin-top:10px; padding:6px 14px; font-size:13px;">রিসেট (Reset)</button>
+            <p style="font-size:16px; color:#475569;">"সুবহানাল্লাহ, আলহামদুলিল্লাহ, আল্লাহু আকবার"</p>
+            <button class="tasbih-btn" id="tasbihCountVal" onclick="countTasbih()">${tasbihCount}</button>
+            <p style="font-size:14px; color:#64748b;">গণনা বৃদ্ধি করতে বোতামে চাপ দিন</p>
+            <button class="btn danger" style="margin-top:10px;" onclick="resetTasbih()">পুনরায় শুরু করুন (Reset)</button>
           </div>
         `;
-      }
-      else if (feature === 'masala') {
-        modalTitle.innerText = "📜 প্রয়োজনীয় মাসআলা-মাসায়েল";
-        let html = '';
-        masalaList.forEach(m => {
-          html += `<div style="background:#f8fafc; padding:12px; border-radius:8px; margin-bottom:10px; border-left:4px solid #2563eb;"><h4 style="margin:0 0 5px 0; color:#2563eb; font-size:15px;">${m.title}</h4><p style="margin:0; font-size:13px; color:#475569;">${m.details}</p></div>`;
-        });
-        modalBody.innerHTML = html;
-      }
-      else if (feature === 'books') {
-        modalTitle.innerText = "📚 ইসলামিক বই ও পিডিএফ";
-        modalBody.innerHTML = `<p style="padding:20px; text-align:center; color:#64748b; font-size:14px;">শীঘ্রই ইসলামিক গুরুত্বপূর্ণ বইগুলোর পিডিএফ ডাউনলোড লিংক এখানে যুক্ত করা হবে ইনশাআল্লাহ।</p>`;
+      } 
+      else if(feature === 'books') {
+        title.innerHTML = "📚 ইসলামিক বই ও হাদীস গ্রন্থসমূহ";
+        body.innerHTML = `
+          <ul style="line-height:2.2; font-size:16px;">
+            <li>📖 <strong>সহীহ আল-বুখারী</strong> (সম্পূর্ণ খণ্ড)</li>
+            <li>📖 <strong>সহীহ মুসলিম</strong> (সম্পূর্ণ খণ্ড)</li>
+            <li>📖 <strong>রিয়াদুস সালেহীন</strong></li>
+            <li>📖 <strong>তাজউীদ ও কুরআন শিক্ষা গাইড</strong></li>
+            <li>📖 <strong>আর-রাহীকুল মাখতূম (রাসূলুল্লাহর স: জীবনী)</strong></li>
+          </ul>
+        `;
       }
     }
 
-    function showSurahDetails(num) {
-      let sName = defaultNames[num] || "সূরা";
-      let surahInfo = surahData[num];
-
-      document.getElementById('modalTitle').innerText = `📖 ${num}. ${sName}`;
-      
-      let contentHtml = "";
-      if (surahInfo) {
-        contentHtml = `
-          <div class="arabic-text" style="font-size: 22px; margin-bottom: 15px; color: #0f172a; direction: rtl; line-height: 1.8; white-space: pre-line;">${surahInfo.arabic}</div>
-          <hr style="border:0; border-top:1px solid #e2e8f0; margin: 15px 0;">
-          <p class="bangla-text" style="font-size: 15px; color: #334155; line-height: 1.8; white-space: pre-line; margin: 0;">${surahInfo.meaning}</p>
-        `;
-      } else {
-        contentHtml = `
-          <div style="text-align: center; padding: 10px 0;">
-            <div class="arabic-text" style="font-size: 24px; margin-bottom: 15px; color: #0f172a; direction: rtl;">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
-            <p class="bangla-text" style="font-size: 15px; color: #334155; line-height: 1.8; margin: 0;">${sName} (${num} নং সূরা)-এর পূর্ণাঙ্গ আয়াত ও বাংলা অনুবাদ খুব শীঘ্রই ডাটাবেজে যুক্ত করা হবে।</p>
-          </div>
-        `;
-      }
-
+    function showSurahDetails(surahName) {
+      document.getElementById('modalTitle').innerHTML = "📖 " + surahName;
       document.getElementById('modalBody').innerHTML = `
-        <div style="padding: 5px 0;">
-          <button class="btn" style="margin-bottom: 15px; padding: 6px 14px; font-size: 12px; border-radius: 8px;" onclick="openIslamicFeature('quran')">&larr; সকল সূরার তালিকায় ফিরে যান</button>
-          <div style="background: #f8fafc; padding: 20px; border-radius: 12px; border-left: 5px solid #2563eb; box-shadow: 0 4px 6px rgba(0,0,0,0.02);">
-            ${contentHtml}
-          </div>
+        <div class="ayah-card">
+          <div class="arabic-text">بِسْمِ ٱللَّهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div>
+          <div class="bangla-text">পরম করুণাময় ও অসীম দয়ালু আল্লাহর নামে শুরু করছি।</div>
         </div>
+        <button class="btn" onclick="openIslamicFeature('quran')" style="margin-top:10px;">&larr; সব সূরায় ফিরে যান</button>
       `;
     }
 
     function countTasbih() {
       tasbihCount++;
-      document.getElementById('tasbihDisplay').innerText = tasbihCount;
+      document.getElementById('tasbihCountVal').innerText = tasbihCount;
     }
-    
+
     function resetTasbih() {
       tasbihCount = 0;
-      document.getElementById('tasbihDisplay').innerText = tasbihCount;
+      document.getElementById('tasbihCountVal').innerText = tasbihCount;
     }
 
-    function closeModal() { document.getElementById('featureModal').style.display = 'none'; }
+    function closeModal() {
+      document.getElementById('featureModal').style.display = 'none';
+    }
 
     const defaultData = {
-      about: "I am Monir Ahmed Shakib. Experienced professional dedicated to digital solutions.",
-      skills: [{title: "Digital Marketing", desc: "SEO, Social Media Marketing and Content Strategy"}, {title: "Web Development", desc: "HTML, CSS, JavaScript Responsive Design"}, {title: "Graphics Design", desc: "Visual Design, Branding & Professional Graphics"}],
-      education: [{title: "Bachelor Degree", desc: "Graduation completed with standard academic performance."}, {title: "Higher Secondary", desc: "Completed with focus on science/arts/commerce stream."}],
-      experience: [{title: "Freelance Specialist", desc: "Working with international clients delivering quality digital services."}, {title: "Project Associate", desc: "Managed end to end tasks with technical standard protocols."}],
-      services: [{title: "Digital Marketing", desc: "Complete online promotion and brand strategy services."}, {title: "Data Entry", desc: "Professional data entry services with accuracy."}],
-      portfolio: [{title: "Project Alpha", desc: "Successful implementation of web and digital campaign."}, {title: "Project Beta", desc: "Branding and design identity project for corporate client."}]
+      about: "I am Monir Ahmed Shakib. Experienced professional dedicated to digital solutions, creative design, and technical services.",
+      skills: [
+        {title: "Digital Marketing", desc: "SEO, Social Media Marketing and Content Strategy"},
+        {title: "Web Development", desc: "HTML, CSS, JavaScript Responsive Design"},
+        {title: "Graphics Design", desc: "Visual Design, Branding & Professional Graphics"}
+      ],
+      education: [
+        {title: "Bachelor Degree", desc: "Graduation completed with standard academic performance."},
+        {title: "Higher Secondary", desc: "Completed with focus on science/arts/commerce stream."}
+      ],
+      experience: [
+        {title: "Freelance Specialist", desc: "Working with international clients delivering quality digital services."},
+        {title: "Project Associate", desc: "Managed end to end tasks with technical standard protocols."}
+      ],
+      services: [
+        {title: "Digital Marketing", desc: "Complete online promotion and brand strategy services."},
+        {title: "Data Entry", desc: "Professional data entry services with accuracy."}
+      ],
+      portfolio: [
+        {title: "Project Alpha", desc: "Successful implementation of web and digital campaign."},
+        {title: "Project Beta", desc: "Branding and design identity project for corporate client."}
+      ]
     };
 
     function loadData() {
-      let data = JSON.parse(localStorage.getItem("siteData")) || defaultData;
+      let data = JSON.parse(localStorage.getItem("siteData"));
+      if(!data){ data = defaultData; localStorage.setItem("siteData", JSON.stringify(data)); }
+
       document.getElementById("aboutText").innerText = data.about;
+
       ['skills','education','experience','services','portfolio'].forEach(key => {
         const container = document.getElementById(key + "Grid");
-        if(container && data[key]) {
+        if(container) {
           container.innerHTML = "";
           data[key].forEach(item => {
             container.innerHTML += `<div class="card"><h3>${item.title}</h3><p>${item.desc}</p></div>`;
@@ -431,15 +663,66 @@
 
     function openAdmin(){ document.getElementById("admin").style.display="block"; }
     function closeAdmin(){ document.getElementById("admin").style.display="none"; }
+
     function login(e){
       e.preventDefault();
-      if(document.getElementById("u").value==="admin" && document.getElementById("p").value==="1234"){
+      const u = document.getElementById("u").value;
+      const p = document.getElementById("p").value;
+      if(u==="admin" && p==="1234"){
         document.getElementById("login").style.display="none";
         document.getElementById("list").style.display="block";
-      } else { alert("Wrong Login!"); }
+        loadAdminItems();
+      } else { alert("Wrong Login Details!"); }
     }
-    function saveItem(){ loadData(); }
-    function saveInfo(){ loadData(); alert("Updated!"); }
+
+    function loadAdminItems(){
+      const data = JSON.parse(localStorage.getItem("siteData"));
+      document.getElementById("aboutEdit").value = data.about;
+
+      let html = "";
+      ['skills','education','experience','services','portfolio'].forEach(key => {
+        data[key].forEach((item, index) => {
+          html += `<div style="padding:10px;background:#fff;margin-bottom:8px;border-radius:5px;display:flex;justify-content:space-between;">
+            <div><strong>[${key}] ${item.title}</strong> - ${item.desc}</div>
+            <button class="btn danger" onclick="removeItem('${key}', ${index})">Delete</button>
+          </div>`;
+        });
+      });
+      document.getElementById("itemsList").innerHTML = html;
+    }
+
+    function saveItem(){
+      const title = document.getElementById("title").value;
+      const desc = document.getElementById("desc").value;
+      const type = document.getElementById("type").value;
+      if(!title || !desc) return alert("Fill all fields");
+
+      const data = JSON.parse(localStorage.getItem("siteData"));
+      data[type].push({title, desc});
+      localStorage.setItem("siteData", JSON.stringify(data));
+      
+      document.getElementById("title").value = "";
+      document.getElementById("desc").value = "";
+      loadData();
+      loadAdminItems();
+    }
+
+    function removeItem(type, index){
+      const data = JSON.parse(localStorage.getItem("siteData"));
+      data[type].splice(index, 1);
+      localStorage.setItem("siteData", JSON.stringify(data));
+      loadData();
+      loadAdminItems();
+    }
+
+    function saveInfo(){
+      const data = JSON.parse(localStorage.getItem("siteData"));
+      data.about = document.getElementById("aboutEdit").value;
+      localStorage.setItem("siteData", JSON.stringify(data));
+      loadData();
+      alert("Updated Successfully!");
+    }
+
     loadData();
   </script>
 </body>
