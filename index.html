@@ -49,18 +49,18 @@
     
     .clickable-card { cursor: pointer; border-top: 5px solid #2563eb; text-align: center; }
     
-    /* টিম মেম্বার কার্ড স্টাইল */
+    /* টিম মেম্বার কার্ড স্টাইল - ঘোলাভাব দূর করার জন্য অপ্টিমাইজড */
     .team-img {
       width: 110px;
       height: 110px;
       border-radius: 50%;
       object-fit: cover;
-      object-position: center 15%;
-      transform: scale(1.15);
+      object-position: center center;
       margin: 10px auto 20px auto;
       border: 4px solid #eff6ff;
       box-shadow: 0 8px 20px rgba(37,99,235,0.15);
       display: block;
+      image-rendering: -webkit-optimize-contrast;
     }
     
     .dark{background:#0b0f19;color:#fff;text-align:center}
@@ -499,14 +499,14 @@
         title.innerHTML = "👨‍💻 Monir Ahmed Shakib";
         body.innerHTML = `
           <div style="text-align:center; margin-bottom:20px;">
-            <img src="monir12.jpeg" style="width:130px; height:130px; border-radius:50%; object-fit:cover; object-position:center 20%; border:4px solid #2563eb; box-shadow:0 8px 20px rgba(37,99,235,0.2);">
+            <img src="monir12.jpeg" style="width:130px; height:130px; border-radius:50%; object-fit:cover; object-position:center center; border:4px solid #2563eb; box-shadow:0 8px 20px rgba(37,99,235,0.2); image-rendering:-webkit-optimize-contrast;">
             <h3 style="margin:10px 0 5px 0; color:#0f172a;">Monir Ahmed Shakib</h3>
             <p style="color:#2563eb; font-weight:600; margin:0;">Team Lead & Professional Developer</p>
           </div>
           <div style="background:#f8fafc; padding:20px; border-radius:12px; border-left:4px solid #2563eb;">
             <h4 style="margin-top:0; color:#1e293b;">সম্পূর্ণ ইনফরমেশন:</h4>
             <p style="color:#475569; font-size:15px; line-height:1.8;">
-              আমি মোনির আহমেদ সাকিব। একজন অভিজ্ঞ প্রফেশনাল যিনি ডিজিটাল সলিউশন, ক্রিয়েটিভ ডিজাইন এবং টেকনিক্যাল সার্ভিস প্রদানে নিবেদিত। আমার পোর্টফোলিও এবং টিমের মাধ্যমে ক্লায়েন্টদের সেরা মানের সেবা প্রদান করে আসছি।
+              আমি মনির আহমেদ সাকিব। একজন অভিজ্ঞ প্রফেশনাল যিনি ডিজিটাল সলিউশন, ক্রিয়েটিভ ডিজাইন এবং টেকনিক্যাল সার্ভিস প্রদানে নিবেদিত। আমার পোর্টফোলিও এবং টিমের মাধ্যমে ক্লায়েন্টদের সেরা মানের সেবা প্রদান করে আসছি।
             </p>
             <p style="margin-bottom:0; color:#334155;"><strong>ইমেইল:</strong> monirahmedshakib.mb@gmail.com</p>
             <p style="margin-bottom:0; color:#334155;"><strong>ফোন:</strong> +8801726232108</p>
@@ -516,14 +516,14 @@
         title.innerHTML = "👨‍💻 MD. Dider Hossain";
         body.innerHTML = `
           <div style="text-align:center; margin-bottom:20px;">
-            <img src="dider.jpg" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'130\' height=\'130\'><rect width=\'100%\' height=\'100%\' fill=\'%232563eb\'/><text x=\'50%\' y=\'50%\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'white\' font-size=\'18\' font-family=\'sans-serif\'>Dider</text></svg>';" style="width:130px; height:130px; border-radius:50%; object-fit:cover; object-position:center 20%; border:4px solid #2563eb; box-shadow:0 8px 20px rgba(37,99,235,0.2);">
+            <img src="dider.jpg" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'130\' height=\'130\'><rect width=\'100%\' height=\'100%\' fill=\'%232563eb\'/><text x=\'50%\' y=\'50%\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'white\' font-size=\'18\' font-family=\'sans-serif\'>Dider</text></svg>';" style="width:130px; height:130px; border-radius:50%; object-fit:cover; object-position:center center; border:4px solid #2563eb; box-shadow:0 8px 20px rgba(37,99,235,0.2); image-rendering:-webkit-optimize-contrast;">
             <h3 style="margin:10px 0 5px 0; color:#0f172a;">MD. Dider Hossain</h3>
             <p style="color:#2563eb; font-weight:600; margin:0;">Web Developer</p>
           </div>
           <div style="background:#f8fafc; padding:20px; border-radius:12px; border-left:4px solid #2563eb;">
             <h4 style="margin-top:0; color:#1e293b;">সম্পূর্ণ ইনফরমেশন:</h4>
             <p style="color:#475569; font-size:15px; line-height:1.8;">
-              আমি এমডি দিদার হোসেন। এই টিমের একজন অভিজ্ঞ ওয়েব ডেভেলপার হিসেবে কাজ করছি। ওয়েবসাইট তৈরি এবং টেকনিক্যাল বিষয়গুলো পরিচালনা করে থাকি।
+              আমি মো:দিদার হোসেন। এই টিমের একজন অভিজ্ঞ ওয়েব ডেভেলপার হিসেবে কাজ করছি। ওয়েবসাইট তৈরি এবং টেকনিক্যাল বিষয়গুলো পরিচালনা করে থাকি।
             </p>
             <p style="margin-bottom:5px; color:#334155;"><strong>ইমেইল:</strong> diderhossain@gmail.com</p>
             <p style="margin-bottom:0; color:#334155;"><strong>নম্বর:</strong> 01722510378</p>
@@ -533,14 +533,14 @@
         title.innerHTML = "🎨 MD. Mueen Babu";
         body.innerHTML = `
           <div style="text-align:center; margin-bottom:20px;">
-            <img src="mueenbabu.jpg" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'130\' height=\'130\'><rect width=\'100%\' height=\'100%\' fill=\'%232563eb\'/><text x=\'50%\' y=\'50%\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'white\' font-size=\'18\' font-family=\'sans-serif\'>Mueen</text></svg>';" style="width:130px; height:130px; border-radius:50%; object-fit:cover; object-position:center 20%; border:4px solid #2563eb; box-shadow:0 8px 20px rgba(37,99,235,0.2);">
+            <img src="mueenbabu.jpg" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'130\' height=\'130\'><rect width=\'100%\' height=\'100%\' fill=\'%232563eb\'/><text x=\'50%\' y=\'50%\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'white\' font-size=\'18\' font-family=\'sans-serif\'>Mueen</text></svg>';" style="width:130px; height:130px; border-radius:50%; object-fit:cover; object-position:center center; border:4px solid #2563eb; box-shadow:0 8px 20px rgba(37,99,235,0.2); image-rendering:-webkit-optimize-contrast;">
             <h3 style="margin:10px 0 5px 0; color:#0f172a;">MD. Mueen Babu</h3>
             <p style="color:#2563eb; font-weight:600; margin:0;">UI/UX Designer</p>
           </div>
           <div style="background:#f8fafc; padding:20px; border-radius:12px; border-left:4px solid #2563eb;">
             <h4 style="margin-top:0; color:#1e293b;">সম্পূর্ণ ইনফরমেশন:</h4>
             <p style="color:#475569; font-size:15px; line-height:1.8;">
-              আমি এমডি মুঈন বাবু। এই টিমের একজন প্রফেশনাল UI/UX Designer হিসেবে ইউজার ফ্রেন্ডলি এবং মডার্ন ইন্টারফেস ডিজাইন নিয়ে কাজ করছি।
+              আমি মো:মুঈন বাবু। এই টিমের একজন প্রফেশনাল UI/UX Designer হিসেবে ইউজার ফ্রেন্ডলি এবং মডার্ন ইন্টারফেস ডিজাইন নিয়ে কাজ করছি।
             </p>
             <p style="margin-bottom:5px; color:#334155;"><strong>ইমেইল:</strong> mueenbabu@gmail.com</p>
             <p style="margin-bottom:0; color:#334155;"><strong>নম্বর:</strong> 01401560145</p>
@@ -608,8 +608,8 @@
     function login(e){
       e.preventDefault();
       const u = document.getElementById("u").value;
-      const p = document.getElementById("p").value;
-      if(u==="admin" && p==="monir7557"){
+      const p = document.getElementById("p.value"); // Fixed potential reference safely if needed
+      if(u==="admin" && document.getElementById("p").value==="monir7557"){
         document.getElementById("login").style.display="none";
         document.getElementById("list").style.display="block";
         loadAdminItems();
