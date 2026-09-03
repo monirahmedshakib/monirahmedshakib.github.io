@@ -49,14 +49,15 @@
     
     .clickable-card { cursor: pointer; border-top: 5px solid #2563eb; text-align: center; }
     
-    /* টিম মেম্বার কার্ড স্টাইল */
+    /* টিম মেম্বার কার্ড স্টাইল (দিদার ভাইয়ের ছবির মতো ফেস ফোকাস ও ফিট করার জন্য প্রপার্টি) */
     .team-img {
       width: 110px;
       height: 110px;
       border-radius: 50%;
       object-fit: cover;
-      object-position: center 20%;
-      margin: 0 auto 15px auto;
+      object-position: center 15%;
+      transform: scale(1.15); /* ছবিটিকে সামান্য জুম করে পরিষ্কার দেখানোর জন্য */
+      margin: 10px auto 20px auto;
       border: 4px solid #eff6ff;
       box-shadow: 0 8px 20px rgba(37,99,235,0.15);
       display: block;
@@ -368,7 +369,7 @@
         <small style="color:#64748b; font-weight:500;">ইনফরমেশন দেখুন &rarr;</small>
       </div>
 
-      <!-- ৩. MD. Mueen Babu (UI/UX Designer) -->
+      <!-- ৩. MD. Mueen Babu (UI/UX Designer) - আপডেট করা স্টাইল -->
       <div class="card clickable-card" onclick="openTeamMember('mueen')">
         <img src="mueenbabu.jpg" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'110\' height=\'110\'><rect width=\'100%\' height=\'100%\' fill=\'%232563eb\'/><text x=\'50%\' y=\'50%\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'white\' font-size=\'16\' font-family=\'sans-serif\'>Mueen</text></svg>';" alt="MD. Mueen Babu" class="team-img">
         <h3 style="margin:0 0 5px 0; color:#0f172a; font-size:18px;">MD. Mueen Babu</h3>
