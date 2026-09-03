@@ -49,12 +49,13 @@
     
     .clickable-card { cursor: pointer; border-top: 5px solid #2563eb; text-align: center; }
     
-    /* টিম মেম্বার কার্ড স্টাইল - ঘোলাভাব দূর করার জন্য অপ্টিমাইজড */
+    /* টিম মেম্বার কার্ড স্টাইল - ছবি ভেতরে ঢুকে যাওয়া সমস্যা সমাধান করা হয়েছে */
     .team-img {
       width: 110px;
       height: 110px;
       border-radius: 50%;
-      object-fit: cover;
+      object-fit: contain;
+      background-color: #fff;
       object-position: center center;
       margin: 10px auto 20px auto;
       border: 4px solid #eff6ff;
@@ -499,7 +500,7 @@
         title.innerHTML = "👨‍💻 Monir Ahmed Shakib";
         body.innerHTML = `
           <div style="text-align:center; margin-bottom:20px;">
-            <img src="monir12.jpeg" style="width:130px; height:130px; border-radius:50%; object-fit:cover; object-position:center center; border:4px solid #2563eb; box-shadow:0 8px 20px rgba(37,99,235,0.2); image-rendering:-webkit-optimize-contrast;">
+            <img src="monir12.jpeg" style="width:130px; height:130px; border-radius:50%; object-fit:contain; background-color:#fff; object-position:center center; border:4px solid #2563eb; box-shadow:0 8px 20px rgba(37,99,235,0.2);">
             <h3 style="margin:10px 0 5px 0; color:#0f172a;">Monir Ahmed Shakib</h3>
             <p style="color:#2563eb; font-weight:600; margin:0;">Team Lead & Professional Developer</p>
           </div>
@@ -516,7 +517,7 @@
         title.innerHTML = "👨‍💻 MD. Dider Hossain";
         body.innerHTML = `
           <div style="text-align:center; margin-bottom:20px;">
-            <img src="dider.jpg" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'130\' height=\'130\'><rect width=\'100%\' height=\'100%\' fill=\'%232563eb\'/><text x=\'50%\' y=\'50%\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'white\' font-size=\'18\' font-family=\'sans-serif\'>Dider</text></svg>';" style="width:130px; height:130px; border-radius:50%; object-fit:cover; object-position:center center; border:4px solid #2563eb; box-shadow:0 8px 20px rgba(37,99,235,0.2); image-rendering:-webkit-optimize-contrast;">
+            <img src="dider.jpg" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'130\' height=\'130\'><rect width=\'100%\' height=\'100%\' fill=\'%232563eb\'/><text x=\'50%\' y=\'50%\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'white\' font-size=\'18\' font-family=\'sans-serif\'>Dider</text></svg>';" style="width:130px; height:130px; border-radius:50%; object-fit:contain; background-color:#fff; object-position:center center; border:4px solid #2563eb; box-shadow:0 8px 20px rgba(37,99,235,0.2);">
             <h3 style="margin:10px 0 5px 0; color:#0f172a;">MD. Dider Hossain</h3>
             <p style="color:#2563eb; font-weight:600; margin:0;">Web Developer</p>
           </div>
@@ -533,7 +534,7 @@
         title.innerHTML = "🎨 MD. Mueen Babu";
         body.innerHTML = `
           <div style="text-align:center; margin-bottom:20px;">
-            <img src="mueenbabu.jpg" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'130\' height=\'130\'><rect width=\'100%\' height=\'100%\' fill=\'%232563eb\'/><text x=\'50%\' y=\'50%\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'white\' font-size=\'18\' font-family=\'sans-serif\'>Mueen</text></svg>';" style="width:130px; height:130px; border-radius:50%; object-fit:cover; object-position:center center; border:4px solid #2563eb; box-shadow:0 8px 20px rgba(37,99,235,0.2); image-rendering:-webkit-optimize-contrast;">
+            <img src="mueenbabu.jpg" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'130\' height=\'130\'><rect width=\'100%\' height=\'100%\' fill=\'%232563eb\'/><text x=\'50%\' y=\'50%\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'white\' font-size=\'18\' font-family=\'sans-serif\'>Mueen</text></svg>';" style="width:130px; height:130px; border-radius:50%; object-fit:contain; background-color:#fff; object-position:center center; border:4px solid #2563eb; box-shadow:0 8px 20px rgba(37,99,235,0.2);">
             <h3 style="margin:10px 0 5px 0; color:#0f172a;">MD. Mueen Babu</h3>
             <p style="color:#2563eb; font-weight:600; margin:0;">UI/UX Designer</p>
           </div>
@@ -608,7 +609,6 @@
     function login(e){
       e.preventDefault();
       const u = document.getElementById("u").value;
-      const p = document.getElementById("p.value"); // Fixed potential reference safely if needed
       if(u==="admin" && document.getElementById("p").value==="monir7557"){
         document.getElementById("login").style.display="none";
         document.getElementById("list").style.display="block";
