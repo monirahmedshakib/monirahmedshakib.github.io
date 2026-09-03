@@ -359,9 +359,9 @@
         <small style="color:#64748b; font-weight:500;">সব ইনফরমেশন দেখুন &rarr;</small>
       </div>
       
-      <!-- ২. MD. Dider Hossain (Web Developer) -->
+      <!-- ২. MD. Dider Hossain (Web Developer) - Fallback সহ ফিক্স করা হলো -->
       <div class="card clickable-card" onclick="openTeamMember('dider')">
-        <img src="dider.jpg" alt="MD. Dider Hossain" class="team-img">
+        <img src="dider.jpg" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'110\' height=\'110\'><rect width=\'100%\' height=\'100%\' fill=\'%232563eb\'/><text x=\'50%\' y=\'50%\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'white\' font-size=\'16\' font-family=\'sans-serif\'>Dider</text></svg>';" alt="MD. Dider Hossain" class="team-img">
         <h3 style="margin:0 0 5px 0; color:#0f172a; font-size:18px;">MD. Dider Hossain</h3>
         <p style="color:#2563eb; font-size:14px; font-weight:600; margin:0 0 10px 0;">Web Developer</p>
         <small style="color:#64748b; font-weight:500;">ইনফরমেশন দেখুন &rarr;</small>
@@ -485,7 +485,7 @@
   </div>
 
   <script>
-    // টিম মেম্বারদের বিস্তারিত তথ্য
+    // টিম মেম্বারদের বিস্তারিত তথ্য (মডালের ভেতর ছবি সহ ফিক্স করা হলো)
     function openTeamMember(memberKey) {
       const modal = document.getElementById('featureModal');
       const title = document.getElementById('modalTitle');
@@ -514,7 +514,7 @@
         title.innerHTML = "👨‍💻 MD. Dider Hossain";
         body.innerHTML = `
           <div style="text-align:center; margin-bottom:20px;">
-            <img src="dider.jpg" style="width:130px; height:130px; border-radius:50%; object-fit:cover; border:4px solid #2563eb; box-shadow:0 8px 20px rgba(37,99,235,0.2);">
+            <img src="dider.jpg" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'130\' height=\'130\'><rect width=\'100%\' height=\'100%\' fill=\'%232563eb\'/><text x=\'50%\' y=\'50%\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'white\' font-size=\'18\' font-family=\'sans-serif\'>Dider</text></svg>';" style="width:130px; height:130px; border-radius:50%; object-fit:cover; border:4px solid #2563eb; box-shadow:0 8px 20px rgba(37,99,235,0.2);">
             <h3 style="margin:10px 0 5px 0; color:#0f172a;">MD. Dider Hossain</h3>
             <p style="color:#2563eb; font-weight:600; margin:0;">Web Developer</p>
           </div>
@@ -615,7 +615,7 @@
 
     function saveItem(){
       const title = document.getElementById("title").value;
-      const desc = document.getElementById("desc").value;
+      const desc = document.getElementById("desc,value")?.value || document.getElementById("desc").value;
       const type = document.getElementById("type").value;
       if(!title || !desc) return alert("সব ফিল্ড পূরণ করুন!");
 
