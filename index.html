@@ -49,13 +49,13 @@
     
     .clickable-card { cursor: pointer; border-top: 5px solid #2563eb; text-align: center; }
     
-    /* টিম মেম্বার কার্ড স্টাইল (এখানে object-position দিয়ে ফেস পজিশন ঠিক করা হয়েছে) */
+    /* টিম মেম্বার কার্ড স্টাইল */
     .team-img {
       width: 110px;
       height: 110px;
       border-radius: 50%;
       object-fit: cover;
-      object-position: center 20%; /* ছবিটির ফেস বা মাথা ঠিকমতো দেখানোর জন্য পজিশন অ্যাডজাস্ট করা হলো */
+      object-position: center 20%;
       margin: 0 auto 15px auto;
       border: 4px solid #eff6ff;
       box-shadow: 0 8px 20px rgba(37,99,235,0.15);
@@ -368,10 +368,10 @@
         <small style="color:#64748b; font-weight:500;">ইনফরমেশন দেখুন &rarr;</small>
       </div>
 
-      <!-- ৩. টিম মেম্বার ৩ -->
-      <div class="card clickable-card" onclick="openTeamMember('member3')">
-        <img src="https://via.placeholder.com/150" alt="Team Member" class="team-img">
-        <h3 style="margin:0 0 5px 0; color:#0f172a; font-size:18px;">মেম্বারের নাম ৩</h3>
+      <!-- ৩. MD. Mueen Babu (UI/UX Designer) -->
+      <div class="card clickable-card" onclick="openTeamMember('mueen')">
+        <img src="mueenbabu.jpg" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'110\' height=\'110\'><rect width=\'100%\' height=\'100%\' fill=\'%232563eb\'/><text x=\'50%\' y=\'50%\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'white\' font-size=\'16\' font-family=\'sans-serif\'>Mueen</text></svg>';" alt="MD. Mueen Babu" class="team-img">
+        <h3 style="margin:0 0 5px 0; color:#0f172a; font-size:18px;">MD. Mueen Babu</h3>
         <p style="color:#2563eb; font-size:14px; font-weight:600; margin:0 0 10px 0;">UI/UX Designer</p>
         <small style="color:#64748b; font-weight:500;">ইনফরমেশন দেখুন &rarr;</small>
       </div>
@@ -486,7 +486,7 @@
   </div>
 
   <script>
-    // টিম মেম্বারদের বিস্তারিত তথ্য (মডালের ভেতরের ছবিগুলোতেও পজিশন ফিক্স করা হয়েছে)
+    // টিম মেম্বারদের বিস্তারিত তথ্য
     function openTeamMember(memberKey) {
       const modal = document.getElementById('featureModal');
       const title = document.getElementById('modalTitle');
@@ -526,6 +526,23 @@
             </p>
             <p style="margin-bottom:5px; color:#334155;"><strong>ইমেইল:</strong> diderhossain@gmail.com</p>
             <p style="margin-bottom:0; color:#334155;"><strong>নম্বর:</strong> 01722510378</p>
+          </div>
+        `;
+      } else if(memberKey === 'mueen') {
+        title.innerHTML = "🎨 MD. Mueen Babu";
+        body.innerHTML = `
+          <div style="text-align:center; margin-bottom:20px;">
+            <img src="mueenbabu.jpg" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'130\' height=\'130\'><rect width=\'100%\' height=\'100%\' fill=\'%232563eb\'/><text x=\'50%\' y=\'50%\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'white\' font-size=\'18\' font-family=\'sans-serif\'>Mueen</text></svg>';" style="width:130px; height:130px; border-radius:50%; object-fit:cover; object-position:center 20%; border:4px solid #2563eb; box-shadow:0 8px 20px rgba(37,99,235,0.2);">
+            <h3 style="margin:10px 0 5px 0; color:#0f172a;">MD. Mueen Babu</h3>
+            <p style="color:#2563eb; font-weight:600; margin:0;">UI/UX Designer</p>
+          </div>
+          <div style="background:#f8fafc; padding:20px; border-radius:12px; border-left:4px solid #2563eb;">
+            <h4 style="margin-top:0; color:#1e293b;">সম্পূর্ণ ইনফরমেশন:</h4>
+            <p style="color:#475569; font-size:15px; line-height:1.8;">
+              আমি এমডি মুঈন বাবু। এই টিমের একজন প্রফেশনাল UI/UX Designer হিসেবে ইউজার ফ্রেন্ডলি এবং মডার্ন ইন্টারফেস ডিজাইন নিয়ে কাজ করছি।
+            </p>
+            <p style="margin-bottom:5px; color:#334155;"><strong>ইমেইল:</strong> mueenbabu@gmail.com</p>
+            <p style="margin-bottom:0; color:#334155;"><strong>নম্বর:</strong> 01401560145</p>
           </div>
         `;
       } else {
