@@ -47,10 +47,21 @@
       border-color: #cbd5e1;
     }
     
-    .clickable-card { cursor: pointer; border-top: 5px solid #2563eb; }
+    .clickable-card { cursor: pointer; border-top: 5px solid #2563eb; text-align: center; }
+    
+    /* টিম মেম্বার কার্ড স্টাইল */
+    .team-img {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 0 auto 15px auto;
+      border: 4px solid #eff6ff;
+      box-shadow: 0 8px 20px rgba(37,99,235,0.15);
+      display: block;
+    }
     
     .dark{background:#0b0f19;color:#fff;text-align:center}
-    /* ডার্ক সেকশনের শিরোনাম ও আন্ডারলাইন ঠিক করার জন্য */
     .dark h2 { color: #ffffff; }
     .dark h2::after { background: #60a5fa; }
     
@@ -267,88 +278,6 @@
     }
     .modal-close:hover { background: #fee2e2; color: #dc2626; }
 
-    .quran-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-      gap: 12px;
-      margin-top: 15px;
-    }
-    .surah-box {
-      background: #f8fafc;
-      border: 1px solid #e2e8f0;
-      padding: 12px;
-      border-radius: 10px;
-      font-size: 13px;
-      font-weight: 600;
-      color: #1e293b;
-      cursor: pointer;
-      text-align: center;
-      transition: all 0.2s;
-    }
-    .surah-box:hover { background: #2563eb; color: #fff; border-color: #2563eb; transform: translateY(-2px); }
-    
-    .ayah-card {
-      background: #f8fafc;
-      padding: 18px;
-      border-radius: 12px;
-      margin-bottom: 15px;
-      border-left: 4px solid #2563eb;
-    }
-    .arabic-text {
-      font-size: 24px;
-      font-family: 'Amiri', 'Traditional Arabic', serif;
-      text-align: right;
-      color: #0f172a;
-      direction: rtl;
-      line-height: 2;
-      margin-bottom: 10px;
-    }
-    .bangla-text { font-size: 14px; color: #475569; }
-
-    .dua-card, .masala-card {
-      background: #f8fafc;
-      padding: 20px;
-      border-radius: 12px;
-      margin-bottom: 15px;
-      border-left: 4px solid #10b981;
-      border: 1px solid #e2e8f0;
-    }
-    .masala-card { border-left-color: #f59e0b; }
-    .dua-card h4, .masala-card h4 { margin: 0 0 10px 0; color: #1e293b; font-size: 16px; font-weight: 600; }
-
-    .tasbih-btn {
-      width: 140px;
-      height: 140px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, #2563eb, #1d4ed8);
-      color: #fff;
-      font-size: 42px;
-      font-weight: bold;
-      border: none;
-      box-shadow: 0 15px 30px rgba(37, 99, 235, 0.4);
-      cursor: pointer;
-      margin: 25px auto;
-      display: block;
-      transition: transform 0.1s;
-    }
-    .tasbih-btn:active { transform: scale(0.93); }
-
-    .namaz-table { width: 100%; border-collapse: collapse; margin-top: 15px; margin-bottom: 25px; }
-    .namaz-table td, .namaz-table th { padding: 12px; border-bottom: 1px solid #e2e8f0; text-align: left; font-size: 14px; }
-    .namaz-table th { background: #f8fafc; color: #2563eb; font-weight: 600; }
-    
-    .namaz-rules-box {
-      background: #f8fafc;
-      border-left: 4px solid #2563eb;
-      padding: 18px;
-      border-radius: 12px;
-      margin-top: 20px;
-      border: 1px solid #e2e8f0;
-    }
-    .namaz-rules-box h4 { margin-top: 0; color: #1e293b; font-size: 16px; }
-    .namaz-rules-box ol, .namaz-rules-box ul { padding-left: 20px; margin-bottom: 0; font-size: 14px; }
-    .namaz-rules-box li { margin-bottom: 8px; color: #475569; }
-
     footer{text-align:center;padding:25px;background:#0b0f19;color:#94a3b8;font-size:14px;border-top:1px solid #1e293b}
     
     @media(max-width:750px){
@@ -422,46 +351,52 @@
   <section id="blog">
     <h2>My Team</h2>
     <div class="grid">
-      <!-- ১. কুরআন শরীফ -->
-      <div class="card clickable-card" onclick="openIslamicFeature('quran')">
-        <h3 style="margin-top:0; color:#0f172a;">📖 আল-কুরআন শরীফ</h3>
-        <p style="color:#475569; font-size:14px;">অনলাইন কুরআন শরীফ ১ infiltrated টি সূরা ও অনুবাদসহ পড়ুন।</p>
-        <small style="color:#2563eb; font-weight:600;">সূরাগুলো দেখুন &rarr;</small>
+      <!-- ১. মোনির আহমেদ সাকিব (আপনার ছবি ও ইনফো) -->
+      <div class="card clickable-card" onclick="openTeamMember('monir')">
+        <img src="monir-ahmed-shakib-1.jpg" alt="Monir Ahmed Shakib" class="team-img">
+        <h3 style="margin:0 0 5px 0; color:#0f172a; font-size:18px;">Monir Ahmed Shakib</h3>
+        <p style="color:#2563eb; font-size:14px; font-weight:600; margin:0 0 10px 0;">Team Lead & Founder</p>
+        <small style="color:#64748b; font-weight:500;">সব ইনফরমেশন দেখুন &rarr;</small>
       </div>
       
-      <!-- ২. নামাযের সময়সূচী -->
-      <div class="card clickable-card" onclick="openIslamicFeature('namaz')">
-        <h3 style="margin-top:0; color:#0f172a;">🕌 নামাযের সময়সূচী ও নিয়ম</h3>
-        <p style="color:#475569; font-size:14px;">দৈনন্দিন নামাযের সঠিক সময়, ফরজ, ওয়াজিব ও সুন্নাত নিয়ম।</p>
-        <small style="color:#2563eb; font-weight:600;">সময়সূচী ও নিয়ম দেখুন &rarr;</small>
+      <!-- ২. টিম মেম্বার ২ -->
+      <div class="card clickable-card" onclick="openTeamMember('member2')">
+        <img src="https://via.placeholder.com/150" alt="Team Member" class="team-img">
+        <h3 style="margin:0 0 5px 0; color:#0f172a; font-size:18px;">মেম্বারের নাম ২</h3>
+        <p style="color:#2563eb; font-size:14px; font-weight:600; margin:0 0 10px 0;">Web Developer</p>
+        <small style="color:#64748b; font-weight:500;">ইনফরমেশন দেখুন &rarr;</small>
       </div>
 
-      <!-- ৩. প্রয়োজনীয় দোয়া -->
-      <div class="card clickable-card" onclick="openIslamicFeature('dua')">
-        <h3 style="margin-top:0; color:#0f172a;">🤲 প্রয়োজনীয় দোয়া</h3>
-        <p style="color:#475569; font-size:14px;">দৈনন্দিন জীবনের ৫০টি অত্যন্ত গুরুত্বপূর্ণ প্রয়োজনীয় দোয়া।</p>
-        <small style="color:#2563eb; font-weight:600;">দোয়াগুলো দেখুন &rarr;</small>
+      <!-- ৩. টিম মেম্বার ৩ -->
+      <div class="card clickable-card" onclick="openTeamMember('member3')">
+        <img src="https://via.placeholder.com/150" alt="Team Member" class="team-img">
+        <h3 style="margin:0 0 5px 0; color:#0f172a; font-size:18px;">মেম্বারের নাম ৩</h3>
+        <p style="color:#2563eb; font-size:14px; font-weight:600; margin:0 0 10px 0;">UI/UX Designer</p>
+        <small style="color:#64748b; font-weight:500;">ইনফরমেশন দেখুন &rarr;</small>
       </div>
 
-      <!-- ৪. ডিজিটাল তাসবিহ -->
-      <div class="card clickable-card" onclick="openIslamicFeature('tasbih')">
-        <h3 style="margin-top:0; color:#0f172a;">🔍 ডিজিটাল তাসবিহ</h3>
-        <p style="color:#475569; font-size:14px;">অনলাইনে ডিজিটাল তাসবিহ ও জিকির গণনা।</p>
-        <small style="color:#2563eb; font-weight:600;">তাসবিহ গুনুন &rarr;</small>
+      <!-- ৪. টিম মেম্বার ৪ -->
+      <div class="card clickable-card" onclick="openTeamMember('member4')">
+        <img src="https://via.placeholder.com/150" alt="Team Member" class="team-img">
+        <h3 style="margin:0 0 5px 0; color:#0f172a; font-size:18px;">মেম্বারের নাম ৪</h3>
+        <p style="color:#2563eb; font-size:14px; font-weight:600; margin:0 0 10px 0;">Digital Marketer</p>
+        <small style="color:#64748b; font-weight:500;">ইনফরমেশন দেখুন &rarr;</small>
       </div>
 
-      <!-- ৫. ইসলামিক বই -->
-      <div class="card clickable-card" onclick="openIslamicFeature('books')">
-        <h3 style="margin-top:0; color:#0f172a;">📚 ইসলামিক বই ও পিডিএফ</h3>
-        <p style="color:#475569; font-size:14px;">গুরুত্বপূর্ণ ইসলামিক বই ও হাদিস কিতাব সমুহ।</p>
-        <small style="color:#2563eb; font-weight:600;">বইগুলো দেখুন &rarr;</small>
+      <!-- ৫. টিম মেম্বার ৫ -->
+      <div class="card clickable-card" onclick="openTeamMember('member5')">
+        <img src="https://via.placeholder.com/150" alt="Team Member" class="team-img">
+        <h3 style="margin:0 0 5px 0; color:#0f172a; font-size:18px;">মেম্বারের নাম ৫</h3>
+        <p style="color:#2563eb; font-size:14px; font-weight:600; margin:0 0 10px 0;">Content Writer</p>
+        <small style="color:#64748b; font-weight:500;">ইনফরমেশন দেখুন &rarr;</small>
       </div>
 
-      <!-- ৬. প্রয়োজনীয় মাসআলা -->
-      <div class="card clickable-card" onclick="openIslamicFeature('masala')">
-        <h3 style="margin-top:0; color:#0f172a;">📜 প্রয়োজনীয় মাসআলা</h3>
-        <p style="color:#475569; font-size:14px;">দৈনন্দিন জীবনের প্রয়োজনীয় শরীয়তের মাসআলা-মাসায়েল।</p>
-        <small style="color:#2563eb; font-weight:600;">মাসআলাগুলো দেখুন &rarr;</small>
+      <!-- ৬. টিম মেম্বার ৬ -->
+      <div class="card clickable-card" onclick="openTeamMember('member6')">
+        <img src="https://via.placeholder.com/150" alt="Team Member" class="team-img">
+        <h3 style="margin:0 0 5px 0; color:#0f172a; font-size:18px;">মেম্বারের নাম ৬</h3>
+        <p style="color:#2563eb; font-size:14px; font-weight:600; margin:0 0 10px 0;">Support Specialist</p>
+        <small style="color:#64748b; font-weight:500;">ইনফরমেশন দেখুন &rarr;</small>
       </div>
     </div>
   </section>
@@ -550,274 +485,39 @@
   </div>
 
   <script>
-    const surahs = [
-      "১. আল-ফাতিহা", "২. আল-বাকারা", "৩. আল-ইমরান", "৪. আন-নিসা", "৫. আল-মায়িদাহ", "৬. আল-আনআম", "৭. আল-আরাফ", "৮. আল-আনফাল", "৯. আত-তাওবাহ", "১০. ইউনুস",
-      "১১. হুদ", "১২. ইউসুফ", "১৩. আর-রাঅ্দ", "১৪. ইব্রাহিম", "১৫. আল-হিজর", "১৬. আন-নাহল", "১৭. বনী ইসরাইল", "১৮. আল-কাহফ", "১৯. মারইয়াম", "২০. ত্বা-হা",
-      "২১. আল-আনবিয়া", "২২. আল-হাজ্জ", "২৩. আল-মু'মিনুন", "২৪. আন-নূর", "২৫. আল-ফুরকান", "২৬. আশ-শুআরা", "২৭. আন-নামল", "২৮. আল-কাসাস", "২৯. আল-আনকাবুত", "৩০. আর-রূম",
-      "৩১. লুকমান", "৩২. আস-সাজদাহ", "৩৩. আল-আহজাব", "৩৪. সাবা", "৩৫. ফাতির", "৩৬. ইয়াসীন", "৩৭. আস-সাফফাত", "৩৮. সোয়াদ", "৩৯. আজ-জুমার", "৪০. গাফির",
-      "৪১. ফুসসিলাত", "৪২. আশ-শুরা", "৪৩. আজ-জুখরুফ", "৪৪. আদ-দুখান", "৪৫. আল-জাসিয়াহ", "৪৬. আল-আহকাফ", "৪৭. মুহাম্মদ", "৪৮. আল-ফাতহ", "৪৯. আল-হুজুরাত", "৫০. ক্বাফ",
-      "৫১. আজ-যারিয়াত", "৫২. আত-তূর", "৫৩. আন-নাজম", "৫৪. আল-কামার", "৫৫. আর-রহমান", "৫৬. আল-ওয়াকিয়াহ", "৫৭. আল-হাদীদ", "৫৮. আল-মুজাদালাহ", "৫৯. আল-হাশর", "৬০. আল-মুমতাহিনাহ",
-      "৬১. আস-সফ", "৬২. আল-জুমুআহ", "৬৩. আল-মুনাফিকুন", "৬৪. আত-তাগাবুন", "৬৫. আত-ত্বলাক", "৬৬. আত-তাহরীম", "৬৭. আল-মুলক", "৬৮. আল-কলাম", "৬৯. আল-হাক্কাহ", "৭০. আল-মাআরিজ",
-      "৭১. নূহ", "৭২. আল-জিন", "৭৩. আল-মুযযামমিল", "৭৪. আল-মুদ্দাসসির", "৭৫. আল-কিয়ামাহ", "৭৬. আল-ইনসান", "৭৭. আল-মুর্সালাত", "৭৮. আন-নাবা", "৭৯. আন-নাজিআত", "৮০. আবাসা",
-      "৮১. আত-তাকভীর", "৮২. আল-ইনফিতার", "৮৩. আল-মুত্বাফফিফীন", "৮৪. আল-ইনশিকাক", "৮৫. আল-বুরূজ", "৮৬. আত-তারিক", "৮৭. আল-আলা", "৮৮. আল-গাশিয়াহ", "৮৯. আল-ফজর", "৯০. আল-বালাদ",
-      "৯১. আশ-শামস", "৯২. আল-লাইল", "৯৩. আদ-দুহা", "৯৪. আশ-শারহ", "৯৫. আত-তীন", "৯৬. আল-আলাক", "৯৭. আল-কদর", "৯৮. আল-বায়্যিনাহ", "৯৯. আল-যালযালাহ", "১০০. আল-আদিয়াত",
-      "১০১. আল-কারিয়াহ", "১০২. আত-তাকাছুর", "১০৩. আল-আসর", "১০৪. আল-হুমাযাহ", "১০৫. আল-ফীল", "১০৬. কুরাইশ", "১০৭. আল-মাউন", "১০৮. আল-কাওছার", "১০৯. আল-কাফিরুন", "১১০. আন-নসর",
-      "১১১. আল-লাহাব", "১১২. আল-ইখলাস", "১৩. আল-ফালাক", "১১৪. আন-নাস"
-    ];
-
-    const duasList = [
-      { title: "১. ঘুমানোর পূর্বের দোয়া", ar: "اللَّهُمَّ بِاسْمِكَ أَمُوتُ وَأَحْيَا", pron: "আল্লা-হুম্মা বিস্মিকা আমূতু ওয়া আহ্ইয়া।", mean: "হে আল্লাহ! আপনার নামে আমি মৃত্যুবরণ (ঘুম) করছি এবং আপনার নামেই জীবিত (জাগ্রত) হচ্ছি।" },
-      { title: "২. ঘুম থেকে ওঠার পর দোয়া", ar: "الْحَمْدُ لِلَّهِ الَّذِي أَحْيَانَا بَعْدَ مَا أَمَاتَنَا وَإِلَيْهِ النُّشُورُ", pron: "আলহামদু লিল্লাহিল্লাজি আহইয়ানা বা'দা মা আমাতানা ওয়া ইলাইহিন নুশূর।", mean: "সমস্ত প্রশংসা সেই আল্লাহর জন্য যিনি মৃত্যুর পর আমাদের জীবন দান করলেন, এবং তাঁর দিকেই আমাদের পুনরুত্থান।" },
-      { title: "৩. খাবার খাওয়ার শুরুতে দোয়া", ar: "بِسْمِ اللَّهِ وَعَلَى بَرَكَةِ اللَّهِ", pron: "বিসমিল্লাহি ওয়া 'আলা বারাকাতিল্লাহ।", mean: "আল্লাহর নামে এবং আল্লাহর বরকতের সাথে খাওয়া শুরু করছি।" },
-      { title: "৪. খাবার শেষে দোয়া", ar: "الْحَمْدُ لِلَّهِ الَّذِي أَطْعَمَنَا وَسَقَانَا وَجَعَلَنَا مِنَ الْمُسْلِمِينَ", pron: "আলহামদু লিল্লাহিল্লাজি অত্'আমানা ওয়া সাকানা ওয়া জা'আলানা মিনাল মুসলিমিন।", mean: "প্রশংসা আল্লাহর যিনি আমাদের আহার করিয়েছেন, পান করিয়েছেন এবং মুসলিম বানিয়েছেন।" },
-      { title: "৫. ঘর থেকে বের হওয়ার দোয়া", ar: "بِسْمِ اللَّهِ تَوَكَّلْتُ عَلَى اللَّهِ وَلَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللَّهِ", pron: "বিসমিল্লাহি তাওয়াক্কালতু 'আলাল্লাহি ওয়া লা হাওয়ালা ওয়া লা কুওয়াতা ইল্লা বিল্লাহ।", mean: "আল্লাহর নামে বের হচ্ছি, আল্লাহর ওপর ভরসা করছি। আল্লাহ ছাড়া কোনো উপায় ও ক্ষমতা নেই।" },
-      { title: "৬. ঘরে প্রবেশের দোয়া", ar: "بِسْمِ اللَّهِ وَلَجْنَا، وَبِسْمِ اللَّهِ خَرَجْنَا، وَعَلَى رَبِّنَا تَوَكَّلْنَا", pron: "বিসমিল্লাহি ওয়ালাজনা, ওয়া বিসমিল্লাহি খারাজনা, ওয়া আলা রাব্বিনা তাওয়াক্কালনা।", mean: "আল্লাহর নামে আমরা প্রবেশ করলাম, আল্লাহর নামে বের হলাম এবং আমাদের রবের ওপর ভরসা করলাম।" },
-      { title: "৭. মসজিদে প্রবেশের দোয়া", ar: "اللَّهُمَّ افْتَحْ لِي أَبْوَابَ رَحْمَتِكَ", pron: "আল্লাহুম্মাফ তাহলি আবওয়াবা রাহমাতিক।", mean: "হে আল্লাহ! আমার জন্য আপনার রহমতের দরজাগুলো খুলে দিন।" },
-      { title: "৮. মসজিদ থেকে বের হওয়ার দোয়া", ar: "اللَّهُمَّ إِنِّي أَسْأَلُكَ مِنْ فَضْلِكَ", pron: "আল্লাহুম্মা ইন্নি আসআলুক মিন ফাদলিক।", mean: "হে আল্লাহ! আমি আপনার অনুগ্রহ প্রার্থনা করছি।" },
-      { title: "৯. বাথরুমে প্রবেশের দোয়া", ar: "اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْخُبْثِ وَالْخَبَائِثِ", pron: "আল্লাহুম্মা ইন্নি আউযুবিকা মিনাল খুবসি ওয়াল খাবায়িস।", mean: "হে আল্লাহ! আমি পুরুষ ও নারী শয়তানের অনিষ্ট থেকে আপনার আশ্রয় চাই।" },
-      { title: "১০. বাথরুম থেকে বের হওয়ার দোয়া", ar: "غُفْرَانَكَ", pron: "গুফরানাকা।", mean: "হে আল্লাহ! আমি আপনার কাছে ক্ষমা প্রার্থনা করছি।" },
-      { title: "১১. ওযুর শুরুর দোয়া", ar: "بِسْمِ اللَّهِ", pron: "বিসমিল্লাহ।", mean: "আল্লাহর নামে শুরু করছি।" },
-      { title: "১২. ওযুর শেষের দোয়া", ar: "أَشْهَدُ أَنْ لَا إِلَهَ إِلَّا اللَّهُ وَأَشْهَدُ أَنَّ مُحَمَّدًا عَبْدُهُ وَرَسُولُهُ", pron: "আশহাদু আল্লা ইলাহা ইল্লাল্লাহু ওয়া আশহাদু আন্না মুহাম্মাদান আবদুহু ওয়া রাসূলুহু।", mean: "আমি সাক্ষ্য দিচ্ছি যে, আল্লাহ ছাড়া কোনো মাবুদ নেই এবং মুহাম্মদ (সা.) তাঁর বান্দা ও রাসূল।" },
-      { title: "১৩. আয়না দেখার দোয়া", ar: "اللَّهُمَّ أَنْتَ حَسَّنْتَ خَلْقِي فَحَسِّنْ خُلُقِي", pron: "আল্লাহুম্মা আনতা হাসানতা খালকী ফাহাসসিন খুলুকী।", mean: "হে আল্লাহ! আপনি আমার গঠন সুন্দর করেছেন, আমার চরিত্রও সুন্দর করে দিন।" },
-      { title: "১৪. নতুন কাপড় পরার দোয়া", ar: "الْحَمْدُ لِلَّهِ الَّذِي كَسَانِي هَذَا", pron: "আলহামদুলিল্লাহিল্লাজী কাসানী হা-যা।", mean: "সকল প্রশংসা আল্লাহর, যিনি আমাকে এই কাপড় পরিয়েছেন।" },
-      { title: "১৫. যানবাহনে ওঠার দোয়া", ar: "سُبْحَانَ الَّذِي سَخَّرَ لَنَا هَذَا وَمَا كُنَّا لَهُ مُقْرِنِينَ", pron: "সুবহানাল্লাজী সাখখারা লানা হা-যা ওয়া মা কুননা লাহু মুকরিনীন।", mean: "পবিত্র সেই সত্তা, যিনি এটিকে আমাদের বশীভূত করে দিয়েছেন, নচেৎ আমরা একে বশীভূত করতে পারতাম না।" },
-      { title: "১৬. বিপদের সময়ের দোয়া", ar: "إِنَّا لِلَّهِ وَإِنَّا إِلَيْهِ رَاجِعُونَ", pron: "ইন্নালিল্লাহি ওয়া ইন্না ইলাইহি রাজিউন।", mean: "নিশ্চয়ই আমরা আল্লাহর জন্য এবং আমাদেরকে তাঁর দিকেই ফিরে যেতে হবে।" },
-      { title: "১৭. রাগ দমনের দোয়া", ar: "أَعُوذُ بِاللَّهِ مِنَ الشَّيْطَانِ الرَّجِيمِ", pron: "আউযুবিল্লাহি মিনাশ শাইতানির রাজীম।", mean: "বিতাড়িত শয়তান থেকে আল্লাহর কাছে আশ্রয় চাই।" },
-      { title: "১৮. হাঁচি দিলে", ar: "الْحَمْدُ لِلَّهِ", pron: "আলহামদুলিল্লাহ।", mean: "সমস্ত প্রশংসা আল্লাহর জন্য।" },
-      { title: "১৯. হাঁচির উত্তরে (শুনলে)", ar: "يَرْحَمُكَ اللَّهُ", pron: "ইয়ারহামুকাল্লাহ।", mean: "আল্লাহ আপনার প্রতি রহম করুন।" },
-      { title: "২০. হাঁচির উত্তরের জবাবে", ar: "يَهْدِيكُمُ اللَّهُ وَيُصْلِحُ بَالَكُمْ", pron: "ইয়াহদিকুমুল্লাহু ওয়া ইউসলিহু বালাকুম।", mean: "আল্লাহ আপনাদের হিদায়াত দিন এবং আপনাদের অবস্থা ঠিক করে দিন।" },
-      { title: "২১. জ্ঞান বৃদ্ধির দোয়া", ar: "رَبِّ زِدْنِي عِلْمًا", pron: "রাব্বি যিদনী ইলমা।", mean: "হে আমার প্রতিপালক! আমার জ্ঞান বৃদ্ধি করে দিন।" },
-      { title: "২২. মা-বাবার জন্য দোয়া", ar: "رَبِّ ارْحَمْهُمَا كَمَا رَبَّيَانِي صَغِيرًا", pron: "রাব্বির হামহুমা কামা রাব্বায়ানী সাগীরা।", mean: "হে আমার রব! তাঁদের উভয়ের প্রতি রহম করুন, যেমন তাঁরা আমাকে শৈশবে লালন-পালন করেছেন।" },
-      { title: "২৩. দুনিয়া ও আখিরাতের কল্যাণের দোয়া", ar: "رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الْآخِرَةِ حَسَنَةً وَقِنَا عَذَابَ النَّارِ", pron: "রাব্বানা আতিনা ফিদদুনইয়া হাসানাতাও ওয়া ফিল আখিরাতি হাসানাতাও ওয়াকিনা আজাবান্নার।", mean: "হে আমাদের রব! আমাদের দুনিয়া ও আখিরাতে কল্যাণ দান করুন এবং জাহান্নামের আযাব থেকে বাঁচান।" },
-      { title: "২৪. কেউ উপকার করলে (কৃতজ্ঞতা)", ar: "جَزَاكَ اللَّهُ خَيْرًا", pron: "জাযাকাল্লাহু খাইরান।", mean: "আল্লাহ আপনাকে উত্তম প্রতিদান দিন।" },
-      { title: "২৫. সালামের পূর্ণ রূপ", ar: "السَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللَّهِ وَبَرَكَاتُهُ", pron: "আসসালামু আলাইকুম ওয়া রাহমাতুল্লাহি ওয়া বারাকাতুহ।", mean: "আপনাদের ওপর শান্তি, আল্লাহর রহমত ও বরকত বর্ষিত হোক।" },
-      { title: "২৬. ঋণ মুক্তির দোয়া", ar: "اللَّهُمَّ اكْفِنِي بِحَلَالِكَ عَنْ حَرَامِكَ", pron: "আল্লাহুম্মাকফিনী বিহালালিকা আন হারামিকা।", mean: "হে আল্লাহ! হারামের পরিবর্তে আপনার হালাল রুজিই আমার জন্য যথেষ্ট করে দিন।" },
-      { title: "২৭. ক্ষমা চাওয়ার শ্রেষ্ঠ দোয়া (সাইয়্যিদুল ইস্তিগফার)", ar: "اللَّهُمَّ أَنْتَ رَبِّي لَا إِلَهَ إِلَّا أَنْتَ خَلَقْتَنِي وَأَنَا عَبْدُكَ", pron: "আল্লাহুম্মা আনতা রাব্বি লা ইলাহা ইল্লা আনতা, খালাকতানি ওয়া আনা আবদুকা...", mean: "হে আল্লাহ! আপনি আপনার রব, আপনি ছাড়া কোনো ইলাহ নেই। আপনি আমাকে সৃষ্টি করেছেন এবং আমি আপনার বান্দা।" },
-      { title: "২৮. দুঃখ-কষ্ট দূর করার দোয়া (দোয়া ইউনুস)", ar: "لَا إِلَهَ إِلَّا أَنْتَ سُبْحَانَكَ إِنِّي كُنْتُ مِنَ الظَّالِمِينَ", pron: "লা ইলাহা ইল্লা আনতা সুবহানাকা ইন্নি কুনতু মিনাজ জালিমিন।", mean: "আপনি ছাড়া কোনো ইলাহ নেই, আপনি পবিত্র। নিশ্চয়ই আমি জালিমদের অন্তর্ভুক্ত।" },
-      { title: "২৯. অসুস্থ ব্যক্তির খোঁজ নিতে গেলে", ar: "لَا بَأْسَ طَهُورٌ إِنْ شَاءَ اللَّهُ", pron: "লা-বা'সা তহুরুন ইনশাআল্লাহ।", mean: "ভয় নেই, আল্লাহর ইচ্ছায় এটি গুনাহ থেকে পবিত্রকারী হবে।" },
-      { title: "৩০. কবরস্থানে প্রবেশের দোয়া", ar: "السَّلَامُ عَلَيْكُمْ أَهْلَ الدِّيَارِ مِنَ الْمُؤْمِنِينَ وَالْمُسْلِمِينَ", pron: "আসসালামু আলাইকুম আহলাদ দিয়ারি মিনাল মু'মিনিনা ওয়াল মুসলিমিন।", mean: "হে মুমিন ও মুসলিম কবরবাসীরা! আপনাদের ওপর শান্তি বর্ষিত হোক।" },
-      { title: "৩১. বৃষ্টি চাওয়ার দোয়া", ar: "اللَّهُمَّ أَغِثْنَا", pron: "আল্লাহুম্মা আগিসনা।", mean: "হে আল্লাহ! আমাদেরকে বৃষ্টি দান করুন।" },
-      { title: "৩২. বৃষ্টি হতে দেখলে", ar: "اللَّهُمَّ صَيِّبًا نَافِعًا", pron: "আল্লাহুম্মা সায়্যিবান নাফিয়া।", mean: "হে আল্লাহ! উপকারী বৃষ্টি বর্ষণ করুন।" },
-      { title: "৩৩. মেঘের গর্জন শুনলে", ar: "سُبْحَانَ الَّذِي يُسَبِّحُ الرَّعْدُ بِحَمْدِهِ", pron: "সুবহানাল্লাজী ইউসাব্বিহুর রা'দু বিহামদিহী।", mean: "পবিত্র সেই সত্তা, যাঁর প্রশংসার সাথে মেঘমালা তাসবিহ পাঠ করে।" },
-      { title: "৩৪. চাঁদ দেখার দোয়া", ar: "اللَّهُمَّ أَهِلَّهُ عَلَيْنَا بِالْيُمْنِ وَالْإِيمَانِ", pron: "আল্লাহুম্মা আহিল্লাহু আলাইনা বিলয়ুমনি ওয়াল ইমান।", mean: "হে আল্লাহ! এই চাঁদকে আমাদের ওপর বরকত ও ঈমানের সাথে উদিত করুন।" },
-      { title: "৩৫. রোজার ইফতারের দোয়া", ar: "ذَهَبَ الظَّمَأُ وَابْتَلَّتِ الْعُرُوقُ وَثَبَتَ الْأَجْرُ", pron: "যাহাবায যামাউ ওয়াবতাল্লাতিল উরূকু ওয়া সাবাতাল আজরু।", mean: "পিপাসা মিটেছে, শিরা-উপশিরা সিক্ত হয়েছে এবং সওয়াব নির্ধারিত হয়েছে।" },
-      { title: "৩৬. লাইলাতুল কদরের দোয়া", ar: "اللَّهُمَّ إِنَّكَ عَفُوٌّ تُحِبُّ الْعَفْوَ فَاعْفُ عَنِّي", pron: "আল্লাহুম্মা ইন্নাকা আফুয়্যুন তুহিব্বুল আফওয়া ফা'ফু আন্নী।", mean: "হে আল্লাহ! নিশ্চয়ই আপনি ক্ষমাশীল, ক্ষমা করতে ভালোবাসেন। অতএব আমাকে ক্ষমা করুন।" },
-      { title: "৩৭. বিপদ থেকে রক্ষার দোয়া", ar: "بِسْمِ اللَّهِ الَّذِي لَا يَضُرُّ مَعَ اسْمِهِ شَيْءٌ فِي الْأَرْضِ وَلَا فِي السَّمَاءِ", pron: "বিسمিল্লাহিল্লাজি লা ইয়াদুররু মাআসমিহি শাইয়ুন ফিল আরদি ওয়ালা ফিস সামা-ই।", mean: "আল্লাহর নামে, যাঁর নামের বরকতে আসমান ও জমিনের কোনো কিছুই ক্ষতি করতে পারে না।" },
-      { title: "৩৮. শয়তানের প্ররোচনা থেকে বাঁচার দোয়া", ar: "أَعُوذُ بِاللَّهِ السَّمِيعِ الْعَلِيمِ مِنَ الشَّيْطَانِ الرَّجِيمِ", pron: "আউযুবিল্লাহিস সামিয়িল আলীমি মিনাশ শাইতানির রাজীম।", mean: "আমি সর্বশ্রোতা সর্বজ্ঞানী আল্লাহর কাছে বিতাড়িত শয়তান থেকে আশ্রয় চাই।" },
-      { title: "৩৯. অন্তর স্থির রাখার দোয়া", ar: "يَا مُقَلِّبَ الْقُلُوبِ ثَبِّتْ قَلْبِي عَلَى دِينِكَ", pron: "ইয়া মুকাল্লিবাল কুলুব, সাব্বিত কালবী আলা দীনিক।", mean: "হে অন্তর পরিবর্তনকারী! আমার অন্তরকে আপনার দ্বীনের ওপর স্থির রাখুন।" },
-      { title: "৪০. বালা-মুসিবত থেকে বাঁচার দোয়া", ar: "اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنْ جَهْدِ الْبَلَاءِ", pron: "আল্লাহুম্মা ইন্নি আউযুবিকা মিন জাহদিল বালা-ই।", mean: "হে আল্লাহ! আমি কঠিন বালা-মুসিবত থেকে আপনার আশ্রয় চাই।" },
-      { title: "৪১. জান্নাত চাওয়ার দোয়া", ar: "اللَّهُمَّ إِنِّي أَسْأَلُكَ الْجَنَّةَ", pron: "আল্লাহুম্মা ইন্নি আসআলুকাল জান্নাহ।", mean: "হে আল্লাহ! আমি আপনার কাছে জান্নাত চাই।" },
-      { title: "৪২. জাহান্নাম থেকে বাঁচার দোয়া", ar: "اللَّهُمَّ أَجِرْنِي مِنَ النَّارِ", pron: "আল্লাহুম্মা আজিরনী মিনান্নার।", mean: "হে আল্লাহ! আমাকে জাহান্নামের আগুন থেকে রক্ষা করুন।" },
-      { title: "৪৩. সহজ হিসাবের দোয়া", ar: "اللَّهُمَّ حَاسِبْنِي حِسَابًا يَسِيرًا", pron: "আল্লাহুম্মা হাসিবনী হিসাবাই ইয়াসিরা।", mean: "হে আল্লাহ! আমার হিসাব সহজ করে দিন।" },
-      { title: "৪৪. রহমত চাওয়ার দোয়া", ar: "رَبِّ اغْفِرْ وَارْحَمْ وَأَنْتَ خَيْرُ الرَّاحِمِينَ", pron: "রাব্বিগফির ওয়ারহাম ওয়া আনতা খাইরুর রাহিমীন।", mean: "হে আমার রব! আমাকে ক্ষমা করুন ও দয়া করুন, আপনিই শ্রেষ্ঠ দয়ালু।" },
-      { title: "৪৫. দ্বীনের উপর অবিচল থাকার দোয়া", ar: "رَبَّنَا لَا تُزِغْ قُلُوبَنَا بَعْدَ إِذْ هَدَيْتَنَا", pron: "রাব্বানা লা তুযিগ কুলুবানা বা'দা ইজ হাদাইতানা।", mean: "হে আমাদের রব! হিদায়াত দেওয়ার পর আমাদের অন্তরকে বক্র করবেন না।" },
-      { title: "৪৬. ঈমানের সাথে মৃত্যুর দোয়া", ar: "تَوَفَّنِي مُسْلِمًا وَأَلْحِقْنِي بِالصَّالِحِينَ", pron: "তাওয়াফফানী মুসলিমাও ওয়া আলহিকনী বিস সালিহীন।", mean: "আমাকে মুসলিম হিসেবে মৃত্যু দিন এবং সৎকর্মশীলদের অন্তর্ভুক্ত করুন।" },
-      { title: "৪৭. আল্লাহর রহমতের দোয়া", ar: "يَا حَيُّ يَا قَيُّومُ بِرَحْمَتِكَ أَسْتَغِيثُ", pron: "ইয়া হাইয়্যু ইয়া কাইয়্যুম, বিরাহমাতিকা আস্তাগিস।", mean: "হে চিরঞ্জীব, হে চিরস্থায়ী! আমি আপনার রহমতের উসিলায় সাহায্য চাই।" },
-      { title: "৪৮. শত্রুর চক্রান্ত থেকে বাঁচার দোয়া", ar: "اللَّهُمَّ إِنَّا نَجْعَلُكَ فِي نُحُورِهِمْ", pron: "আল্লাহুম্মা ইন্না নাজআলুকা ফী নুহুরিহিম।", mean: "হে আল্লাহ! আমরা আপনাকে তাদের মোকাবেলায় ঢাল বানাচ্ছি।" },
-      { title: "৪৯. ক্ষমা প্রার্থনার দোয়া", ar: "أَسْتَغْفِرُ اللَّهَ الْعَظِيمَ الَّذِي لَا إِلَهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ وَأَتُوبُ إِلَيْهِ", pron: "আস্তাগফিরুল্লাহাল আযীম আল্লাযী লা ইলাহা ইল্লা হুওয়াল হাইয়্যুল কাইয়্যুমু ওয়া আতুবু ইলাইহি।", mean: "আমি সেই মহান আল্লাহর কাছে ক্ষমা চাই, যিনি চিরঞ্জীব ও চিরস্থায়ী।" },
-      { title: "৫০. সংক্ষিপ্ত দরুদ শরীফ", ar: "صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ", pron: "সাল্লাল্লাহু আলাইহি ওয়াসাল্লাম।", mean: "আল্লাহ তাঁর ওপর রহমত ও শান্তি বর্ষণ করুন।" }
-    ];
-
-    const masalaList = [
-      { title: "১. ওজুর ফরজ সমূহ", details: "ওজুতে ৪টি ফরজ কাজ রয়েছে:<br>১. পুরো মুখমণ্ডল একবার ধৌত করা。<br>২. দুই হাতের কনুইসহ একবার ধৌত করা。<br>৩. মাথার চারভাগের একভাগ মাসেহ করা。<br>৪. দুই পায়ের গ্রন্থি (টাখনু) সহ একবার ধৌত করা।" },
-      { title: "২. গোসলের ফরজ সমূহ", details: "গোসলে ৩টি ফরজ কাজ রয়েছে:<br>১. ভালোভাবে কুলি করা。<br>২. নাকে পানি দিয়ে নাক পরিষ্কার করা。<br>৩. সমস্ত শরীরে এমনভাবে পানি পৌঁছানো যেন একটি চুল পরিমাণ জায়গাও শুকনো না থাকে।" },
-      { title: "৩. তায়াম্মুমের ফরজ সমূহ", details: "তায়াম্মুমে ৩টি ফরজ কাজ রয়েছে:<br>১. নিয়ত করা。<br>২. পবিত্র মাটিতে হাত মেরে পুরো মুখমণ্ডল মাসেহ করা。<br>৩. পুনরায় মাটিতে হাত মেরে উভয় হাত কনুইসহ মাসেহ করা।" },
-      { title: "৪. যেসব কারণে ওজু ভেঙে যায়", details: "১. পায়খানা বা প্রস্রাবের রাস্তা দিয়ে কিছু বের হওয়া。<br>২. মুখ ভরে বমি করা。<br>৩. শরীর থেকে রক্ত বা পুঁজ বের হয়ে গড়িয়ে পড়া。<br>৪. থুথুর সাথে রক্তের ভাগ সমান বা বেশি হওয়া。<br>৫. কাত হয়ে বা হেলান দিয়ে ঘুমিয়ে পড়া。<br>৬. নামাজে উচ্চস্বরে হেসে ওঠা।" },
-      { title: "৫. নামাজের ওয়াজিব সমূহ", details: "নামাজে ১৪টি ওয়াজিব রয়েছে। যেমন: আল-ফাতিহা পড়া, সুরা মিলানো, রুকু ও সিজদায় ধীরস্থিরতা অবলম্বন করা, প্রথম ও শেষ বৈঠকে বসা, তাশাহহুদ পড়া, সালামের মাধ্যমে নামাজ শেষ করা ইত্যাদি।" },
-      { title: "৬. সিজদায়ে সাহু কখন দিতে হয়?", details: "নামাজে কোনো ওয়াজিব ভুলবশত ছুটে গেলে বা বিলম্বে আদায় করলে শেষ বৈঠকে ডান দিকে সালাম ফিরিয়ে অতিরিক্ত দুটি সিজদা দেওয়াই হলো সিজদায়ে সাহু।" },
-      { title: "৭. রোজার ফরজ ও কাজা হওয়ার কারণ", details: "সুবহে সাদিক থেকে সূর্যাস্ত পর্যন্ত নিয়তের সাথে পানাহার ও স্ত্রী সহবাস থেকে বিরত থাকা ফরজ। ইচ্ছাকৃতভাবে খেলে রোজা ভেঙে যায় এবং কাজা ও কাফফারা দুই-ই ওয়াজিব হয়।" },
-      { title: "৮. জাকাত ফরজ হওয়ার শর্ত", details: "নেসাব পরিমাণ ধন-সম্পদ (সাড়ে ৭ তোলা সোনা বা সাড়ে ৫২ তোলা রূপা অথবা সমপরিমাণ অর্থ) নিজের কাছে পূর্ণ এক বছর বজায় থাকলে জাকাত দেওয়া ফরজ।" }
-    ];
-
-    let tasbihCount = 0;
-
-    function openIslamicFeature(feature) {
+    // টিম মেম্বারদের বিস্তারিত তথ্য
+    function openTeamMember(memberKey) {
       const modal = document.getElementById('featureModal');
       const title = document.getElementById('modalTitle');
       const body = document.getElementById('modalBody');
 
       modal.style.display = 'flex';
 
-      if(feature === 'quran') {
-        title.innerHTML = "📖 আল-কুরআন শরীফ (১ থেকে ১১৪ সূরা)";
-        let gridHtml = `<p style="font-size:14px; color:#64748b;">যে কোন সূরায় ক্লিক করে তেলওয়াত শুনুন ও বাংলা অনুবাদ পড়ুন:</p><div class="quran-grid">`;
-        
-        for(let i = 0; i < surahs.length; i++) {
-          let surahNumber = i + 1;
-          gridHtml += `<div class="surah-box" onclick="showSurahDetails(${surahNumber})">${surahs[i]}</div>`;
-        }
-        
-        gridHtml += `</div>`;
-        body.innerHTML = gridHtml;
-      } 
-      else if(feature === 'namaz') {
-        title.innerHTML = "🕌 নামাযের সময়সূচী ও নিয়মাবলী";
+      if(memberKey === 'monir') {
+        title.innerHTML = "👨‍💻 Monir Ahmed Shakib";
         body.innerHTML = `
-          <h4 style="color:#2563eb; margin-top:0;">দৈনন্দিন নামাযের সময়সূচী (বাংলাদেশ):</h4>
-          <table class="namaz-table">
-            <tr><th>ওয়াক্ত</th><th>সময় (আনুমানিক)</th></tr>
-            <tr><td>ফজর</td><td>০৪:৪৫ AM</td></tr>
-            <tr><td>জোহর</td><td>১২:১৫ PM</td></tr>
-            <tr><td>আসর</td><td>০৪:০০ PM</td></tr>
-            <tr><td>মাগরিব</td><td>০৬:১৫ PM</td></tr>
-            <tr><td>এশা</td><td>০৭:৩০ PM</td></tr>
-          </table>
-
-          <h4 style="color:#2563eb; margin-bottom:10px;">পাঁচ ওয়াক্ত নামাজের মোট রাকাত:</h4>
-          <table class="namaz-table">
-            <tr><th>ওয়াক্ত</th><th>সুন্নাত</th><th>ফরজ</th><th>সুন্নাত/বিতর</th><th>মোট রাকাত</th></tr>
-            <tr><td>ফজর</td><td>২ (সুন্নাত)</td><td>২ (ফরজ)</td><td>-</td><td>৪ রাকাত</td></tr>
-            <tr><td>জোহর</td><td>৪ (সুন্নাত)</td><td>৪ (ফরজ)</td><td>২ (সুন্নাত)</td><td>১০ রাকাত</td></tr>
-            <tr><td>আসর</td><td>-</td><td>৪ (ফরজ)</td><td>-</td><td>৪ রাকাত</td></tr>
-            <tr><td>মাগরিব</td><td>-</td><td>৩ (ফরজ)</td><td>২ (সুন্নাত)</td><td>৫ রাকাত</td></tr>
-            <tr><td>এশা</td><td>-</td><td>৪ (ফরজ)</td><td>২ (সুন্নাত) + ৩ (বিতর)</td><td>৯ রাকাত</td></tr>
-          </table>
-
-          <div class="namaz-rules-box">
-            <h4>নামাজের বাইরে ৭টি ফরজ (শর্তাবলী):</h4>
-            <ol>
-              <li>শরীর পাক হওয়া।</li>
-              <li>কাপড় পাক হওয়া।</li>
-              <li>নামাজের স্থান পাক হওয়া।</li>
-              <li>সতর ঢাকা।</li>
-              <li>কিবলামুখী হওয়া।</li>
-              <li>নামাজের সময় হওয়া।</li>
-              <li>নামাজের নিয়ত করা।</li>
-            </ol>
+          <div style="text-align:center; margin-bottom:20px;">
+            <img src="monir-ahmed-shakib-1.jpg" style="width:130px; height:130px; border-radius:50%; object-fit:cover; border:4px solid #2563eb; box-shadow:0 8px 20px rgba(37,99,235,0.2);">
+            <h3 style="margin:10px 0 5px 0; color:#0f172a;">Monir Ahmed Shakib</h3>
+            <p style="color:#2563eb; font-weight:600; margin:0;">Team Lead & Professional Developer</p>
           </div>
-          
-          <div class="namaz-rules-box">
-            <h4>নামাজের ভেতরে ৬টি ফরজ (রুকন):</h4>
-            <ol>
-              <li>তাকবীরে তাহরীমা (আল্লাহু আকবার) বলা।</li>
-              <li>দাঁড়িয়ে নামাজ পড়া (অক্ষম হলে বসে)।</li>
-              <li>ক্বিরাআত (কুরআন শরীফ) পড়া।</li>
-              <li>রুকু করা।</li>
-              <li>দুই সিজদা করা।</li>
-              <li>শেষ বৈঠকে (আত্তাহিয়্যাতু পরিমাণ) বসা।</li>
-            </ol>
+          <div style="background:#f8fafc; padding:20px; border-radius:12px; border-left:4px solid #2563eb;">
+            <h4 style="margin-top:0; color:#1e293b;">সম্পূর্ণ ইনফরমেশন:</h4>
+            <p style="color:#475569; font-size:15px; line-height:1.8;">
+              আমি মোনির আহমেদ সাকিব। একজন অভিজ্ঞ প্রফেশনাল যিনি ডিজিটাল সলিউশন, ক্রিয়েটিভ ডিজাইন এবং টেকনিক্যাল সার্ভিস প্রদানে নিবেদিত। আমার পোর্টফোলিও এবং টিমের মাধ্যমে ক্লায়েন্টদের সেরা মানের সেবা প্রদান করে আসছি।
+            </p>
+            <p style="margin-bottom:0; color:#334155;"><strong>ইমেইল:</strong> monirahmedshakib.mb@gmail.com</p>
+            <p style="margin-bottom:0; color:#334155;"><strong>ফোন:</strong> +8801726232108</p>
           </div>
         `;
-      } 
-      else if(feature === 'dua') {
-        title.innerHTML = "🤲 প্রয়োজনীয় মাসনুন দোয়া (৫০টি)";
-        let duaHtml = '<div style="margin-bottom:15px; font-size:14px; color:#64748b;">দৈনন্দিন জীবনের অত্যন্ত গুরুত্বপূর্ণ ৫০টি প্রয়োজনীয় দোয়া নিচে দেওয়া হলো:</div>';
-        
-        duasList.forEach(d => {
-          duaHtml += `
-            <div class="dua-card">
-              <h4>${d.title}</h4>
-              <p class="arabic-text">${d.ar}</p>
-              <p class="bangla-text"><strong>উচ্চারণ:</strong> ${d.pron}<br><strong>অর্থ:</strong> ${d.mean}</p>
-            </div>
-          `;
-        });
-        
-        body.innerHTML = duaHtml;
-      } 
-      else if(feature === 'masala') {
-        title.innerHTML = "📜 প্রয়োজনীয় মাসআলা-মাসায়েল";
-        let masalaHtml = '<div style="margin-bottom:15px; font-size:14px; color:#64748b;">দৈনন্দিন জীবনের অতি গুরুত্বপূর্ণ কয়েকটি শরীয়তের মাসআলা:</div>';
-        
-        masalaList.forEach(m => {
-          masalaHtml += `
-            <div class="masala-card">
-              <h4>${m.title}</h4>
-              <div class="bangla-text">${m.details}</div>
-            </div>
-          `;
-        });
-        
-        body.innerHTML = masalaHtml;
-      }
-      else if(feature === 'tasbih') {
-        title.innerHTML = "🔍 ডিজিটাল জিকির ও তাসবিহ";
+      } else {
+        title.innerHTML = "👤 টিম মেম্বার ইনফরমেশন";
         body.innerHTML = `
-          <div style="text-align:center;">
-            <p style="font-size:16px; color:#475569;">"সুবহানাল্লাহ, আলহামদুলিল্লাহ, আল্লাহু আকবার"</p>
-            <button class="tasbih-btn" id="tasbihCountVal" onclick="countTasbih()">${tasbihCount}</button>
-            <p style="font-size:14px; color:#64748b;">গণনা বৃদ্ধি করতে বোতামে চাপ দিন</p>
-            <button class="btn danger" style="margin-top:10px;" onclick="resetTasbih()">পুনরায় শুরু করুন (Reset)</button>
-          </div>
-        `;
-      } 
-      else if(feature === 'books') {
-        title.innerHTML = "📚 ইসলামিক বই ও হাদীস গ্রন্থসমূহ";
-        body.innerHTML = `
-          <ul style="line-height:2.2; font-size:16px; color:#475569;">
-            <li>📖 <strong>সহীহ আল-বুখারী</strong> (সম্পূর্ণ খণ্ড)</li>
-            <li>📖 <strong>সহীহ মুসলিম</strong> (সম্পূর্ণ খণ্ড)</li>
-            <li>📖 <strong>রিয়াদুস সালেহীন</strong></li>
-            <li>📖 <strong>তাজউীদ ও কুরআন শিক্ষা গাইড</strong></li>
-            <li>📖 <strong>আর-রাহীকুল মাখতূম (রাসূলুল্লাহর স: জীবনী)</strong></li>
-          </ul>
-        `;
-      }
-    }
-
-    async function showSurahDetails(num) {
-      let sName = surahs[num - 1] || `সূরা ${num}`;
-      document.getElementById('modalTitle').innerText = "📖 " + sName;
-      
-      document.getElementById('modalBody').innerHTML = `
-        <div style="text-align: center; padding: 40px;">
-          <p style="color: #2563eb; font-weight: bold; font-size: 16px;">⏳ আয়াত ও বাংলা অনুবাদ লোড হচ্ছে...</p>
-        </div>
-      `;
-
-      try {
-        let response = await fetch(`https://api.alquran.cloud/v1/surah/${num}/editions/quran-uthmani,bn.bengali`);
-        let data = await response.json();
-        
-        if(data.code === 200) {
-          let arabicAyahs = data.data[0].ayahs;
-          let banglaAyahs = data.data[1].ayahs;
-          
-          let html = `
-            <div style="padding: 5px 0;">
-              <button class="btn" style="margin-bottom: 15px; padding: 6px 14px; font-size: 12px; border-radius: 8px; cursor:pointer;" onclick="openIslamicFeature('quran')">&larr; সকল সূরায় ফিরে যান</button>
-              <div style="background: #f8fafc; padding: 20px; border-radius: 12px; border-left: 5px solid #2563eb; max-height: 60vh; overflow-y: auto;">
-          `;
-
-          if(num !== 9) {
-            html += `<div style="text-align: center; font-size: 22px; margin-bottom: 20px; color: #0f172a; font-weight: bold; font-family: 'Amiri', serif;">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>`;
-          }
-
-          for(let i = 0; i < arabicAyahs.length; i++) {
-            html += `
-              <div style="margin-bottom: 20px; border-bottom: 1px solid #e2e8f0; padding-bottom: 15px;">
-                <div style="font-size: 22px; text-align: right; color: #0f172a; margin-bottom: 8px; line-height: 1.8; font-family: serif;">
-                  ${arabicAyahs[i].text} 
-                  <span style="font-size: 12px; border: 1px solid #cbd5e1; border-radius: 50%; padding: 2px 6px; display: inline-block; color: #64748b; margin-left: 5px;">${arabicAyahs[i].numberInSurah}</span>
-                </div>
-                <div style="font-size: 14px; text-align: left; color: #334155; line-height: 1.6;">
-                  <b>${banglaAyahs[i].numberInSurah}.</b> ${banglaAyahs[i].text}
-                </div>
-              </div>
-            `;
-          }
-
-          html += `</div></div>`;
-          document.getElementById('modalBody').innerHTML = html;
-        }
-      } catch (error) {
-        document.getElementById('modalBody').innerHTML = `
-          <div style="text-align: center; padding: 20px; color: #dc2626;">
-            <p>ইন্টারনেট সংযোগ না থাকায় আয়াত লোড করা যায়নি। দয়া করে আপনার ইন্টারনেট কানেকশন চেক করুন।</p>
-            <button class="btn" onclick="openIslamicFeature('quran')" style="margin-top:10px;">&larr; সকল সূরায় ফিরে যান</button>
+          <div style="background:#f8fafc; padding:20px; border-radius:12px; border-left:4px solid #2563eb; text-align:center;">
+            <p style="color:#475569; font-size:16px;">এই টিম মেম্বারের বিস্তারিত বায়ো এবং তথ্য খুব শীঘ্রই এখানে যুক্ত করা হবে।</p>
           </div>
         `;
       }
-    }
-
-    function countTasbih() {
-      tasbihCount++;
-      document.getElementById('tasbihCountVal').innerText = tasbihCount;
-    }
-
-    function resetTasbih() {
-      tasbihCount = 0;
-      document.getElementById('tasbihCountVal').innerText = tasbihCount;
     }
 
     function closeModal() {
