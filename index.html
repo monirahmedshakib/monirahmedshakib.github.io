@@ -49,12 +49,13 @@
     
     .clickable-card { cursor: pointer; border-top: 5px solid #2563eb; text-align: center; }
     
-    /* টিম মেম্বার কার্ড স্টাইল */
+    /* টিম মেম্বার কার্ড স্টাইল (এখানে object-position দিয়ে ফেস পজিশন ঠিক করা হয়েছে) */
     .team-img {
       width: 110px;
       height: 110px;
       border-radius: 50%;
       object-fit: cover;
+      object-position: center 20%; /* ছবিটির ফেস বা মাথা ঠিকমতো দেখানোর জন্য পজিশন অ্যাডজাস্ট করা হলো */
       margin: 0 auto 15px auto;
       border: 4px solid #eff6ff;
       box-shadow: 0 8px 20px rgba(37,99,235,0.15);
@@ -359,7 +360,7 @@
         <small style="color:#64748b; font-weight:500;">সব ইনফরমেশন দেখুন &rarr;</small>
       </div>
       
-      <!-- ২. MD. Dider Hossain (Web Developer) - Fallback সহ ফিক্স করা হলো -->
+      <!-- ২. MD. Dider Hossain (Web Developer) -->
       <div class="card clickable-card" onclick="openTeamMember('dider')">
         <img src="dider.jpg" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'110\' height=\'110\'><rect width=\'100%\' height=\'100%\' fill=\'%232563eb\'/><text x=\'50%\' y=\'50%\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'white\' font-size=\'16\' font-family=\'sans-serif\'>Dider</text></svg>';" alt="MD. Dider Hossain" class="team-img">
         <h3 style="margin:0 0 5px 0; color:#0f172a; font-size:18px;">MD. Dider Hossain</h3>
@@ -485,7 +486,7 @@
   </div>
 
   <script>
-    // টিম মেম্বারদের বিস্তারিত তথ্য (মডালের ভেতর ছবি সহ ফিক্স করা হলো)
+    // টিম মেম্বারদের বিস্তারিত তথ্য (মডালের ভেতরের ছবিগুলোতেও পজিশন ফিক্স করা হয়েছে)
     function openTeamMember(memberKey) {
       const modal = document.getElementById('featureModal');
       const title = document.getElementById('modalTitle');
@@ -497,7 +498,7 @@
         title.innerHTML = "👨‍💻 Monir Ahmed Shakib";
         body.innerHTML = `
           <div style="text-align:center; margin-bottom:20px;">
-            <img src="monir-ahmed-shakib-1.jpg" style="width:130px; height:130px; border-radius:50%; object-fit:cover; border:4px solid #2563eb; box-shadow:0 8px 20px rgba(37,99,235,0.2);">
+            <img src="monir-ahmed-shakib-1.jpg" style="width:130px; height:130px; border-radius:50%; object-fit:cover; object-position:center 20%; border:4px solid #2563eb; box-shadow:0 8px 20px rgba(37,99,235,0.2);">
             <h3 style="margin:10px 0 5px 0; color:#0f172a;">Monir Ahmed Shakib</h3>
             <p style="color:#2563eb; font-weight:600; margin:0;">Team Lead & Professional Developer</p>
           </div>
@@ -514,7 +515,7 @@
         title.innerHTML = "👨‍💻 MD. Dider Hossain";
         body.innerHTML = `
           <div style="text-align:center; margin-bottom:20px;">
-            <img src="dider.jpg" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'130\' height=\'130\'><rect width=\'100%\' height=\'100%\' fill=\'%232563eb\'/><text x=\'50%\' y=\'50%\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'white\' font-size=\'18\' font-family=\'sans-serif\'>Dider</text></svg>';" style="width:130px; height:130px; border-radius:50%; object-fit:cover; border:4px solid #2563eb; box-shadow:0 8px 20px rgba(37,99,235,0.2);">
+            <img src="dider.jpg" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'130\' height=\'130\'><rect width=\'100%\' height=\'100%\' fill=\'%232563eb\'/><text x=\'50%\' y=\'50%\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'white\' font-size=\'18\' font-family=\'sans-serif\'>Dider</text></svg>';" style="width:130px; height:130px; border-radius:50%; object-fit:cover; object-position:center 20%; border:4px solid #2563eb; box-shadow:0 8px 20px rgba(37,99,235,0.2);">
             <h3 style="margin:10px 0 5px 0; color:#0f172a;">MD. Dider Hossain</h3>
             <p style="color:#2563eb; font-weight:600; margin:0;">Web Developer</p>
           </div>
