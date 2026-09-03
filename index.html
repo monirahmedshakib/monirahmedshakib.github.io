@@ -351,7 +351,7 @@
   <section id="blog">
     <h2>My Team</h2>
     <div class="grid">
-      <!-- ১. মোনির আহমেদ সাকিব (আপনার ছবি ও ইনফো) -->
+      <!-- ১. মোনির আহমেদ সাকিব -->
       <div class="card clickable-card" onclick="openTeamMember('monir')">
         <img src="monir-ahmed-shakib-1.jpg" alt="Monir Ahmed Shakib" class="team-img">
         <h3 style="margin:0 0 5px 0; color:#0f172a; font-size:18px;">Monir Ahmed Shakib</h3>
@@ -359,12 +359,12 @@
         <small style="color:#64748b; font-weight:500;">সব ইনফরমেশন দেখুন &rarr;</small>
       </div>
       
-      <!-- ২. টিম মেম্বার ২ -->
-      <div class="card clickable-card" onclick="openTeamMember('member2')">
-        <img src="https://via.placeholder.com/150" alt="Team Member" class="team-img">
-        <h3 style="margin:0 0 5px 0; color:#0f172a; font-size:18px;">মেম্বারের নাম ২</h3>
-        <p style="color:#2563eb; font-size:14px; font-weight:600; margin:0 0 10px 0;">Web Developer</p>
-        <small style="color:#64748b; font-weight:500;">ইনফরমেশন দেখুন &rarr;</small>
+      <!-- ২. MD. Dider Hossain (নতুন যুক্ত করা হলো) -->
+      <div class="card clickable-card" onclick="openTeamMember('dider')">
+        <img src="dider.jpg" alt="MD. Dider Hossain" class="team-img">
+        <h3 style="margin:0 0 5px 0; color:#0f172a; font-size:18px;">MD. Dider Hossain</h3>
+        <p style="color:#2563eb; font-size:14px; font-weight:600; margin:0 0 10px 0;">Team Member</p>
+        <small style="color:#64748b; font-weight:500;">সব ইনফরমেশন দেখুন &rarr;</small>
       </div>
 
       <!-- ৩. টিম মেম্বার ৩ -->
@@ -508,6 +508,23 @@
             </p>
             <p style="margin-bottom:0; color:#334155;"><strong>ইমেইল:</strong> monirahmedshakib.mb@gmail.com</p>
             <p style="margin-bottom:0; color:#334155;"><strong>ফোন:</strong> +8801726232108</p>
+          </div>
+        `;
+      } else if(memberKey === 'dider') {
+        title.innerHTML = "👨‍💻 MD. Dider Hossain";
+        body.innerHTML = `
+          <div style="text-align:center; margin-bottom:20px;">
+            <img src="dider.jpg" style="width:130px; height:130px; border-radius:50%; object-fit:cover; border:4px solid #2563eb; box-shadow:0 8px 20px rgba(37,99,235,0.2);">
+            <h3 style="margin:10px 0 5px 0; color:#0f172a;">MD. Dider Hossain</h3>
+            <p style="color:#2563eb; font-weight:600; margin:0;">Team Member</p>
+          </div>
+          <div style="background:#f8fafc; padding:20px; border-radius:12px; border-left:4px solid #2563eb;">
+            <h4 style="margin-top:0; color:#1e293b;">সম্পূর্ণ ইনফরমেশন:</h4>
+            <p style="color:#475569; font-size:15px; line-height:1.8;">
+              আমি এমডি দিদার হোসেন। এই টিমের একজন নিবেদিত প্রাণ সদস্য হিসেবে কাজ করছি।
+            </p>
+            <p style="margin-bottom:5px; color:#334155;"><strong>ইমেইল:</strong> diderhossain@gmail.com</p>
+            <p style="margin-bottom:0; color:#334155;"><strong>নম্বর:</strong> 01722510378</p>
           </div>
         `;
       } else {
