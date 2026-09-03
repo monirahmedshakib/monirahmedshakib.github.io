@@ -49,14 +49,14 @@
     
     .clickable-card { cursor: pointer; border-top: 5px solid #2563eb; text-align: center; }
     
-    /* টিম মেম্বার কার্ড স্টাইল (দিদার ভাইয়ের ছবির মতো ফেস ফোকাস ও ফিট করার জন্য প্রপার্টি) */
+    /* টিম মেম্বার কার্ড স্টাইল */
     .team-img {
       width: 110px;
       height: 110px;
       border-radius: 50%;
       object-fit: cover;
       object-position: center 15%;
-      transform: scale(1.15); /* ছবিটিকে সামান্য জুম করে পরিষ্কার দেখানোর জন্য */
+      transform: scale(1.15);
       margin: 10px auto 20px auto;
       border: 4px solid #eff6ff;
       box-shadow: 0 8px 20px rgba(37,99,235,0.15);
@@ -369,7 +369,7 @@
         <small style="color:#64748b; font-weight:500;">ইনফরমেশন দেখুন &rarr;</small>
       </div>
 
-      <!-- ৩. MD. Mueen Babu (UI/UX Designer) - আপডেট করা স্টাইল -->
+      <!-- ৩. MD. Mueen Babu (UI/UX Designer) -->
       <div class="card clickable-card" onclick="openTeamMember('mueen')">
         <img src="mueenbabu.jpg" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'110\' height=\'110\'><rect width=\'100%\' height=\'100%\' fill=\'%232563eb\'/><text x=\'50%\' y=\'50%\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'white\' font-size=\'16\' font-family=\'sans-serif\'>Mueen</text></svg>';" alt="MD. Mueen Babu" class="team-img">
         <h3 style="margin:0 0 5px 0; color:#0f172a; font-size:18px;">MD. Mueen Babu</h3>
@@ -499,7 +499,7 @@
         title.innerHTML = "👨‍💻 Monir Ahmed Shakib";
         body.innerHTML = `
           <div style="text-align:center; margin-bottom:20px;">
-            <img src="monir-ahmed-shakib-1.jpg" style="width:130px; height:130px; border-radius:50%; object-fit:cover; object-position:center 20%; border:4px solid #2563eb; box-shadow:0 8px 20px rgba(37,99,235,0.2);">
+            <img src="monir12.jpeg" style="width:130px; height:130px; border-radius:50%; object-fit:cover; object-position:center 20%; border:4px solid #2563eb; box-shadow:0 8px 20px rgba(37,99,235,0.2);">
             <h3 style="margin:10px 0 5px 0; color:#0f172a;">Monir Ahmed Shakib</h3>
             <p style="color:#2563eb; font-weight:600; margin:0;">Team Lead & Professional Developer</p>
           </div>
@@ -634,7 +634,7 @@
 
     function saveItem(){
       const title = document.getElementById("title").value;
-      const desc = document.getElementById("desc,value")?.value || document.getElementById("desc").value;
+      const desc = document.getElementById("desc").value;
       const type = document.getElementById("type").value;
       if(!title || !desc) return alert("সব ফিল্ড পূরণ করুন!");
 
